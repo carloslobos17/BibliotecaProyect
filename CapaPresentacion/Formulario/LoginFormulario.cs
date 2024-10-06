@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formulario
 {
-    public partial class login : Form
+    public partial class LoginFormulario : Form
     {
-        public login()
+        public LoginFormulario()
         {
             InitializeComponent();
         }
