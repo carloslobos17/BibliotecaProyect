@@ -29,162 +29,192 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFormulario));
-            panel1 = new Panel();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            panel2 = new Panel();
-            BtnIniciarSesion = new Button();
-            BtnCancelarInicio = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            TextBoxContrasena = new TextBox();
-            TextBoxUsuario = new TextBox();
-            panel3 = new Panel();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            panelSuperior = new Panel();
+            titulLabel = new Label();
+            iconoBox = new PictureBox();
+            panelCentral = new Panel();
+            errorLoginLabel = new Label();
+            iniciarBtn = new Button();
+            cancelarBtn = new Button();
+            contraseñaLabel = new Label();
+            usuarioLabel = new Label();
+            claveLoginTextBox = new TextBox();
+            usuarioLoginTextBox = new TextBox();
+            panelInferior = new Panel();
+            panelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconoBox).BeginInit();
+            panelCentral.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelSuperior
             // 
-            panel1.BackColor = Color.SandyBrown;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(584, 361);
-            panel1.TabIndex = 0;
+            panelSuperior.BackColor = Color.RosyBrown;
+            panelSuperior.Controls.Add(titulLabel);
+            panelSuperior.Controls.Add(iconoBox);
+            panelSuperior.Dock = DockStyle.Fill;
+            panelSuperior.Location = new Point(0, 0);
+            panelSuperior.Margin = new Padding(3, 4, 3, 4);
+            panelSuperior.Name = "panelSuperior";
+            panelSuperior.Size = new Size(667, 481);
+            panelSuperior.TabIndex = 0;
             // 
-            // label1
+            // titulLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(145, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(382, 38);
-            label1.TabIndex = 1;
-            label1.Text = "Biblioteca los 5 Amigos";
+            titulLabel.AutoSize = true;
+            titulLabel.Font = new Font("Century", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titulLabel.ForeColor = SystemColors.ControlLightLight;
+            titulLabel.Location = new Point(166, 27);
+            titulLabel.Name = "titulLabel";
+            titulLabel.Size = new Size(428, 47);
+            titulLabel.TabIndex = 1;
+            titulLabel.Text = "Gestión de biblioteca";
             // 
-            // pictureBox1
+            // iconoBox
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 75);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            iconoBox.Image = (Image)resources.GetObject("iconoBox.Image");
+            iconoBox.Location = new Point(0, 0);
+            iconoBox.Margin = new Padding(3, 4, 3, 4);
+            iconoBox.Name = "iconoBox";
+            iconoBox.Size = new Size(114, 100);
+            iconoBox.SizeMode = PictureBoxSizeMode.Zoom;
+            iconoBox.TabIndex = 0;
+            iconoBox.TabStop = false;
             // 
-            // panel2
+            // panelCentral
             // 
-            panel2.BackColor = Color.PeachPuff;
-            panel2.Controls.Add(BtnIniciarSesion);
-            panel2.Controls.Add(BtnCancelarInicio);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(TextBoxContrasena);
-            panel2.Controls.Add(TextBoxUsuario);
-            panel2.Location = new Point(0, 75);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(584, 286);
-            panel2.TabIndex = 1;
+            panelCentral.BackColor = Color.White;
+            panelCentral.Controls.Add(errorLoginLabel);
+            panelCentral.Controls.Add(iniciarBtn);
+            panelCentral.Controls.Add(cancelarBtn);
+            panelCentral.Controls.Add(contraseñaLabel);
+            panelCentral.Controls.Add(usuarioLabel);
+            panelCentral.Controls.Add(claveLoginTextBox);
+            panelCentral.Controls.Add(usuarioLoginTextBox);
+            panelCentral.Location = new Point(0, 100);
+            panelCentral.Margin = new Padding(3, 4, 3, 4);
+            panelCentral.Name = "panelCentral";
+            panelCentral.Size = new Size(667, 381);
+            panelCentral.TabIndex = 1;
             // 
-            // BtnIniciarSesion
+            // errorLoginLabel
             // 
-            BtnIniciarSesion.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnIniciarSesion.Location = new Point(295, 160);
-            BtnIniciarSesion.Name = "BtnIniciarSesion";
-            BtnIniciarSesion.Size = new Size(83, 26);
-            BtnIniciarSesion.TabIndex = 5;
-            BtnIniciarSesion.Text = "Iniciar";
-            BtnIniciarSesion.UseVisualStyleBackColor = true;
+            errorLoginLabel.AutoSize = true;
+            errorLoginLabel.ForeColor = Color.Crimson;
+            errorLoginLabel.Location = new Point(211, 274);
+            errorLoginLabel.Name = "errorLoginLabel";
+            errorLoginLabel.Size = new Size(51, 20);
+            errorLoginLabel.TabIndex = 6;
+            errorLoginLabel.Text = "FASDF";
             // 
-            // BtnCancelarInicio
+            // iniciarBtn
             // 
-            BtnCancelarInicio.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnCancelarInicio.Location = new Point(176, 158);
-            BtnCancelarInicio.Name = "BtnCancelarInicio";
-            BtnCancelarInicio.Size = new Size(83, 28);
-            BtnCancelarInicio.TabIndex = 4;
-            BtnCancelarInicio.Text = "Cancelar";
-            BtnCancelarInicio.UseVisualStyleBackColor = true;
+            iniciarBtn.BackColor = Color.RosyBrown;
+            iniciarBtn.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iniciarBtn.ForeColor = SystemColors.ControlLightLight;
+            iniciarBtn.Location = new Point(195, 213);
+            iniciarBtn.Margin = new Padding(3, 4, 3, 4);
+            iniciarBtn.Name = "iniciarBtn";
+            iniciarBtn.Size = new Size(100, 35);
+            iniciarBtn.TabIndex = 5;
+            iniciarBtn.Text = "Iniciar";
+            iniciarBtn.UseVisualStyleBackColor = false;
+            iniciarBtn.Click += iniciarBtn_Click;
             // 
-            // label3
+            // cancelarBtn
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(145, 98);
-            label3.Name = "label3";
-            label3.Size = new Size(114, 23);
-            label3.TabIndex = 3;
-            label3.Text = "Contraseña";
+            cancelarBtn.BackColor = Color.RosyBrown;
+            cancelarBtn.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cancelarBtn.ForeColor = SystemColors.ButtonHighlight;
+            cancelarBtn.Location = new Point(337, 211);
+            cancelarBtn.Margin = new Padding(3, 4, 3, 4);
+            cancelarBtn.Name = "cancelarBtn";
+            cancelarBtn.Size = new Size(130, 37);
+            cancelarBtn.TabIndex = 4;
+            cancelarBtn.Text = "Cancelar";
+            cancelarBtn.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // contraseñaLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(145, 48);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 23);
-            label2.TabIndex = 2;
-            label2.Text = "Usuario";
+            contraseñaLabel.AutoSize = true;
+            contraseñaLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contraseñaLabel.Location = new Point(166, 131);
+            contraseñaLabel.Name = "contraseñaLabel";
+            contraseñaLabel.Size = new Size(140, 28);
+            contraseñaLabel.TabIndex = 3;
+            contraseñaLabel.Text = "Contraseña";
             // 
-            // TextBoxContrasena
+            // usuarioLabel
             // 
-            TextBoxContrasena.Location = new Point(295, 98);
-            TextBoxContrasena.Multiline = true;
-            TextBoxContrasena.Name = "TextBoxContrasena";
-            TextBoxContrasena.Size = new Size(114, 31);
-            TextBoxContrasena.TabIndex = 1;
+            usuarioLabel.AutoSize = true;
+            usuarioLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usuarioLabel.Location = new Point(195, 64);
+            usuarioLabel.Name = "usuarioLabel";
+            usuarioLabel.Size = new Size(102, 28);
+            usuarioLabel.TabIndex = 2;
+            usuarioLabel.Text = "Usuario";
             // 
-            // TextBoxUsuario
+            // claveLoginTextBox
             // 
-            TextBoxUsuario.Location = new Point(295, 48);
-            TextBoxUsuario.Multiline = true;
-            TextBoxUsuario.Name = "TextBoxUsuario";
-            TextBoxUsuario.Size = new Size(114, 31);
-            TextBoxUsuario.TabIndex = 0;
+            claveLoginTextBox.BackColor = Color.White;
+            claveLoginTextBox.Location = new Point(337, 131);
+            claveLoginTextBox.Margin = new Padding(3, 4, 3, 4);
+            claveLoginTextBox.Multiline = true;
+            claveLoginTextBox.Name = "claveLoginTextBox";
+            claveLoginTextBox.Size = new Size(130, 40);
+            claveLoginTextBox.TabIndex = 1;
             // 
-            // panel3
+            // usuarioLoginTextBox
             // 
-            panel3.BackColor = Color.SandyBrown;
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 311);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(584, 50);
-            panel3.TabIndex = 2;
+            usuarioLoginTextBox.BackColor = Color.White;
+            usuarioLoginTextBox.Location = new Point(337, 64);
+            usuarioLoginTextBox.Margin = new Padding(3, 4, 3, 4);
+            usuarioLoginTextBox.Multiline = true;
+            usuarioLoginTextBox.Name = "usuarioLoginTextBox";
+            usuarioLoginTextBox.Size = new Size(130, 40);
+            usuarioLoginTextBox.TabIndex = 0;
+            // 
+            // panelInferior
+            // 
+            panelInferior.BackColor = Color.RosyBrown;
+            panelInferior.Dock = DockStyle.Bottom;
+            panelInferior.Location = new Point(0, 414);
+            panelInferior.Margin = new Padding(0);
+            panelInferior.Name = "panelInferior";
+            panelInferior.Size = new Size(667, 67);
+            panelInferior.TabIndex = 2;
             // 
             // LoginFormulario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 361);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            ClientSize = new Size(667, 481);
+            Controls.Add(panelInferior);
+            Controls.Add(panelCentral);
+            Controls.Add(panelSuperior);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LoginFormulario";
             Text = "login";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelSuperior.ResumeLayout(false);
+            panelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconoBox).EndInit();
+            panelCentral.ResumeLayout(false);
+            panelCentral.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Button BtnIniciarSesion;
-        private Button BtnCancelarInicio;
-        private Label label3;
-        private Label label2;
-        private TextBox TextBoxContrasena;
-        private TextBox TextBoxUsuario;
+        private Panel panelSuperior;
+        private Panel panelCentral;
+        private Panel panelInferior;
+        private PictureBox iconoBox;
+        private Label titulLabel;
+        private Button iniciarBtn;
+        private Button cancelarBtn;
+        private Label contraseñaLabel;
+        private Label usuarioLabel;
+        private TextBox claveLoginTextBox;
+        private TextBox usuarioLoginTextBox;
+        private Label errorLoginLabel;
     }
 }
