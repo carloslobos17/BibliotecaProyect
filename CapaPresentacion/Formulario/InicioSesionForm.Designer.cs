@@ -48,7 +48,7 @@
             // 
             // panelSuperior
             // 
-            panelSuperior.BackColor = Color.RosyBrown;
+            panelSuperior.BackColor = Color.FromArgb(162, 129, 112);
             panelSuperior.Controls.Add(titulLabel);
             panelSuperior.Controls.Add(iconoBox);
             panelSuperior.Dock = DockStyle.Fill;
@@ -102,13 +102,12 @@
             errorLoginLabel.ForeColor = Color.Crimson;
             errorLoginLabel.Location = new Point(211, 274);
             errorLoginLabel.Name = "errorLoginLabel";
-            errorLoginLabel.Size = new Size(51, 20);
+            errorLoginLabel.Size = new Size(0, 20);
             errorLoginLabel.TabIndex = 6;
-            errorLoginLabel.Text = "FASDF";
             // 
             // iniciarBtn
             // 
-            iniciarBtn.BackColor = Color.RosyBrown;
+            iniciarBtn.BackColor = Color.FromArgb(162, 129, 112);
             iniciarBtn.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             iniciarBtn.ForeColor = SystemColors.ControlLightLight;
             iniciarBtn.Location = new Point(195, 213);
@@ -122,7 +121,7 @@
             // 
             // cancelarBtn
             // 
-            cancelarBtn.BackColor = Color.RosyBrown;
+            cancelarBtn.BackColor = Color.FromArgb(162, 129, 112);
             cancelarBtn.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancelarBtn.ForeColor = SystemColors.ButtonHighlight;
             cancelarBtn.Location = new Point(337, 211);
@@ -175,7 +174,7 @@
             // 
             // panelInferior
             // 
-            panelInferior.BackColor = Color.RosyBrown;
+            panelInferior.BackColor = Color.FromArgb(162, 129, 112);
             panelInferior.Dock = DockStyle.Bottom;
             panelInferior.Location = new Point(0, 414);
             panelInferior.Margin = new Padding(0);
@@ -191,8 +190,10 @@
             Controls.Add(panelInferior);
             Controls.Add(panelCentral);
             Controls.Add(panelSuperior);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoginFormulario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "login";
             panelSuperior.ResumeLayout(false);
             panelSuperior.PerformLayout();

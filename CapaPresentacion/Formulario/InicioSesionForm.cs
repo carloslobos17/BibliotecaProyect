@@ -13,6 +13,7 @@ namespace CapaPresentacion.Formulario
     public partial class LoginFormulario : Form
     {
         private UsuarioServicio _usuarioServicio;
+        
         public LoginFormulario()
         {
             InitializeComponent();
@@ -26,39 +27,22 @@ namespace CapaPresentacion.Formulario
             int autenticar = _usuarioServicio.AutenticarUsuario(usuario, clave);
 
             if (autenticar == 0)
-            { 
+            {
                 errorLoginLabel.Text = "Usuario o contraseña incorrecta";
             }
-            else 
+            else
             {
-               string rol = _usuarioServicio.ObtenerRol(autenticar);
+                string rol = _usuarioServicio.ObtenerRol(autenticar);
 
-                switch (rol)
-                {
-                    case "Administrador":
-                        AdminForm adminForm = new AdminForm();
-                        adminForm.ShowDialog();
-                        break;
-
-                    case "Bibliotecario":
-                        BibliotecarioForm bibliotecarioForm = new BibliotecarioForm();
-                        bibliotecarioForm.ShowDialog();
-                        break;
-
-                    case "Estudiante":
-                        EstudianteForm estudianteForm = new EstudianteForm();
-                        estudianteForm.ShowDialog();
-                        break;
-
-                    default:
-                        break;
-
-
-                }
+                PrincipalForm principalForm = new PrincipalForm(rol);
+                principalForm.Show();
+                this.Hide();
             }
 
 
         }
+
+      
     }
 }
 
