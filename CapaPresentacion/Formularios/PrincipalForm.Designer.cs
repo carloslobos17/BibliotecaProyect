@@ -43,6 +43,7 @@
             panelControlButton = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
+            contenedorPanel = new Panel();
             superiorPanel.SuspendLayout();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -127,6 +128,7 @@
             historialButton.TabIndex = 7;
             historialButton.Text = " Historial";
             historialButton.UseVisualStyleBackColor = true;
+            historialButton.Click += historialButton_Click;
             // 
             // librosButton
             // 
@@ -144,6 +146,7 @@
             librosButton.TabIndex = 6;
             librosButton.Text = " Libros ";
             librosButton.UseVisualStyleBackColor = true;
+            librosButton.Click += librosButton_Click;
             // 
             // devolucionesButton
             // 
@@ -161,6 +164,7 @@
             devolucionesButton.TabIndex = 5;
             devolucionesButton.Text = "    Devoluciones";
             devolucionesButton.UseVisualStyleBackColor = true;
+            devolucionesButton.Click += devolucionesButton_Click;
             // 
             // prestamosButton
             // 
@@ -178,6 +182,7 @@
             prestamosButton.TabIndex = 4;
             prestamosButton.Text = "Préstamos";
             prestamosButton.UseVisualStyleBackColor = true;
+            prestamosButton.Click += prestamosButton_Click;
             // 
             // gestionarLibrosButton
             // 
@@ -196,6 +201,7 @@
             gestionarLibrosButton.Text = "Gestionar libros";
             gestionarLibrosButton.TextAlign = ContentAlignment.MiddleRight;
             gestionarLibrosButton.UseVisualStyleBackColor = true;
+            gestionarLibrosButton.Click += gestionarLibrosButton_Click;
             // 
             // bibliotecariosButton
             // 
@@ -214,6 +220,7 @@
             bibliotecariosButton.Text = "Bibliotecarios";
             bibliotecariosButton.TextAlign = ContentAlignment.MiddleRight;
             bibliotecariosButton.UseVisualStyleBackColor = true;
+            bibliotecariosButton.Click += bibliotecariosButton_Click;
             // 
             // panelControlButton
             // 
@@ -232,6 +239,7 @@
             panelControlButton.Text = "Panel de control";
             panelControlButton.TextAlign = ContentAlignment.MiddleRight;
             panelControlButton.UseVisualStyleBackColor = true;
+            panelControlButton.Click += panelControlButton_Click;
             // 
             // pictureBox1
             // 
@@ -242,10 +250,18 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // contenedorPanel
+            // 
+            contenedorPanel.Location = new Point(253, 55);
+            contenedorPanel.Name = "contenedorPanel";
+            contenedorPanel.Size = new Size(997, 695);
+            contenedorPanel.TabIndex = 2;
+            // 
             // PrincipalForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1250, 750);
+            Controls.Add(contenedorPanel);
             Controls.Add(menuPanel);
             Controls.Add(superiorPanel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -277,5 +293,6 @@
         private FontAwesome.Sharp.IconButton devolucionesButton;
         private FontAwesome.Sharp.IconButton historialButton;
         private FontAwesome.Sharp.IconButton librosButton;
+        private Panel contenedorPanel;
     }
 }
