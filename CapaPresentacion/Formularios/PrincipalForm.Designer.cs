@@ -91,7 +91,7 @@
             titleLabel.ForeColor = Color.FromArgb(162, 129, 112);
             titleLabel.Location = new Point(44, 9);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(178, 33);
+            titleLabel.Size = new Size(147, 28);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "B I B L I O T E C A";
             // 
@@ -109,7 +109,7 @@
             menuPanel.Dock = DockStyle.Left;
             menuPanel.Location = new Point(0, 55);
             menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(255, 695);
+            menuPanel.Size = new Size(255, 694);
             menuPanel.TabIndex = 1;
             // 
             // historialButton
@@ -260,7 +260,7 @@
             // PrincipalForm
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1250, 750);
+            ClientSize = new Size(1250, 749);
             Controls.Add(contenedorPanel);
             Controls.Add(menuPanel);
             Controls.Add(superiorPanel);
