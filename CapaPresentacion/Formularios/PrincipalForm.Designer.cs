@@ -44,21 +44,24 @@
             pictureBox1 = new PictureBox();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             contenedorPanel = new Panel();
+            pictureBox2 = new PictureBox();
             superiorPanel.SuspendLayout();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // superiorPanel
             // 
             superiorPanel.BackColor = SystemColors.Window;
+            superiorPanel.Controls.Add(pictureBox2);
             superiorPanel.Controls.Add(button2);
             superiorPanel.Controls.Add(cerrarButton);
             superiorPanel.Controls.Add(titleLabel);
             superiorPanel.Dock = DockStyle.Top;
             superiorPanel.Location = new Point(0, 0);
             superiorPanel.Name = "superiorPanel";
-            superiorPanel.Size = new Size(1250, 55);
+            superiorPanel.Size = new Size(1250, 60);
             superiorPanel.TabIndex = 0;
             // 
             // button2
@@ -89,15 +92,16 @@
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Sitka Banner", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titleLabel.ForeColor = Color.FromArgb(162, 129, 112);
-            titleLabel.Location = new Point(44, 9);
+            titleLabel.Location = new Point(77, 13);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(147, 28);
+            titleLabel.Size = new Size(178, 33);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "B I B L I O T E C A";
             // 
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(162, 129, 112);
+            menuPanel.Controls.Add(pictureBox1);
             menuPanel.Controls.Add(historialButton);
             menuPanel.Controls.Add(librosButton);
             menuPanel.Controls.Add(devolucionesButton);
@@ -105,11 +109,10 @@
             menuPanel.Controls.Add(gestionarLibrosButton);
             menuPanel.Controls.Add(bibliotecariosButton);
             menuPanel.Controls.Add(panelControlButton);
-            menuPanel.Controls.Add(pictureBox1);
             menuPanel.Dock = DockStyle.Left;
-            menuPanel.Location = new Point(0, 55);
+            menuPanel.Location = new Point(0, 60);
             menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(255, 694);
+            menuPanel.Size = new Size(255, 689);
             menuPanel.TabIndex = 1;
             // 
             // historialButton
@@ -224,6 +227,7 @@
             // 
             // panelControlButton
             // 
+            panelControlButton.BackColor = Color.FromArgb(162, 129, 112);
             panelControlButton.FlatStyle = FlatStyle.Flat;
             panelControlButton.ForeColor = SystemColors.MenuBar;
             panelControlButton.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
@@ -238,24 +242,37 @@
             panelControlButton.TabIndex = 1;
             panelControlButton.Text = "Panel de control";
             panelControlButton.TextAlign = ContentAlignment.MiddleRight;
-            panelControlButton.UseVisualStyleBackColor = true;
+            panelControlButton.UseVisualStyleBackColor = false;
             panelControlButton.Click += panelControlButton_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.MenuBar;
-            pictureBox1.Location = new Point(32, 24);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(31, 27);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(189, 127);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // contenedorPanel
             // 
-            contenedorPanel.Location = new Point(253, 55);
+            contenedorPanel.Location = new Point(249, 60);
             contenedorPanel.Name = "contenedorPanel";
-            contenedorPanel.Size = new Size(997, 695);
+            contenedorPanel.Size = new Size(1001, 689);
             contenedorPanel.TabIndex = 2;
+            contenedorPanel.Paint += contenedorPanel_Paint;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(21, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(62, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
             // 
             // PrincipalForm
             // 
@@ -274,6 +291,7 @@
             superiorPanel.PerformLayout();
             menuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -294,5 +312,6 @@
         private FontAwesome.Sharp.IconButton historialButton;
         private FontAwesome.Sharp.IconButton librosButton;
         private Panel contenedorPanel;
+        private PictureBox pictureBox2;
     }
 }

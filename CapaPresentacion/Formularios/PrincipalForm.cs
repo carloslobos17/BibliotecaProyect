@@ -112,5 +112,10 @@ namespace CapaPresentacion
         {
             AbrirFormHijo(new HistorialForm());
         }
+
+        private void contenedorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

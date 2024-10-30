@@ -29,229 +29,169 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarLibrosForm));
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Rol = new DataGridViewTextBoxColumn();
-            Usuario = new DataGridViewTextBoxColumn();
-            Libros = new DataGridViewTextBoxColumn();
-            Prestamos = new DataGridViewTextBoxColumn();
-            Devoluciones = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
-            button1 = new Button();
-            pictureBox3 = new PictureBox();
+            label2 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
+            agregarLibroButton = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(61, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Gestionar libros";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Rol, Usuario, Libros, Prestamos, Devoluciones, Categoria });
-            dataGridView1.Location = new Point(27, 24);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(628, 150);
-            dataGridView1.TabIndex = 1;
-            // 
-            // Rol
-            // 
-            Rol.HeaderText = "Rol";
-            Rol.Name = "Rol";
-            // 
-            // Usuario
-            // 
-            Usuario.HeaderText = "Usuario";
-            Usuario.Name = "Usuario";
-            // 
-            // Libros
-            // 
-            Libros.HeaderText = "Libros";
-            Libros.Name = "Libros";
-            // 
-            // Prestamos
-            // 
-            Prestamos.HeaderText = "Prestamos";
-            Prestamos.Name = "Prestamos";
-            // 
-            // Devoluciones
-            // 
-            Devoluciones.HeaderText = "Devoluciones";
-            Devoluciones.Name = "Devoluciones";
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(77, 131);
+            panel1.BackColor = Color.FromArgb(162, 129, 112);
+            panel1.ForeColor = Color.FromArgb(162, 129, 112);
+            panel1.Location = new Point(232, 85);
             panel1.Name = "panel1";
-            panel1.Size = new Size(685, 384);
-            panel1.TabIndex = 2;
+            panel1.Size = new Size(353, 12);
+            panel1.TabIndex = 25;
             // 
-            // button1
+            // label2
             // 
-            button1.Location = new Point(261, 321);
-            button1.Name = "button1";
-            button1.Size = new Size(201, 29);
-            button1.TabIndex = 11;
-            button1.Text = "Volver";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(487, 196);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(90, 55);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 10;
-            pictureBox3.TabStop = false;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(162, 129, 112);
+            label2.Location = new Point(278, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(262, 41);
+            label2.TabIndex = 24;
+            label2.Text = "Gestion de Libros";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(317, 191);
+            pictureBox2.Location = new Point(582, 15);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(90, 60);
+            pictureBox2.Size = new Size(107, 82);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 9;
+            pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(133, 196);
+            pictureBox1.Location = new Point(110, 27);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(90, 55);
+            pictureBox1.Size = new Size(133, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 8;
+            pictureBox1.TabIndex = 22;
             pictureBox1.TabStop = false;
             // 
-            // label4
+            // iconButton3
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(501, 265);
-            label4.Name = "label4";
-            label4.Size = new Size(67, 21);
-            label4.TabIndex = 7;
-            label4.Text = "Eliminar";
+            iconButton3.BackColor = Color.FromArgb(191, 97, 106);
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            iconButton3.ForeColor = SystemColors.MenuBar;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            iconButton3.IconColor = SystemColors.MenuBar;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 40;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(747, 280);
+            iconButton3.Margin = new Padding(0);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(131, 46);
+            iconButton3.TabIndex = 21;
+            iconButton3.Text = "Eliminar";
+            iconButton3.TextAlign = ContentAlignment.MiddleRight;
+            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton3.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // agregarLibroButton
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(341, 265);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 21);
-            label3.TabIndex = 6;
-            label3.Text = "Editar";
+            agregarLibroButton.BackColor = Color.FromArgb(163, 190, 140);
+            agregarLibroButton.FlatStyle = FlatStyle.Flat;
+            agregarLibroButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            agregarLibroButton.ForeColor = SystemColors.MenuBar;
+            agregarLibroButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
+            agregarLibroButton.IconColor = SystemColors.MenuBar;
+            agregarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            agregarLibroButton.IconSize = 40;
+            agregarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
+            agregarLibroButton.Location = new Point(747, 153);
+            agregarLibroButton.Margin = new Padding(0);
+            agregarLibroButton.Name = "agregarLibroButton";
+            agregarLibroButton.Size = new Size(131, 46);
+            agregarLibroButton.TabIndex = 19;
+            agregarLibroButton.Text = "Agregar";
+            agregarLibroButton.TextAlign = ContentAlignment.MiddleRight;
+            agregarLibroButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            agregarLibroButton.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // iconButton1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(148, 265);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 21);
-            label2.TabIndex = 5;
-            label2.Text = "Agregar";
+            iconButton1.BackColor = Color.FromArgb(129, 161, 193);
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton1.ForeColor = SystemColors.MenuBar;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            iconButton1.IconColor = SystemColors.MenuBar;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 40;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(747, 215);
+            iconButton1.Margin = new Padding(0);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(131, 45);
+            iconButton1.TabIndex = 20;
+            iconButton1.Text = "Editar";
+            iconButton1.TextAlign = ContentAlignment.MiddleRight;
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // dataGridView1
             // 
-            panel2.BackColor = Color.FromArgb(162, 129, 112);
-            panel2.Controls.Add(label1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 70);
-            panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(162, 129, 112);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 679);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(800, 70);
-            panel3.TabIndex = 4;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(80, 153);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(645, 444);
+            dataGridView1.TabIndex = 18;
             // 
             // GestionarLibrosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 749);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            ClientSize = new Size(912, 644);
             Controls.Add(panel1);
+            Controls.Add(label2);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(iconButton3);
+            Controls.Add(agregarLibroButton);
+            Controls.Add(iconButton1);
+            Controls.Add(dataGridView1);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "GestionarLibrosForm";
             Text = "GestionarLibrosForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            Load += GestionarLibrosForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private DataGridView dataGridView1;
         private Panel panel1;
-        private DataGridViewTextBoxColumn Rol;
-        private DataGridViewTextBoxColumn Usuario;
-        private DataGridViewTextBoxColumn Libros;
-        private DataGridViewTextBoxColumn Prestamos;
-        private DataGridViewTextBoxColumn Devoluciones;
-        private DataGridViewTextBoxColumn Categoria;
-        private Panel panel2;
-        private Panel panel3;
-        private Label label3;
         private Label label2;
-        private Label label4;
-        private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Button button1;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton agregarLibroButton;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private DataGridView dataGridView1;
     }
 }

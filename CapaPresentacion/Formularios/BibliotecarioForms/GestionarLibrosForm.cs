@@ -16,5 +16,15 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GestionarLibrosForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
