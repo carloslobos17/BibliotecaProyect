@@ -16,5 +16,7 @@ namespace CapaPresentacion.Formularios.AdminForms
         {
             InitializeComponent();
         }
+
+       
     }
 }

@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalForm));
             superiorPanel = new Panel();
+            pictureBox2 = new PictureBox();
             button2 = new Button();
             cerrarButton = new Button();
             titleLabel = new Label();
             menuPanel = new Panel();
+            pictureBox1 = new PictureBox();
             historialButton = new FontAwesome.Sharp.IconButton();
             librosButton = new FontAwesome.Sharp.IconButton();
             devolucionesButton = new FontAwesome.Sharp.IconButton();
@@ -41,14 +43,12 @@
             gestionarLibrosButton = new FontAwesome.Sharp.IconButton();
             bibliotecariosButton = new FontAwesome.Sharp.IconButton();
             panelControlButton = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             contenedorPanel = new Panel();
-            pictureBox2 = new PictureBox();
             superiorPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // superiorPanel
@@ -63,6 +63,16 @@
             superiorPanel.Name = "superiorPanel";
             superiorPanel.Size = new Size(1250, 60);
             superiorPanel.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(21, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(62, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
             // 
             // button2
             // 
@@ -90,17 +100,17 @@
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Font = new Font("Sitka Banner", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            titleLabel.ForeColor = Color.FromArgb(162, 129, 112);
-            titleLabel.Location = new Point(77, 13);
+            titleLabel.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleLabel.ForeColor = Color.Black;
+            titleLabel.Location = new Point(89, 16);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(178, 33);
+            titleLabel.Size = new Size(163, 29);
             titleLabel.TabIndex = 0;
-            titleLabel.Text = "B I B L I O T E C A";
+            titleLabel.Text = "BIBLIOTECA";
             // 
             // menuPanel
             // 
-            menuPanel.BackColor = Color.FromArgb(162, 129, 112);
+            menuPanel.BackColor = Color.FromArgb(100, 0, 25);
             menuPanel.Controls.Add(pictureBox1);
             menuPanel.Controls.Add(historialButton);
             menuPanel.Controls.Add(librosButton);
@@ -114,6 +124,17 @@
             menuPanel.Name = "menuPanel";
             menuPanel.Size = new Size(255, 689);
             menuPanel.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = SystemColors.MenuBar;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(32, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(190, 142);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // historialButton
             // 
@@ -209,6 +230,7 @@
             // bibliotecariosButton
             // 
             bibliotecariosButton.FlatStyle = FlatStyle.Flat;
+            bibliotecariosButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bibliotecariosButton.ForeColor = SystemColors.MenuBar;
             bibliotecariosButton.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             bibliotecariosButton.IconColor = SystemColors.MenuBar;
@@ -227,8 +249,9 @@
             // 
             // panelControlButton
             // 
-            panelControlButton.BackColor = Color.FromArgb(162, 129, 112);
+            panelControlButton.BackColor = Color.FromArgb(100, 0, 25);
             panelControlButton.FlatStyle = FlatStyle.Flat;
+            panelControlButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panelControlButton.ForeColor = SystemColors.MenuBar;
             panelControlButton.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
             panelControlButton.IconColor = SystemColors.MenuBar;
@@ -245,17 +268,6 @@
             panelControlButton.UseVisualStyleBackColor = false;
             panelControlButton.Click += panelControlButton_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = SystemColors.MenuBar;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(31, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(189, 127);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // contenedorPanel
             // 
             contenedorPanel.Location = new Point(249, 60);
@@ -263,16 +275,6 @@
             contenedorPanel.Size = new Size(1001, 689);
             contenedorPanel.TabIndex = 2;
             contenedorPanel.Paint += contenedorPanel_Paint;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(21, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(62, 41);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 4;
-            pictureBox2.TabStop = false;
             // 
             // PrincipalForm
             // 
@@ -289,9 +291,9 @@
             Load += PrincipalForm_Load;
             superiorPanel.ResumeLayout(false);
             superiorPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             menuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
