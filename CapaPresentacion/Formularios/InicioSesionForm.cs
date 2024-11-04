@@ -13,7 +13,7 @@ namespace CapaPresentacion.Formulario
     public partial class LoginFormulario : Form
     {
         private UsuarioServicio _usuarioServicio;
-        
+
         public LoginFormulario()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace CapaPresentacion.Formulario
 
         }
 
-      
+        
     }
 }
 
