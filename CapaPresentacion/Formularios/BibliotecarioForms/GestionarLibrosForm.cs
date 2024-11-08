@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaPresentacion.Formularios.AdminForms.Modal;
-using CapaPresentacion.Formularios.BibliotecarioForms.Modal;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
@@ -17,16 +15,16 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         public GestionarLibrosForm()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-       
-        private void agregarLibroButton_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ModalGestionarLibros modalGestionarLibros = new ModalGestionarLibros();
-            modalGestionarLibros.StartPosition = FormStartPosition.CenterScreen;
 
-            modalGestionarLibros.Show();
+        }
+
+        private void GestionarLibrosForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

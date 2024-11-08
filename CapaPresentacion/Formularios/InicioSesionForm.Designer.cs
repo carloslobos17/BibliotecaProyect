@@ -48,7 +48,7 @@
             // 
             // panelSuperior
             // 
-            panelSuperior.BackColor = Color.FromArgb(37, 53, 68);
+            panelSuperior.BackColor = Color.FromArgb(100, 0, 25);
             panelSuperior.Controls.Add(titulLabel);
             panelSuperior.Controls.Add(iconoBox);
             panelSuperior.Dock = DockStyle.Fill;
@@ -82,7 +82,7 @@
             // 
             // panelCentral
             // 
-            panelCentral.BackColor = Color.LightGray;
+            panelCentral.BackColor = Color.FromArgb(224, 224, 224);
             panelCentral.Controls.Add(errorLoginLabel);
             panelCentral.Controls.Add(iniciarBtn);
             panelCentral.Controls.Add(cancelarBtn);
@@ -110,7 +110,7 @@
             iniciarBtn.BackColor = Color.SeaGreen;
             iniciarBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             iniciarBtn.ForeColor = SystemColors.ControlLightLight;
-            iniciarBtn.Location = new Point(182, 213);
+            iniciarBtn.Location = new Point(166, 213);
             iniciarBtn.Margin = new Padding(3, 4, 3, 4);
             iniciarBtn.Name = "iniciarBtn";
             iniciarBtn.Size = new Size(130, 50);
@@ -124,7 +124,7 @@
             cancelarBtn.BackColor = Color.FromArgb(191, 97, 106);
             cancelarBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancelarBtn.ForeColor = SystemColors.ButtonHighlight;
-            cancelarBtn.Location = new Point(353, 211);
+            cancelarBtn.Location = new Point(337, 211);
             cancelarBtn.Margin = new Padding(3, 4, 3, 4);
             cancelarBtn.Name = "cancelarBtn";
             cancelarBtn.Size = new Size(142, 52);
@@ -136,7 +136,7 @@
             // 
             contraseñaLabel.AutoSize = true;
             contraseñaLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contraseñaLabel.Location = new Point(182, 131);
+            contraseñaLabel.Location = new Point(166, 131);
             contraseñaLabel.Name = "contraseñaLabel";
             contraseñaLabel.Size = new Size(140, 28);
             contraseñaLabel.TabIndex = 3;
@@ -146,7 +146,7 @@
             // 
             usuarioLabel.AutoSize = true;
             usuarioLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usuarioLabel.Location = new Point(211, 64);
+            usuarioLabel.Location = new Point(195, 64);
             usuarioLabel.Name = "usuarioLabel";
             usuarioLabel.Size = new Size(102, 28);
             usuarioLabel.TabIndex = 2;
@@ -155,7 +155,7 @@
             // claveLoginTextBox
             // 
             claveLoginTextBox.BackColor = Color.White;
-            claveLoginTextBox.Location = new Point(353, 131);
+            claveLoginTextBox.Location = new Point(337, 131);
             claveLoginTextBox.Margin = new Padding(3, 4, 3, 4);
             claveLoginTextBox.Multiline = true;
             claveLoginTextBox.Name = "claveLoginTextBox";
@@ -166,7 +166,7 @@
             // usuarioLoginTextBox
             // 
             usuarioLoginTextBox.BackColor = Color.White;
-            usuarioLoginTextBox.Location = new Point(353, 64);
+            usuarioLoginTextBox.Location = new Point(337, 64);
             usuarioLoginTextBox.Margin = new Padding(3, 4, 3, 4);
             usuarioLoginTextBox.Multiline = true;
             usuarioLoginTextBox.Name = "usuarioLoginTextBox";
@@ -175,7 +175,7 @@
             // 
             // panelInferior
             // 
-            panelInferior.BackColor = Color.FromArgb(37, 53, 68);
+            panelInferior.BackColor = Color.FromArgb(100, 0, 25);
             panelInferior.Dock = DockStyle.Bottom;
             panelInferior.Location = new Point(0, 414);
             panelInferior.Margin = new Padding(0);

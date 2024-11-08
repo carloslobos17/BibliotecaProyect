@@ -16,15 +16,5 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             InitializeComponent();
         }
-
-        private void PrestamosForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

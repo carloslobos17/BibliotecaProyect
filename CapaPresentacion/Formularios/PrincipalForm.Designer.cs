@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalForm));
+            superiorPanel = new Panel();
+            pictureBox2 = new PictureBox();
+            button2 = new Button();
+            cerrarButton = new Button();
+            titleLabel = new Label();
             menuPanel = new Panel();
-            salirIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
-            correoUsuarioLabel = new Label();
-            nombreUsuarioLabel = new Label();
             pictureBox1 = new PictureBox();
             historialButton = new FontAwesome.Sharp.IconButton();
             librosButton = new FontAwesome.Sharp.IconButton();
@@ -43,17 +45,72 @@
             panelControlButton = new FontAwesome.Sharp.IconButton();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             contenedorPanel = new Panel();
+            superiorPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)salirIconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
+            // superiorPanel
+            // 
+            superiorPanel.BackColor = SystemColors.Window;
+            superiorPanel.Controls.Add(pictureBox2);
+            superiorPanel.Controls.Add(button2);
+            superiorPanel.Controls.Add(cerrarButton);
+            superiorPanel.Controls.Add(titleLabel);
+            superiorPanel.Dock = DockStyle.Top;
+            superiorPanel.Location = new Point(0, 0);
+            superiorPanel.Name = "superiorPanel";
+            superiorPanel.Size = new Size(1250, 60);
+            superiorPanel.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(21, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(62, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(1154, 9);
+            button2.Name = "button2";
+            button2.Size = new Size(39, 37);
+            button2.TabIndex = 3;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // cerrarButton
+            // 
+            cerrarButton.FlatAppearance.BorderSize = 0;
+            cerrarButton.FlatStyle = FlatStyle.Flat;
+            cerrarButton.Image = (Image)resources.GetObject("cerrarButton.Image");
+            cerrarButton.Location = new Point(1199, 8);
+            cerrarButton.Name = "cerrarButton";
+            cerrarButton.Size = new Size(39, 37);
+            cerrarButton.TabIndex = 2;
+            cerrarButton.UseVisualStyleBackColor = true;
+            cerrarButton.Click += cerrarButton_Click;
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleLabel.ForeColor = Color.Black;
+            titleLabel.Location = new Point(89, 16);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(163, 29);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "BIBLIOTECA";
+            // 
             // menuPanel
             // 
-            menuPanel.BackColor = Color.FromArgb(44, 62, 80);
-            menuPanel.Controls.Add(salirIconPictureBox);
-            menuPanel.Controls.Add(correoUsuarioLabel);
-            menuPanel.Controls.Add(nombreUsuarioLabel);
+            menuPanel.BackColor = Color.FromArgb(100, 0, 25);
             menuPanel.Controls.Add(pictureBox1);
             menuPanel.Controls.Add(historialButton);
             menuPanel.Controls.Add(librosButton);
@@ -63,61 +120,24 @@
             menuPanel.Controls.Add(bibliotecariosButton);
             menuPanel.Controls.Add(panelControlButton);
             menuPanel.Dock = DockStyle.Left;
-            menuPanel.Location = new Point(0, 0);
+            menuPanel.Location = new Point(0, 60);
             menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(255, 749);
+            menuPanel.Size = new Size(255, 689);
             menuPanel.TabIndex = 1;
-            menuPanel.Paint += menuPanel_Paint;
-            // 
-            // salirIconPictureBox
-            // 
-            salirIconPictureBox.BackColor = Color.FromArgb(44, 62, 80);
-            salirIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            salirIconPictureBox.IconColor = Color.White;
-            salirIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            salirIconPictureBox.IconSize = 40;
-            salirIconPictureBox.Location = new Point(201, 697);
-            salirIconPictureBox.Name = "salirIconPictureBox";
-            salirIconPictureBox.Size = new Size(40, 40);
-            salirIconPictureBox.TabIndex = 11;
-            salirIconPictureBox.TabStop = false;
-            salirIconPictureBox.Click += salirIconPictureBox_Click;
-            // 
-            // correoUsuarioLabel
-            // 
-            correoUsuarioLabel.AutoSize = true;
-            correoUsuarioLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            correoUsuarioLabel.ForeColor = Color.White;
-            correoUsuarioLabel.Location = new Point(30, 177);
-            correoUsuarioLabel.Name = "correoUsuarioLabel";
-            correoUsuarioLabel.Size = new Size(198, 20);
-            correoUsuarioLabel.TabIndex = 10;
-            correoUsuarioLabel.Text = "mariasalome@gmail.com";
-            // 
-            // nombreUsuarioLabel
-            // 
-            nombreUsuarioLabel.AutoSize = true;
-            nombreUsuarioLabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nombreUsuarioLabel.ForeColor = Color.White;
-            nombreUsuarioLabel.Location = new Point(61, 149);
-            nombreUsuarioLabel.Name = "nombreUsuarioLabel";
-            nombreUsuarioLabel.Size = new Size(133, 25);
-            nombreUsuarioLabel.TabIndex = 9;
-            nombreUsuarioLabel.Text = "Maria Salomé";
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = SystemColors.MenuBar;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(32, 16);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(220, 152);
+            pictureBox1.Size = new Size(190, 142);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 8;
+            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // historialButton
             // 
-            historialButton.BackColor = Color.FromArgb(37, 53, 68);
             historialButton.FlatStyle = FlatStyle.Flat;
             historialButton.ForeColor = SystemColors.MenuBar;
             historialButton.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
@@ -125,18 +145,17 @@
             historialButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             historialButton.IconSize = 30;
             historialButton.ImageAlign = ContentAlignment.MiddleLeft;
-            historialButton.Location = new Point(29, 577);
+            historialButton.Location = new Point(31, 535);
             historialButton.Margin = new Padding(0);
             historialButton.Name = "historialButton";
             historialButton.Size = new Size(190, 38);
             historialButton.TabIndex = 7;
             historialButton.Text = " Historial";
-            historialButton.UseVisualStyleBackColor = false;
+            historialButton.UseVisualStyleBackColor = true;
             historialButton.Click += historialButton_Click;
             // 
             // librosButton
             // 
-            librosButton.BackColor = Color.FromArgb(37, 53, 68);
             librosButton.FlatStyle = FlatStyle.Flat;
             librosButton.ForeColor = SystemColors.MenuBar;
             librosButton.IconChar = FontAwesome.Sharp.IconChar.Book;
@@ -144,18 +163,17 @@
             librosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             librosButton.IconSize = 30;
             librosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            librosButton.Location = new Point(29, 523);
+            librosButton.Location = new Point(31, 481);
             librosButton.Margin = new Padding(0);
             librosButton.Name = "librosButton";
             librosButton.Size = new Size(190, 38);
             librosButton.TabIndex = 6;
             librosButton.Text = " Libros ";
-            librosButton.UseVisualStyleBackColor = false;
+            librosButton.UseVisualStyleBackColor = true;
             librosButton.Click += librosButton_Click;
             // 
             // devolucionesButton
             // 
-            devolucionesButton.BackColor = Color.FromArgb(37, 53, 68);
             devolucionesButton.FlatStyle = FlatStyle.Flat;
             devolucionesButton.ForeColor = SystemColors.MenuBar;
             devolucionesButton.IconChar = FontAwesome.Sharp.IconChar.Reply;
@@ -163,18 +181,17 @@
             devolucionesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             devolucionesButton.IconSize = 30;
             devolucionesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            devolucionesButton.Location = new Point(29, 466);
+            devolucionesButton.Location = new Point(31, 424);
             devolucionesButton.Margin = new Padding(0);
             devolucionesButton.Name = "devolucionesButton";
             devolucionesButton.Size = new Size(190, 38);
             devolucionesButton.TabIndex = 5;
             devolucionesButton.Text = "    Devoluciones";
-            devolucionesButton.UseVisualStyleBackColor = false;
+            devolucionesButton.UseVisualStyleBackColor = true;
             devolucionesButton.Click += devolucionesButton_Click;
             // 
             // prestamosButton
             // 
-            prestamosButton.BackColor = Color.FromArgb(37, 53, 68);
             prestamosButton.FlatStyle = FlatStyle.Flat;
             prestamosButton.ForeColor = SystemColors.MenuBar;
             prestamosButton.IconChar = FontAwesome.Sharp.IconChar.HandshakeAlt;
@@ -182,18 +199,17 @@
             prestamosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             prestamosButton.IconSize = 30;
             prestamosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            prestamosButton.Location = new Point(29, 406);
+            prestamosButton.Location = new Point(31, 364);
             prestamosButton.Margin = new Padding(0);
             prestamosButton.Name = "prestamosButton";
             prestamosButton.Size = new Size(190, 38);
             prestamosButton.TabIndex = 4;
             prestamosButton.Text = "Préstamos";
-            prestamosButton.UseVisualStyleBackColor = false;
+            prestamosButton.UseVisualStyleBackColor = true;
             prestamosButton.Click += prestamosButton_Click;
             // 
             // gestionarLibrosButton
             // 
-            gestionarLibrosButton.BackColor = Color.FromArgb(37, 53, 68);
             gestionarLibrosButton.FlatStyle = FlatStyle.Flat;
             gestionarLibrosButton.ForeColor = SystemColors.MenuBar;
             gestionarLibrosButton.IconChar = FontAwesome.Sharp.IconChar.BookBookmark;
@@ -201,19 +217,18 @@
             gestionarLibrosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             gestionarLibrosButton.IconSize = 30;
             gestionarLibrosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            gestionarLibrosButton.Location = new Point(29, 343);
+            gestionarLibrosButton.Location = new Point(31, 301);
             gestionarLibrosButton.Margin = new Padding(0);
             gestionarLibrosButton.Name = "gestionarLibrosButton";
             gestionarLibrosButton.Size = new Size(190, 38);
             gestionarLibrosButton.TabIndex = 3;
             gestionarLibrosButton.Text = "Gestionar libros";
             gestionarLibrosButton.TextAlign = ContentAlignment.MiddleRight;
-            gestionarLibrosButton.UseVisualStyleBackColor = false;
+            gestionarLibrosButton.UseVisualStyleBackColor = true;
             gestionarLibrosButton.Click += gestionarLibrosButton_Click;
             // 
             // bibliotecariosButton
             // 
-            bibliotecariosButton.BackColor = Color.FromArgb(37, 53, 68);
             bibliotecariosButton.FlatStyle = FlatStyle.Flat;
             bibliotecariosButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bibliotecariosButton.ForeColor = SystemColors.MenuBar;
@@ -222,19 +237,19 @@
             bibliotecariosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bibliotecariosButton.IconSize = 30;
             bibliotecariosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            bibliotecariosButton.Location = new Point(30, 284);
+            bibliotecariosButton.Location = new Point(32, 242);
             bibliotecariosButton.Margin = new Padding(0);
             bibliotecariosButton.Name = "bibliotecariosButton";
             bibliotecariosButton.Size = new Size(190, 38);
             bibliotecariosButton.TabIndex = 2;
             bibliotecariosButton.Text = "Bibliotecarios";
             bibliotecariosButton.TextAlign = ContentAlignment.MiddleRight;
-            bibliotecariosButton.UseVisualStyleBackColor = false;
+            bibliotecariosButton.UseVisualStyleBackColor = true;
             bibliotecariosButton.Click += bibliotecariosButton_Click;
             // 
             // panelControlButton
             // 
-            panelControlButton.BackColor = Color.FromArgb(37, 53, 68);
+            panelControlButton.BackColor = Color.FromArgb(100, 0, 25);
             panelControlButton.FlatStyle = FlatStyle.Flat;
             panelControlButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panelControlButton.ForeColor = SystemColors.MenuBar;
@@ -243,7 +258,7 @@
             panelControlButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             panelControlButton.IconSize = 30;
             panelControlButton.ImageAlign = ContentAlignment.MiddleLeft;
-            panelControlButton.Location = new Point(30, 227);
+            panelControlButton.Location = new Point(32, 185);
             panelControlButton.Margin = new Padding(0);
             panelControlButton.Name = "panelControlButton";
             panelControlButton.Size = new Size(190, 38);
@@ -255,10 +270,11 @@
             // 
             // contenedorPanel
             // 
-            contenedorPanel.Location = new Point(257, 0);
+            contenedorPanel.Location = new Point(249, 60);
             contenedorPanel.Name = "contenedorPanel";
-            contenedorPanel.Size = new Size(993, 749);
+            contenedorPanel.Size = new Size(1001, 689);
             contenedorPanel.TabIndex = 2;
+            contenedorPanel.Paint += contenedorPanel_Paint;
             // 
             // PrincipalForm
             // 
@@ -266,33 +282,38 @@
             ClientSize = new Size(1250, 749);
             Controls.Add(contenedorPanel);
             Controls.Add(menuPanel);
+            Controls.Add(superiorPanel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PrincipalForm";
             Load += PrincipalForm_Load;
+            superiorPanel.ResumeLayout(false);
+            superiorPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             menuPanel.ResumeLayout(false);
-            menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)salirIconPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel superiorPanel;
         private Panel menuPanel;
+        private Label titleLabel;
+        private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton panelControlButton;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private FontAwesome.Sharp.IconButton prestamosButton;
         private FontAwesome.Sharp.IconButton gestionarLibrosButton;
         private FontAwesome.Sharp.IconButton bibliotecariosButton;
+        private Button cerrarButton;
+        private Button button2;
         private FontAwesome.Sharp.IconButton devolucionesButton;
         private FontAwesome.Sharp.IconButton historialButton;
         private FontAwesome.Sharp.IconButton librosButton;
         private Panel contenedorPanel;
-        private PictureBox pictureBox1;
-        private Label nombreUsuarioLabel;
-        private Label correoUsuarioLabel;
-        private FontAwesome.Sharp.IconPictureBox salirIconPictureBox;
+        private PictureBox pictureBox2;
     }
 }

@@ -34,344 +34,311 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            estadisticasTableLayoutPanel = new TableLayoutPanel();
-            bibliotecariosPanel = new Panel();
-            bibliotecarioIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
-            cantidadBibliotecarioLabel = new Label();
-            tituloBibliotecariosLabel = new Label();
-            librosPanel = new Panel();
-            librosIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
-            cantidadLibrosLabel = new Label();
-            tituloLibrosLabel = new Label();
-            prestamosPanel = new Panel();
-            prestamosIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
-            cantidadPrestamosLabel = new Label();
-            tituloPrestamosLabel = new Label();
-            devolucionesPanel = new Panel();
-            devolucionesIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
-            cantidadDevolucionesLabel = new Label();
-            tituloDevolucionesLabel = new Label();
-            graficoPastelChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            graficoBarrasChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            estadisticasTableLayoutPanel.SuspendLayout();
-            bibliotecariosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)bibliotecarioIconPictureBox).BeginInit();
-            librosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)librosIconPictureBox).BeginInit();
-            prestamosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)prestamosIconPictureBox).BeginInit();
-            devolucionesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)devolucionesIconPictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)graficoPastelChart).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)graficoBarrasChart).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelForm));
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            panel = new Panel();
+            label1 = new Label();
+            panel1 = new Panel();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            label3 = new Label();
+            label4 = new Label();
+            pictureBox3 = new PictureBox();
+            label5 = new Label();
+            label6 = new Label();
+            pictureBox4 = new PictureBox();
+            label7 = new Label();
+            label8 = new Label();
+            tableLayoutPanel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
-            // estadisticasTableLayoutPanel
+            // tableLayoutPanel1
             // 
-            estadisticasTableLayoutPanel.Anchor = AnchorStyles.Top;
-            estadisticasTableLayoutPanel.BackColor = Color.LightGray;
-            estadisticasTableLayoutPanel.ColumnCount = 4;
-            estadisticasTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            estadisticasTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            estadisticasTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            estadisticasTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            estadisticasTableLayoutPanel.Controls.Add(bibliotecariosPanel, 0, 0);
-            estadisticasTableLayoutPanel.Controls.Add(librosPanel, 1, 0);
-            estadisticasTableLayoutPanel.Controls.Add(prestamosPanel, 2, 0);
-            estadisticasTableLayoutPanel.Controls.Add(devolucionesPanel, 3, 0);
-            estadisticasTableLayoutPanel.Location = new Point(22, 19);
-            estadisticasTableLayoutPanel.Margin = new Padding(10);
-            estadisticasTableLayoutPanel.Name = "estadisticasTableLayoutPanel";
-            estadisticasTableLayoutPanel.RowCount = 1;
-            estadisticasTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            estadisticasTableLayoutPanel.Size = new Size(971, 157);
-            estadisticasTableLayoutPanel.TabIndex = 0;
+            tableLayoutPanel1.BackColor = SystemColors.MenuBar;
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(panel3, 3, 0);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
+            tableLayoutPanel1.Controls.Add(panel, 0, 0);
+            tableLayoutPanel1.Controls.Add(panel1, 2, 0);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(10);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1000, 158);
+            tableLayoutPanel1.TabIndex = 0;
             // 
-            // bibliotecariosPanel
+            // panel3
             // 
-            bibliotecariosPanel.Anchor = AnchorStyles.None;
-            bibliotecariosPanel.BackColor = Color.White;
-            bibliotecariosPanel.Controls.Add(bibliotecarioIconPictureBox);
-            bibliotecariosPanel.Controls.Add(cantidadBibliotecarioLabel);
-            bibliotecariosPanel.Controls.Add(tituloBibliotecariosLabel);
-            bibliotecariosPanel.Location = new Point(14, 17);
-            bibliotecariosPanel.Name = "bibliotecariosPanel";
-            bibliotecariosPanel.Size = new Size(213, 123);
-            bibliotecariosPanel.TabIndex = 5;
-            bibliotecariosPanel.MouseEnter += bibliotecariosPanel_MouseEnter;
-            bibliotecariosPanel.MouseLeave += bibliotecariosPanel_MouseLeave;
+            panel3.BackColor = Color.FromArgb(128, 0, 32);
+            panel3.Controls.Add(pictureBox4);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(label8);
+            panel3.Location = new Point(753, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(244, 152);
+            panel3.TabIndex = 2;
             // 
-            // bibliotecarioIconPictureBox
+            // panel2
             // 
-            bibliotecarioIconPictureBox.BackColor = Color.White;
-            bibliotecarioIconPictureBox.ForeColor = Color.Black;
-            bibliotecarioIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            bibliotecarioIconPictureBox.IconColor = Color.Black;
-            bibliotecarioIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            bibliotecarioIconPictureBox.IconSize = 40;
-            bibliotecarioIconPictureBox.Location = new Point(170, 3);
-            bibliotecarioIconPictureBox.Name = "bibliotecarioIconPictureBox";
-            bibliotecarioIconPictureBox.Size = new Size(40, 40);
-            bibliotecarioIconPictureBox.TabIndex = 6;
-            bibliotecarioIconPictureBox.TabStop = false;
+            panel2.BackColor = Color.FromArgb(128, 0, 32);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label6);
+            panel2.Location = new Point(253, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(244, 152);
+            panel2.TabIndex = 1;
             // 
-            // cantidadBibliotecarioLabel
+            // panel
             // 
-            cantidadBibliotecarioLabel.AutoSize = true;
-            cantidadBibliotecarioLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cantidadBibliotecarioLabel.Location = new Point(78, 46);
-            cantidadBibliotecarioLabel.Name = "cantidadBibliotecarioLabel";
-            cantidadBibliotecarioLabel.Size = new Size(56, 46);
-            cantidadBibliotecarioLabel.TabIndex = 5;
-            cantidadBibliotecarioLabel.Text = "50";
+            panel.BackColor = Color.LightGray;
+            panel.Controls.Add(pictureBox1);
+            panel.Controls.Add(label2);
+            panel.Controls.Add(label1);
+            panel.Location = new Point(3, 3);
+            panel.Name = "panel";
+            panel.Size = new Size(244, 152);
+            panel.TabIndex = 0;
             // 
-            // tituloBibliotecariosLabel
+            // label1
             // 
-            tituloBibliotecariosLabel.AutoSize = true;
-            tituloBibliotecariosLabel.BackColor = Color.Transparent;
-            tituloBibliotecariosLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tituloBibliotecariosLabel.ForeColor = SystemColors.GrayText;
-            tituloBibliotecariosLabel.Location = new Point(7, 9);
-            tituloBibliotecariosLabel.Name = "tituloBibliotecariosLabel";
-            tituloBibliotecariosLabel.Size = new Size(117, 22);
-            tituloBibliotecariosLabel.TabIndex = 3;
-            tituloBibliotecariosLabel.Text = "Bibliotecarios";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(66, 83);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 22);
+            label1.TabIndex = 0;
+            label1.Text = "Estudiantes";
             // 
-            // librosPanel
+            // panel1
             // 
-            librosPanel.Anchor = AnchorStyles.None;
-            librosPanel.BackColor = Color.White;
-            librosPanel.Controls.Add(librosIconPictureBox);
-            librosPanel.Controls.Add(cantidadLibrosLabel);
-            librosPanel.Controls.Add(tituloLibrosLabel);
-            librosPanel.Location = new Point(259, 17);
-            librosPanel.Name = "librosPanel";
-            librosPanel.Size = new Size(208, 122);
-            librosPanel.TabIndex = 4;
-            librosPanel.MouseEnter += librosPanel_MouseEnter;
-            librosPanel.MouseLeave += librosPanel_MouseLeave;
+            panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(503, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(244, 152);
+            panel1.TabIndex = 1;
             // 
-            // librosIconPictureBox
-            // 
-            librosIconPictureBox.BackColor = Color.White;
-            librosIconPictureBox.ForeColor = Color.Black;
-            librosIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.BookBookmark;
-            librosIconPictureBox.IconColor = Color.Black;
-            librosIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            librosIconPictureBox.IconSize = 40;
-            librosIconPictureBox.Location = new Point(165, 2);
-            librosIconPictureBox.Name = "librosIconPictureBox";
-            librosIconPictureBox.Size = new Size(40, 40);
-            librosIconPictureBox.TabIndex = 7;
-            librosIconPictureBox.TabStop = false;
-            // 
-            // cantidadLibrosLabel
-            // 
-            cantidadLibrosLabel.AutoSize = true;
-            cantidadLibrosLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cantidadLibrosLabel.Location = new Point(60, 46);
-            cantidadLibrosLabel.Name = "cantidadLibrosLabel";
-            cantidadLibrosLabel.Size = new Size(74, 46);
-            cantidadLibrosLabel.TabIndex = 6;
-            cantidadLibrosLabel.Text = "100";
-            // 
-            // tituloLibrosLabel
-            // 
-            tituloLibrosLabel.AutoSize = true;
-            tituloLibrosLabel.BackColor = Color.Transparent;
-            tituloLibrosLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tituloLibrosLabel.ForeColor = SystemColors.ControlDarkDark;
-            tituloLibrosLabel.Location = new Point(14, 9);
-            tituloLibrosLabel.Name = "tituloLibrosLabel";
-            tituloLibrosLabel.Size = new Size(59, 22);
-            tituloLibrosLabel.TabIndex = 3;
-            tituloLibrosLabel.Text = "Libros";
-            // 
-            // prestamosPanel
-            // 
-            prestamosPanel.Anchor = AnchorStyles.None;
-            prestamosPanel.BackColor = Color.White;
-            prestamosPanel.Controls.Add(prestamosIconPictureBox);
-            prestamosPanel.Controls.Add(cantidadPrestamosLabel);
-            prestamosPanel.Controls.Add(tituloPrestamosLabel);
-            prestamosPanel.Location = new Point(502, 17);
-            prestamosPanel.Name = "prestamosPanel";
-            prestamosPanel.Size = new Size(205, 123);
-            prestamosPanel.TabIndex = 3;
-            prestamosPanel.MouseEnter += prestamosPanel_MouseEnter;
-            prestamosPanel.MouseLeave += prestamosPanel_MouseLeave;
-            // 
-            // prestamosIconPictureBox
-            // 
-            prestamosIconPictureBox.BackColor = Color.White;
-            prestamosIconPictureBox.ForeColor = Color.Black;
-            prestamosIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.HandshakeAlt;
-            prestamosIconPictureBox.IconColor = Color.Black;
-            prestamosIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            prestamosIconPictureBox.IconSize = 40;
-            prestamosIconPictureBox.Location = new Point(165, 1);
-            prestamosIconPictureBox.Name = "prestamosIconPictureBox";
-            prestamosIconPictureBox.Size = new Size(40, 40);
-            prestamosIconPictureBox.TabIndex = 8;
-            prestamosIconPictureBox.TabStop = false;
-            // 
-            // cantidadPrestamosLabel
-            // 
-            cantidadPrestamosLabel.AutoSize = true;
-            cantidadPrestamosLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cantidadPrestamosLabel.Location = new Point(70, 46);
-            cantidadPrestamosLabel.Name = "cantidadPrestamosLabel";
-            cantidadPrestamosLabel.Size = new Size(56, 46);
-            cantidadPrestamosLabel.TabIndex = 7;
-            cantidadPrestamosLabel.Text = "24";
-            // 
-            // tituloPrestamosLabel
-            // 
-            tituloPrestamosLabel.AutoSize = true;
-            tituloPrestamosLabel.BackColor = Color.Transparent;
-            tituloPrestamosLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tituloPrestamosLabel.ForeColor = SystemColors.ControlDarkDark;
-            tituloPrestamosLabel.Location = new Point(12, 9);
-            tituloPrestamosLabel.Name = "tituloPrestamosLabel";
-            tituloPrestamosLabel.Size = new Size(95, 22);
-            tituloPrestamosLabel.TabIndex = 3;
-            tituloPrestamosLabel.Text = "Prestamos";
-            // 
-            // devolucionesPanel
-            // 
-            devolucionesPanel.Anchor = AnchorStyles.None;
-            devolucionesPanel.BackColor = Color.White;
-            devolucionesPanel.Controls.Add(devolucionesIconPictureBox);
-            devolucionesPanel.Controls.Add(cantidadDevolucionesLabel);
-            devolucionesPanel.Controls.Add(tituloDevolucionesLabel);
-            devolucionesPanel.Location = new Point(743, 16);
-            devolucionesPanel.Name = "devolucionesPanel";
-            devolucionesPanel.Size = new Size(211, 124);
-            devolucionesPanel.TabIndex = 2;
-            devolucionesPanel.MouseEnter += devolucionesPanel_MouseEnter;
-            devolucionesPanel.MouseLeave += devolucionesPanel_MouseLeave;
-            // 
-            // devolucionesIconPictureBox
-            // 
-            devolucionesIconPictureBox.BackColor = Color.White;
-            devolucionesIconPictureBox.ForeColor = Color.Black;
-            devolucionesIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.Retweet;
-            devolucionesIconPictureBox.IconColor = Color.Black;
-            devolucionesIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            devolucionesIconPictureBox.IconSize = 40;
-            devolucionesIconPictureBox.Location = new Point(171, 3);
-            devolucionesIconPictureBox.Name = "devolucionesIconPictureBox";
-            devolucionesIconPictureBox.Size = new Size(40, 40);
-            devolucionesIconPictureBox.TabIndex = 9;
-            devolucionesIconPictureBox.TabStop = false;
-            // 
-            // cantidadDevolucionesLabel
-            // 
-            cantidadDevolucionesLabel.AutoSize = true;
-            cantidadDevolucionesLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cantidadDevolucionesLabel.Location = new Point(69, 46);
-            cantidadDevolucionesLabel.Name = "cantidadDevolucionesLabel";
-            cantidadDevolucionesLabel.Size = new Size(56, 46);
-            cantidadDevolucionesLabel.TabIndex = 8;
-            cantidadDevolucionesLabel.Text = "24";
-            // 
-            // tituloDevolucionesLabel
-            // 
-            tituloDevolucionesLabel.AutoSize = true;
-            tituloDevolucionesLabel.BackColor = Color.Transparent;
-            tituloDevolucionesLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tituloDevolucionesLabel.ForeColor = SystemColors.ControlDarkDark;
-            tituloDevolucionesLabel.Location = new Point(12, 9);
-            tituloDevolucionesLabel.Name = "tituloDevolucionesLabel";
-            tituloDevolucionesLabel.Size = new Size(118, 22);
-            tituloDevolucionesLabel.TabIndex = 3;
-            tituloDevolucionesLabel.Text = "Devoluciones";
-            // 
-            // graficoPastelChart
+            // chart1
             // 
             chartArea1.Name = "ChartArea1";
-            graficoPastelChart.ChartAreas.Add(chartArea1);
+            chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            graficoPastelChart.Legends.Add(legend1);
-            graficoPastelChart.Location = new Point(43, 201);
-            graficoPastelChart.Name = "graficoPastelChart";
-            graficoPastelChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            chart1.Legends.Add(legend1);
+            chart1.Location = new Point(35, 182);
+            chart1.Name = "chart1";
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            graficoPastelChart.Series.Add(series1);
-            graficoPastelChart.Size = new Size(329, 416);
-            graficoPastelChart.TabIndex = 1;
-            graficoPastelChart.Text = "chart1";
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(440, 367);
+            chart1.TabIndex = 1;
+            chart1.Text = "chart1";
             // 
-            // graficoBarrasChart
+            // chart2
             // 
             chartArea2.Name = "ChartArea1";
-            graficoBarrasChart.ChartAreas.Add(chartArea2);
+            chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            graficoBarrasChart.Legends.Add(legend2);
-            graficoBarrasChart.Location = new Point(446, 201);
-            graficoBarrasChart.Name = "graficoBarrasChart";
-            graficoBarrasChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            chart2.Legends.Add(legend2);
+            chart2.Location = new Point(503, 182);
+            chart2.Name = "chart2";
+            chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            graficoBarrasChart.Series.Add(series2);
-            graficoBarrasChart.Size = new Size(488, 416);
-            graficoBarrasChart.TabIndex = 2;
-            graficoBarrasChart.Text = "chart2";
+            chart2.Series.Add(series2);
+            chart2.Size = new Size(428, 367);
+            chart2.TabIndex = 2;
+            chart2.Text = "chart2";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(93, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 22);
+            label2.TabIndex = 1;
+            label2.Text = "100";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(57, 18);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(60, 15);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(125, 62);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(105, 115);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 22);
+            label3.TabIndex = 4;
+            label3.Text = "100";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(96, 80);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 22);
+            label4.TabIndex = 3;
+            label4.Text = "Libros";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(60, 15);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(125, 62);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.LightGray;
+            label5.Location = new Point(96, 115);
+            label5.Name = "label5";
+            label5.Size = new Size(40, 22);
+            label5.TabIndex = 4;
+            label5.Text = "100";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.LightGray;
+            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(68, 80);
+            label6.Name = "label6";
+            label6.Size = new Size(117, 22);
+            label6.TabIndex = 3;
+            label6.Text = "Bibliotecarios";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(60, 15);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(125, 62);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.LightGray;
+            label7.Location = new Point(96, 115);
+            label7.Name = "label7";
+            label7.Size = new Size(40, 22);
+            label7.TabIndex = 4;
+            label7.Text = "100";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.LightGray;
+            label8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(73, 80);
+            label8.Name = "label8";
+            label8.Size = new Size(95, 22);
+            label8.TabIndex = 3;
+            label8.Text = "Préstamos";
             // 
             // PanelForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
-            ClientSize = new Size(1012, 647);
-            Controls.Add(graficoBarrasChart);
-            Controls.Add(graficoPastelChart);
-            Controls.Add(estadisticasTableLayoutPanel);
+            ClientSize = new Size(1000, 610);
+            Controls.Add(chart2);
+            Controls.Add(chart1);
+            Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PanelForm";
             Text = "PanelForm";
-            estadisticasTableLayoutPanel.ResumeLayout(false);
-            bibliotecariosPanel.ResumeLayout(false);
-            bibliotecariosPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)bibliotecarioIconPictureBox).EndInit();
-            librosPanel.ResumeLayout(false);
-            librosPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)librosIconPictureBox).EndInit();
-            prestamosPanel.ResumeLayout(false);
-            prestamosPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)prestamosIconPictureBox).EndInit();
-            devolucionesPanel.ResumeLayout(false);
-            devolucionesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)devolucionesIconPictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)graficoPastelChart).EndInit();
-            ((System.ComponentModel.ISupportInitialize)graficoBarrasChart).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel estadisticasTableLayoutPanel;
-        private Panel devolucionesPanel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart graficoPastelChart;
-        private Label tituloDevolucionesLabel;
-        private Panel bibliotecariosPanel;
-        private Label tituloBibliotecariosLabel;
-        private Panel librosPanel;
-        private Label tituloLibrosLabel;
-        private Panel prestamosPanel;
-        private Label tituloPrestamosLabel;
-        private Label cantidadBibliotecarioLabel;
-        private Label cantidadLibrosLabel;
-        private Label cantidadPrestamosLabel;
-        private Label cantidadDevolucionesLabel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart graficoBarrasChart;
-        private FontAwesome.Sharp.IconPictureBox bibliotecarioIconPictureBox;
-        private FontAwesome.Sharp.IconPictureBox librosIconPictureBox;
-        private FontAwesome.Sharp.IconPictureBox prestamosIconPictureBox;
-        private FontAwesome.Sharp.IconPictureBox devolucionesIconPictureBox;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private Label label2;
+        private PictureBox pictureBox4;
+        private Label label7;
+        private Label label8;
+        private PictureBox pictureBox3;
+        private Label label5;
+        private Label label6;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Label label3;
+        private Label label4;
     }
 }
