@@ -1,11 +1,6 @@
-using CapaNegocios.Servicios;
-using CapaAccesoDatos.ConexionBD;
-using CapaAccesoDatos.Repositorios;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using CapaPresentacion;
+using CapaPresentacion.Formulario;
 
-namespace PresentationLayer
+namespace CapaPresentacion
 {
     internal static class Program
     {
@@ -18,32 +13,7 @@ namespace PresentationLayer
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-
-            var host = CreateHostBuilder().Build();
-            ServiceProvider = host.Services;
-
-            Application.Run(ServiceProvider.GetRequiredService<CategoryForm>());
-        }
-
-        public static IServiceProvider ServiceProvider { get; private set; }
-
-        static IHostBuilder CreateHostBuilder()
-        {
-            return Host.CreateDefaultBuilder()
-                .ConfigureServices((context, services) => {
-
-                    //Forms
-                    services.AddTransient<CategoryForm>();
-
-                    //Repositories
-                    services.AddScoped<ICategoryRepository, CategoryRepository>();
-
-                    //Services
-                    services.AddScoped<ICategoryService, CategoryService>();
-
-                    //Connection
-                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
-                });
+            Application.Run(new PrincipalForm());
         }
     }
 }

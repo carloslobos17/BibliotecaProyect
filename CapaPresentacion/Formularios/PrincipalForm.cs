@@ -26,13 +26,6 @@ namespace CapaPresentacion
             Rol = rol;
         }
 
-
-
-        private void cerrarButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void PrincipalForm_Load(object sender, EventArgs e)
         {
             if (Rol == "Administrador")
@@ -113,7 +106,12 @@ namespace CapaPresentacion
             AbrirFormHijo(new HistorialForm());
         }
 
-        private void contenedorPanel_Paint(object sender, PaintEventArgs e)
+        private void salirIconPictureBox_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void menuPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
