@@ -7,28 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad.Entidades;
+using CapaEntidad.Enums;
+using CapaPresentacion.Formulario;
 using CapaPresentacion.Formularios.AdminForms;
 using CapaPresentacion.Formularios.BibliotecarioForms;
 using CapaPresentacion.Formularios.EstudianteForms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CapaPresentacion
 {
     public partial class PrincipalForm : Form
     {
+        private readonly IServiceProvider _serviceProvider;
         public string Rol { get; private set; }
-        public PrincipalForm()
+        public PrincipalForm(IServiceProvider serviceProvider)
         {
             InitializeComponent();
+            EstablecerPermisos();
+            _serviceProvider = serviceProvider;
         }
 
-        public PrincipalForm(string rol) : this()
+        private void EstablecerPermisos()
         {
-            Rol = rol;
-        }
-
-        private void PrincipalForm_Load(object sender, EventArgs e)
-        {
-            if (Rol == "Administrador")
+            if (UsuarioVerificado.RolId == (int)RolEnum.Admin)
             {
                 gestionarLibrosButton.Visible = false;
                 prestamosButton.Visible = false;
@@ -36,7 +38,8 @@ namespace CapaPresentacion
                 librosButton.Visible = false;
                 historialButton.Visible = false;
             }
-            else if (Rol == "Bibliotecario")
+
+            if (UsuarioVerificado.RolId == (int)RolEnum.Bibliotecario)
             {
                 panelControlButton.Visible = false;
                 bibliotecariosButton.Visible = false;
@@ -46,7 +49,8 @@ namespace CapaPresentacion
                 gestionarLibrosButton.Location = panelControlButton.Location;
                 prestamosButton.Location = bibliotecariosButton.Location;
             }
-            else if (Rol == "Estudiante")
+
+            if (UsuarioVerificado.RolId == (int)RolEnum.Estudiante)
             {
                 panelControlButton.Visible = false;
                 bibliotecariosButton.Visible = false;
@@ -58,6 +62,7 @@ namespace CapaPresentacion
                 historialButton.Location = bibliotecariosButton.Location;
             }
         }
+
 
         private void AbrirFormHijo(object formHijo)
         {
@@ -114,6 +119,13 @@ namespace CapaPresentacion
         private void menuPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void PrincipalForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            var loginForm = _serviceProvider.GetRequiredService<LoginFormulario>();
+            loginForm.ShowDialog();
         }
     }
 }

@@ -37,9 +37,9 @@
             iniciarBtn = new Button();
             cancelarBtn = new Button();
             contraseñaLabel = new Label();
-            usuarioLabel = new Label();
+            correoLabel = new Label();
             claveLoginTextBox = new TextBox();
-            usuarioLoginTextBox = new TextBox();
+            correoLoginTextBox = new TextBox();
             panelInferior = new Panel();
             panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconoBox).BeginInit();
@@ -87,9 +87,9 @@
             panelCentral.Controls.Add(iniciarBtn);
             panelCentral.Controls.Add(cancelarBtn);
             panelCentral.Controls.Add(contraseñaLabel);
-            panelCentral.Controls.Add(usuarioLabel);
+            panelCentral.Controls.Add(correoLabel);
             panelCentral.Controls.Add(claveLoginTextBox);
-            panelCentral.Controls.Add(usuarioLoginTextBox);
+            panelCentral.Controls.Add(correoLoginTextBox);
             panelCentral.Location = new Point(0, 100);
             panelCentral.Margin = new Padding(3, 4, 3, 4);
             panelCentral.Name = "panelCentral";
@@ -142,15 +142,15 @@
             contraseñaLabel.TabIndex = 3;
             contraseñaLabel.Text = "Contraseña";
             // 
-            // usuarioLabel
+            // correoLabel
             // 
-            usuarioLabel.AutoSize = true;
-            usuarioLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usuarioLabel.Location = new Point(211, 64);
-            usuarioLabel.Name = "usuarioLabel";
-            usuarioLabel.Size = new Size(102, 28);
-            usuarioLabel.TabIndex = 2;
-            usuarioLabel.Text = "Usuario";
+            correoLabel.AutoSize = true;
+            correoLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            correoLabel.Location = new Point(211, 64);
+            correoLabel.Name = "correoLabel";
+            correoLabel.Size = new Size(87, 28);
+            correoLabel.TabIndex = 2;
+            correoLabel.Text = "Correo";
             // 
             // claveLoginTextBox
             // 
@@ -163,15 +163,15 @@
             claveLoginTextBox.Size = new Size(130, 40);
             claveLoginTextBox.TabIndex = 1;
             // 
-            // usuarioLoginTextBox
+            // correoLoginTextBox
             // 
-            usuarioLoginTextBox.BackColor = Color.White;
-            usuarioLoginTextBox.Location = new Point(353, 64);
-            usuarioLoginTextBox.Margin = new Padding(3, 4, 3, 4);
-            usuarioLoginTextBox.Multiline = true;
-            usuarioLoginTextBox.Name = "usuarioLoginTextBox";
-            usuarioLoginTextBox.Size = new Size(130, 40);
-            usuarioLoginTextBox.TabIndex = 0;
+            correoLoginTextBox.BackColor = Color.White;
+            correoLoginTextBox.Location = new Point(353, 64);
+            correoLoginTextBox.Margin = new Padding(3, 4, 3, 4);
+            correoLoginTextBox.Multiline = true;
+            correoLoginTextBox.Name = "correoLoginTextBox";
+            correoLoginTextBox.Size = new Size(130, 40);
+            correoLoginTextBox.TabIndex = 0;
             // 
             // panelInferior
             // 
@@ -214,9 +214,9 @@
         private Button iniciarBtn;
         private Button cancelarBtn;
         private Label contraseñaLabel;
-        private Label usuarioLabel;
+        private Label correoLabel;
         private TextBox claveLoginTextBox;
-        private TextBox usuarioLoginTextBox;
+        private TextBox correoLoginTextBox;
         private Label errorLoginLabel;
     }
 }

@@ -7,36 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad.Entidades;
 using CapaNegocios.Servicios;
+using CapaNegocios.Servicios.UsuarioServicios;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace CapaPresentacion.Formulario
 {
     public partial class LoginFormulario : Form
     {
-        private UsuarioServicio _usuarioServicio;
+        private readonly IUsuarioServicio _usuarioServicio;
+        private readonly IServiceProvider _serviceProvider;
 
-        public LoginFormulario()
+        public LoginFormulario(IUsuarioServicio usuarioServicio, IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _usuarioServicio = new UsuarioServicio();
+            _usuarioServicio = usuarioServicio;
+            _serviceProvider = serviceProvider;
         }
 
         private void iniciarBtn_Click(object sender, EventArgs e)
         {
-            string usuario = usuarioLoginTextBox.Text;
-            string clave = claveLoginTextBox.Text;
-            int autenticar = _usuarioServicio.AutenticarUsuario(usuario, clave);
+           
+            var usuario = _usuarioServicio.Inicio(correoLoginTextBox.Text, claveLoginTextBox.Text);
 
-            if (autenticar == 0)
+            if (usuario != null)
             {
-                errorLoginLabel.Text = "Usuario o contraseña incorrecta";
-            }
-            else
-            {
-                string rol = _usuarioServicio.ObtenerRol(autenticar);
+                UsuarioVerificado.Correo = usuario.Correo;
+                UsuarioVerificado.RolId = usuario.Id;
 
-                PrincipalForm principalForm = new PrincipalForm(rol);
-                principalForm.Show();
+                var principalForm = _serviceProvider.GetRequiredService<PrincipalForm>();   
+                principalForm.ShowDialog();
                 this.Hide();
+
+               
             }
 
 

@@ -271,7 +271,6 @@
             Name = "PrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PrincipalForm";
-            Load += PrincipalForm_Load;
             menuPanel.ResumeLayout(false);
             menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)salirIconPictureBox).EndInit();
