@@ -9,7 +9,7 @@ namespace CapaEntidad.Enums
     public enum RolEnum
     {
         Admin = 1,
-        Bibliotecario = 2,
-        Estudiante = 3
+        Bibliotecario = 3,
+        Estudiante = 2
     }
 }

@@ -33,22 +33,20 @@
             panel3 = new Panel();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
+            cancelarLibroButton = new Button();
             tituloModalLabel = new Label();
-            button1 = new Button();
-            label5 = new Label();
-            textBox6 = new TextBox();
-            label4 = new Label();
-            textBox5 = new TextBox();
-            label3 = new Label();
-            textBox4 = new TextBox();
-            label2 = new Label();
-            textBox3 = new TextBox();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            nombreLabel = new Label();
-            textBox1 = new TextBox();
+            agregarLibroModalButton = new Button();
+            categoriaLibroLabel = new Label();
+            copiasDisponiblesLabel = new Label();
+            copiasDisponiblesTextBox = new TextBox();
+            fechaPublicacionLabel = new Label();
+            autorLabel = new Label();
+            autorTextBox = new TextBox();
+            tituloLabel = new Label();
+            tituloTextBox = new TextBox();
             panel1 = new Panel();
+            fechaPublicacionDateTimePicker = new DateTimePicker();
+            categoriaComboBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -58,15 +56,15 @@
             panel4.BackColor = Color.FromArgb(44, 62, 80);
             panel4.Location = new Point(0, 677);
             panel4.Name = "panel4";
-            panel4.Size = new Size(535, 11);
+            panel4.Size = new Size(554, 11);
             panel4.TabIndex = 48;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(44, 62, 80);
-            panel3.Location = new Point(522, 103);
+            panel3.Location = new Point(553, 103);
             panel3.Name = "panel3";
-            panel3.Size = new Size(13, 582);
+            panel3.Size = new Size(13, 585);
             panel3.TabIndex = 47;
             // 
             // panel2
@@ -87,17 +85,17 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // button2
+            // cancelarLibroButton
             // 
-            button2.BackColor = Color.DarkRed;
-            button2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(279, 586);
-            button2.Name = "button2";
-            button2.Size = new Size(124, 43);
-            button2.TabIndex = 45;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = false;
+            cancelarLibroButton.BackColor = Color.DarkRed;
+            cancelarLibroButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelarLibroButton.ForeColor = Color.White;
+            cancelarLibroButton.Location = new Point(306, 558);
+            cancelarLibroButton.Name = "cancelarLibroButton";
+            cancelarLibroButton.Size = new Size(124, 43);
+            cancelarLibroButton.TabIndex = 45;
+            cancelarLibroButton.Text = "Cancelar";
+            cancelarLibroButton.UseVisualStyleBackColor = false;
             // 
             // tituloModalLabel
             // 
@@ -110,131 +108,99 @@
             tituloModalLabel.TabIndex = 0;
             tituloModalLabel.Text = "Agregar libro";
             // 
-            // button1
+            // agregarLibroModalButton
             // 
-            button1.BackColor = Color.FromArgb(58, 157, 35);
-            button1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(110, 586);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 43);
-            button1.TabIndex = 44;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = false;
+            agregarLibroModalButton.BackColor = Color.FromArgb(58, 157, 35);
+            agregarLibroModalButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            agregarLibroModalButton.ForeColor = Color.White;
+            agregarLibroModalButton.Location = new Point(123, 558);
+            agregarLibroModalButton.Name = "agregarLibroModalButton";
+            agregarLibroModalButton.Size = new Size(124, 43);
+            agregarLibroModalButton.TabIndex = 44;
+            agregarLibroModalButton.Text = "Agregar";
+            agregarLibroModalButton.UseVisualStyleBackColor = false;
+            agregarLibroModalButton.Click += agregarLibroModalButton_Click;
             // 
-            // label5
+            // categoriaLibroLabel
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(74, 74, 74);
-            label5.Location = new Point(141, 497);
-            label5.Name = "label5";
-            label5.Size = new Size(71, 22);
-            label5.TabIndex = 43;
-            label5.Text = "Correo";
+            categoriaLibroLabel.AutoSize = true;
+            categoriaLibroLabel.BackColor = Color.Transparent;
+            categoriaLibroLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            categoriaLibroLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            categoriaLibroLabel.Location = new Point(146, 467);
+            categoriaLibroLabel.Name = "categoriaLibroLabel";
+            categoriaLibroLabel.Size = new Size(97, 22);
+            categoriaLibroLabel.TabIndex = 43;
+            categoriaLibroLabel.Text = "Categoria";
             // 
-            // textBox6
+            // copiasDisponiblesLabel
             // 
-            textBox6.Location = new Point(249, 494);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(186, 27);
-            textBox6.TabIndex = 42;
+            copiasDisponiblesLabel.AutoSize = true;
+            copiasDisponiblesLabel.BackColor = Color.Transparent;
+            copiasDisponiblesLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            copiasDisponiblesLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            copiasDisponiblesLabel.Location = new Point(68, 393);
+            copiasDisponiblesLabel.Name = "copiasDisponiblesLabel";
+            copiasDisponiblesLabel.Size = new Size(179, 22);
+            copiasDisponiblesLabel.TabIndex = 39;
+            copiasDisponiblesLabel.Text = "Copias disponibles";
             // 
-            // label4
+            // copiasDisponiblesTextBox
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(74, 74, 74);
-            label4.Location = new Point(123, 422);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 22);
-            label4.TabIndex = 41;
-            label4.Text = "Telefono";
+            copiasDisponiblesTextBox.Location = new Point(262, 388);
+            copiasDisponiblesTextBox.Name = "copiasDisponiblesTextBox";
+            copiasDisponiblesTextBox.Size = new Size(250, 27);
+            copiasDisponiblesTextBox.TabIndex = 38;
             // 
-            // textBox5
+            // fechaPublicacionLabel
             // 
-            textBox5.Location = new Point(249, 419);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(186, 27);
-            textBox5.TabIndex = 40;
+            fechaPublicacionLabel.AutoSize = true;
+            fechaPublicacionLabel.BackColor = Color.Transparent;
+            fechaPublicacionLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            fechaPublicacionLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            fechaPublicacionLabel.Location = new Point(47, 316);
+            fechaPublicacionLabel.Name = "fechaPublicacionLabel";
+            fechaPublicacionLabel.Size = new Size(200, 22);
+            fechaPublicacionLabel.TabIndex = 37;
+            fechaPublicacionLabel.Text = "Fecha de publicación";
             // 
-            // label3
+            // autorLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(74, 74, 74);
-            label3.Location = new Point(148, 348);
-            label3.Name = "label3";
-            label3.Size = new Size(61, 22);
-            label3.TabIndex = 39;
-            label3.Text = "Clave";
+            autorLabel.AutoSize = true;
+            autorLabel.BackColor = Color.Transparent;
+            autorLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            autorLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            autorLabel.Location = new Point(111, 240);
+            autorLabel.Name = "autorLabel";
+            autorLabel.Size = new Size(136, 22);
+            autorLabel.TabIndex = 35;
+            autorLabel.Text = "Autor del libro";
             // 
-            // textBox4
+            // autorTextBox
             // 
-            textBox4.Location = new Point(249, 345);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(186, 27);
-            textBox4.TabIndex = 38;
+            autorTextBox.Location = new Point(262, 240);
+            autorTextBox.Name = "autorTextBox";
+            autorTextBox.Size = new Size(250, 27);
+            autorTextBox.TabIndex = 34;
             // 
-            // label2
+            // tituloLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(74, 74, 74);
-            label2.Location = new Point(148, 278);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 22);
-            label2.TabIndex = 37;
-            label2.Text = "Edad";
+            tituloLabel.AutoSize = true;
+            tituloLabel.BackColor = Color.Transparent;
+            tituloLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            tituloLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            tituloLabel.Location = new Point(104, 162);
+            tituloLabel.Name = "tituloLabel";
+            tituloLabel.Size = new Size(139, 22);
+            tituloLabel.TabIndex = 33;
+            tituloLabel.Text = "Titulo del libro";
             // 
-            // textBox3
+            // tituloTextBox
             // 
-            textBox3.Location = new Point(249, 275);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(186, 27);
-            textBox3.TabIndex = 36;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(74, 74, 74);
-            label1.Location = new Point(133, 206);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 22);
-            label1.TabIndex = 35;
-            label1.Text = "Apellido";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(249, 203);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(186, 27);
-            textBox2.TabIndex = 34;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.BackColor = Color.Transparent;
-            nombreLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            nombreLabel.ForeColor = Color.FromArgb(74, 74, 74);
-            nombreLabel.Location = new Point(133, 137);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new Size(79, 22);
-            nombreLabel.TabIndex = 33;
-            nombreLabel.Text = "Nombre";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(249, 134);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(186, 27);
-            textBox1.TabIndex = 32;
+            tituloTextBox.Location = new Point(262, 162);
+            tituloTextBox.Name = "tituloTextBox";
+            tituloTextBox.Size = new Size(250, 27);
+            tituloTextBox.TabIndex = 32;
             // 
             // panel1
             // 
@@ -244,31 +210,44 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(535, 105);
+            panel1.Size = new Size(566, 105);
             panel1.TabIndex = 31;
+            // 
+            // fechaPublicacionDateTimePicker
+            // 
+            fechaPublicacionDateTimePicker.Location = new Point(262, 316);
+            fechaPublicacionDateTimePicker.Name = "fechaPublicacionDateTimePicker";
+            fechaPublicacionDateTimePicker.Size = new Size(250, 27);
+            fechaPublicacionDateTimePicker.TabIndex = 49;
+            // 
+            // categoriaComboBox
+            // 
+            categoriaComboBox.FormattingEnabled = true;
+            categoriaComboBox.Location = new Point(262, 469);
+            categoriaComboBox.Name = "categoriaComboBox";
+            categoriaComboBox.Size = new Size(250, 28);
+            categoriaComboBox.TabIndex = 50;
             // 
             // ModalGestionarLibros
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 688);
+            ClientSize = new Size(566, 686);
+            Controls.Add(categoriaComboBox);
+            Controls.Add(fechaPublicacionDateTimePicker);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label5);
-            Controls.Add(textBox6);
-            Controls.Add(label4);
-            Controls.Add(textBox5);
-            Controls.Add(label3);
-            Controls.Add(textBox4);
-            Controls.Add(label2);
-            Controls.Add(textBox3);
-            Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(nombreLabel);
-            Controls.Add(textBox1);
+            Controls.Add(cancelarLibroButton);
+            Controls.Add(agregarLibroModalButton);
+            Controls.Add(categoriaLibroLabel);
+            Controls.Add(copiasDisponiblesLabel);
+            Controls.Add(copiasDisponiblesTextBox);
+            Controls.Add(fechaPublicacionLabel);
+            Controls.Add(autorLabel);
+            Controls.Add(autorTextBox);
+            Controls.Add(tituloLabel);
+            Controls.Add(tituloTextBox);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ModalGestionarLibros";
@@ -286,21 +265,19 @@
         private Panel panel3;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Button button2;
+        private Button cancelarLibroButton;
         private Label tituloModalLabel;
-        private Button button1;
-        private Label label5;
-        private TextBox textBox6;
-        private Label label4;
-        private TextBox textBox5;
-        private Label label3;
-        private TextBox textBox4;
-        private Label label2;
-        private TextBox textBox3;
-        private Label label1;
-        private TextBox textBox2;
-        private Label nombreLabel;
-        private TextBox textBox1;
+        private Button agregarLibroModalButton;
+        private Label categoriaLibroLabel;
+        private Label copiasDisponiblesLabel;
+        private Label fechaPublicacionLabel;
+        private Label autorLabel;
+        private Label tituloLabel;
         private Panel panel1;
+        public TextBox copiasDisponiblesTextBox;
+        public TextBox autorTextBox;
+        public TextBox tituloTextBox;
+        public DateTimePicker fechaPublicacionDateTimePicker;
+        public ComboBox categoriaComboBox;
     }
 }

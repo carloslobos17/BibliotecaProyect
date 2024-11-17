@@ -88,7 +88,8 @@ namespace CapaPresentacion
 
         private void gestionarLibrosButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new GestionarLibrosForm());
+            var gestionarLibrosForm = _serviceProvider.GetRequiredService<GestionarLibrosForm>();
+            AbrirFormHijo(gestionarLibrosForm);
         }
 
         private void prestamosButton_Click(object sender, EventArgs e)
@@ -103,7 +104,8 @@ namespace CapaPresentacion
 
         private void librosButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new GestionarLibrosForm());
+            var gestionarLibrosForm = _serviceProvider.GetRequiredService<GestionarLibrosForm>();
+            AbrirFormHijo(gestionarLibrosForm);
         }
 
         private void historialButton_Click(object sender, EventArgs e)

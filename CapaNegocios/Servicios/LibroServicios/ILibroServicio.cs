@@ -8,11 +8,10 @@ using CapaEntidad.Entidades;
 namespace CapaNegocios.Servicios.LibroServicios
 {
     public interface ILibroServicio
-    {
-            
-        void AddLibro(Libro libro);
-        void DeleteLibro(int id);
-        void EditLibro(Libro libro);
-        IEnumerable<Libro> GetAllLibros();
+    {  
+        void AgregarLibro(Libro libro);
+        void EliminarLibro(int id);
+        void EditarLibro(Libro libro);
+        IEnumerable<Libro> ObtenerLibros();
     }
 }

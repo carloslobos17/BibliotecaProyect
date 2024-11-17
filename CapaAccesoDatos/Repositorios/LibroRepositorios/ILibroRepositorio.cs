@@ -9,9 +9,9 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
 {
     public interface ILibroRepositorio
     {
-        void AddLibro(Libro libro);
-        void EditLibro(Libro libro);
-        void DeleteLibro(int id);
-        IEnumerable<Libro> GetLibros();
+        void AgregarLibro(Libro libro);
+        void EditarLibro(Libro libro);
+        void EliminarLibro(int id);
+        IEnumerable<Libro> ObtenerLibros();
     }
 }

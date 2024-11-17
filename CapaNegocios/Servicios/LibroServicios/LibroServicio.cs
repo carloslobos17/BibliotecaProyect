@@ -19,13 +19,13 @@ namespace CapaNegocios.Servicios.LibroServicios
             _libroRepositorio = libroRepositorio;
         }
 
-        public IEnumerable<Libro> GetAllLibros() => _libroRepositorio.GetLibros();
+        public IEnumerable<Libro> ObtenerLibros() => _libroRepositorio.ObtenerLibros();
 
-        public void AddLibro(Libro libro) => _libroRepositorio.AddLibro(libro);
+        public void AgregarLibro(Libro libro) => _libroRepositorio.AgregarLibro(libro);
 
-        public void EditLibro(Libro libro) => _libroRepositorio.EditLibro(libro);
+        public void EditarLibro(Libro libro) => _libroRepositorio.EditarLibro(libro);
 
-        public void DeleteLibro(int id) => _libroRepositorio.DeleteLibro(id);
+        public void EliminarLibro(int id) => _libroRepositorio.EliminarLibro(id);
         }
     }
 

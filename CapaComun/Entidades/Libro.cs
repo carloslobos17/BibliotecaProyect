@@ -12,7 +12,7 @@ namespace CapaEntidad.Entidades
 
         public string Titulo{ get; set; }
         public string Autor { get; set; }
-        public DateOnly FechaPublicacion { get; set; }
+        public DateTime FechaPublicacion { get; set; }
         public int CopiasDisponibles { get; set; }
         public int IdCategoria { get; set; }
     }

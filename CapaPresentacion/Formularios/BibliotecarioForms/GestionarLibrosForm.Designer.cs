@@ -32,13 +32,13 @@
             panel1 = new Panel();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            eliminarLibroButton = new FontAwesome.Sharp.IconButton();
             agregarLibroButton = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            dataGridView1 = new DataGridView();
+            editarLibroButton = new FontAwesome.Sharp.IconButton();
+            librosDataGridView = new DataGridView();
             pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)librosDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -72,26 +72,27 @@
             pictureBox1.TabIndex = 22;
             pictureBox1.TabStop = false;
             // 
-            // iconButton3
+            // eliminarLibroButton
             // 
-            iconButton3.BackColor = Color.DarkRed;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = SystemColors.MenuBar;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            iconButton3.IconColor = SystemColors.MenuBar;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 40;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(796, 356);
-            iconButton3.Margin = new Padding(0);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(144, 49);
-            iconButton3.TabIndex = 21;
-            iconButton3.Text = "Eliminar";
-            iconButton3.TextAlign = ContentAlignment.MiddleRight;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = false;
+            eliminarLibroButton.BackColor = Color.DarkRed;
+            eliminarLibroButton.FlatStyle = FlatStyle.Flat;
+            eliminarLibroButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            eliminarLibroButton.ForeColor = SystemColors.MenuBar;
+            eliminarLibroButton.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            eliminarLibroButton.IconColor = SystemColors.MenuBar;
+            eliminarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            eliminarLibroButton.IconSize = 40;
+            eliminarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
+            eliminarLibroButton.Location = new Point(796, 356);
+            eliminarLibroButton.Margin = new Padding(0);
+            eliminarLibroButton.Name = "eliminarLibroButton";
+            eliminarLibroButton.Size = new Size(144, 49);
+            eliminarLibroButton.TabIndex = 21;
+            eliminarLibroButton.Text = "Eliminar";
+            eliminarLibroButton.TextAlign = ContentAlignment.MiddleRight;
+            eliminarLibroButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            eliminarLibroButton.UseVisualStyleBackColor = false;
+            eliminarLibroButton.Click += eliminarLibroButton_Click;
             // 
             // agregarLibroButton
             // 
@@ -115,39 +116,40 @@
             agregarLibroButton.UseVisualStyleBackColor = false;
             agregarLibroButton.Click += agregarLibroButton_Click;
             // 
-            // iconButton1
+            // editarLibroButton
             // 
-            iconButton1.BackColor = Color.SteelBlue;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.ForeColor = SystemColors.MenuBar;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            iconButton1.IconColor = SystemColors.MenuBar;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 40;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(796, 286);
-            iconButton1.Margin = new Padding(0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(144, 48);
-            iconButton1.TabIndex = 20;
-            iconButton1.Text = "Editar";
-            iconButton1.TextAlign = ContentAlignment.MiddleRight;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
+            editarLibroButton.BackColor = Color.SteelBlue;
+            editarLibroButton.FlatStyle = FlatStyle.Flat;
+            editarLibroButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editarLibroButton.ForeColor = SystemColors.MenuBar;
+            editarLibroButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            editarLibroButton.IconColor = SystemColors.MenuBar;
+            editarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            editarLibroButton.IconSize = 40;
+            editarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
+            editarLibroButton.Location = new Point(796, 286);
+            editarLibroButton.Margin = new Padding(0);
+            editarLibroButton.Name = "editarLibroButton";
+            editarLibroButton.Size = new Size(144, 48);
+            editarLibroButton.TabIndex = 20;
+            editarLibroButton.Text = "Editar";
+            editarLibroButton.TextAlign = ContentAlignment.MiddleRight;
+            editarLibroButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            editarLibroButton.UseVisualStyleBackColor = false;
+            editarLibroButton.Click += editarLibroButton_Click;
             // 
-            // dataGridView1
+            // librosDataGridView
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(126, 172);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(645, 444);
-            dataGridView1.TabIndex = 18;
+            librosDataGridView.AllowUserToAddRows = false;
+            librosDataGridView.AllowUserToDeleteRows = false;
+            librosDataGridView.AllowUserToResizeColumns = false;
+            librosDataGridView.AllowUserToResizeRows = false;
+            librosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            librosDataGridView.Location = new Point(126, 172);
+            librosDataGridView.Name = "librosDataGridView";
+            librosDataGridView.RowHeadersWidth = 51;
+            librosDataGridView.Size = new Size(645, 444);
+            librosDataGridView.TabIndex = 18;
             // 
             // pictureBox2
             // 
@@ -168,16 +170,16 @@
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(iconButton3);
+            Controls.Add(eliminarLibroButton);
             Controls.Add(agregarLibroButton);
-            Controls.Add(iconButton1);
-            Controls.Add(dataGridView1);
+            Controls.Add(editarLibroButton);
+            Controls.Add(librosDataGridView);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
             Name = "GestionarLibrosForm";
             Text = "GestionarLibrosForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)librosDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -188,10 +190,10 @@
         private Panel panel1;
         private Label label2;
         private PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton eliminarLibroButton;
         private FontAwesome.Sharp.IconButton agregarLibroButton;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton editarLibroButton;
         private PictureBox pictureBox2;
+        public DataGridView librosDataGridView;
     }
 }

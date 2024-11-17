@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,71 +13,70 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
 {
     public class LibroRepositorio : ILibroRepositorio
     {
-        private readonly IAccesoDatosSql _dbConnection;
+        private readonly IAccesoDatosSql _dbConexion;
 
-        public LibroRepositorio(IAccesoDatosSql dbConnection)
+        public LibroRepositorio(IAccesoDatosSql dbConexion)
         {
-            _dbConnection = dbConnection;
+            _dbConexion = dbConexion;
         }
 
-        public IEnumerable<Libro> GetLibro()
+        public IEnumerable<Libro> ObtenerLibros()
         {
-            using (var connection = _dbConnection.GetConnection())
+            using (var conexion = _dbConexion.GetConnection())
             {
-                string query = @"SELECT 
-                                    l.Id, 
-                                    l.Titulo,
-                                    l.FechaPublicacion,
-                                    l.CopiasDisponibles,
-                                    c.IdCategoria AS Categoria
-                                FROM Libros AS l 
-                                INNER JOIN Categpria AS c ON l.IdCategoria = c.Id";
+                string consulta = @"SELECT l.Id, 
+                                           l.Titulo, 
+                                           l.Autor,
+                                           l.FechaPublicacion, 
+                                           l.CopiasDisponibles, 
+                                           c.Nombre 
+                                    FROM Libros AS l INNER JOIN Categoria AS c ON l.IdCategoria = c.Id";
 
-                return connection.Query<Libro>(query);
+                return conexion.Query<Libro>(consulta);
             }
         }
 
-        public void AddLibro(Libro libro)
+        public void AgregarLibro(Libro libro)
         {
-            using (var connection = _dbConnection.GetConnection())
+            using (var conexion = _dbConexion.GetConnection())
             {
-                string query = @"INSERT INTO Libros(Titulo, FechaPublicacion, CopiasDisponibles,IdCategoria) 
-                                 VALUES(@Titulo, @FechaPublicacion, @CopiasDisponibles,@IdCategoria)";
+                string consulta = @"INSERT INTO Libros(Titulo, Autor, FechaPublicacion, CopiasDisponibles,IdCategoria) 
+                                 VALUES(@Titulo, @Autor, @FechaPublicacion, @CopiasDisponibles,@IdCategoria)";
 
-                connection.Query<Libro>(query, new { libro.Titulo});
-                connection.Query<Libro>(query, new { libro.FechaPublicacion });
-                connection.Query<Libro>(query, new { libro.CopiasDisponibles });
-                connection.Query<Libro>(query, new { libro.IdCategoria});
+                conexion.Query<Libro>(consulta, new
+                {
+                    libro.Titulo,
+                    libro.Autor,
+                    libro.FechaPublicacion,
+                    libro.CopiasDisponibles,
+                    libro.IdCategoria
+                });
             }
         }
 
-        public void EditLibro(Libro libro)
+        public void EditarLibro(Libro libro)
         {
-            using (var connection = _dbConnection.GetConnection())
+            using (var conexion = _dbConexion.GetConnection())
             {
-                string query = @"UPDATE Libros SET
+                string consulta = @"UPDATE Libros SET
                                  Titulo = @Titulo,
-                                 FechaPublicacion,
-                                 CopiasDisponibles,
+                                 Autor = @Autor,
+                                 FechaPublicacion = @FechaPublicacion,
+                                 CopiasDisponibles = @CopiasDisponibles
                                  WHERE Id = @Id";
 
-                connection.Query<Libro>(query, libro);
+                conexion.Query<Libro>(consulta, libro);
             }
         }
 
-        public void DeleteLibro(int id)
+        public void EliminarLibro(int id)
         {
-            using (var connection = _dbConnection.GetConnection())
+            using (var conexion = _dbConexion.GetConnection())
             {
-                string query = "DELETE FROM Libros WHERE Id = @Id";
+                string consulta = "DELETE FROM Libros WHERE Id = @Id";
 
-                connection.Query<Libro>(query, new { id });
+                conexion.Query<Libro>(consulta, new { id });
             }
-        }
-
-        public IEnumerable<Libro> GetLibros()
-        {
-            throw new NotImplementedException();
         }
     }
 }
