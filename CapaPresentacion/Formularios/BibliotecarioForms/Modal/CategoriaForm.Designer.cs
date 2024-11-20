@@ -143,7 +143,7 @@
             editarCategoriaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editarCategoriaButton.IconSize = 40;
             editarCategoriaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editarCategoriaButton.Location = new Point(549, 93);
+            editarCategoriaButton.Location = new Point(570, 93);
             editarCategoriaButton.Margin = new Padding(0);
             editarCategoriaButton.Name = "editarCategoriaButton";
             editarCategoriaButton.Size = new Size(105, 48);

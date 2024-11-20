@@ -37,6 +37,7 @@
             editarLibroButton = new FontAwesome.Sharp.IconButton();
             librosDataGridView = new DataGridView();
             pictureBox2 = new PictureBox();
+            categoriasButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)librosDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -161,11 +162,34 @@
             pictureBox2.TabIndex = 26;
             pictureBox2.TabStop = false;
             // 
+            // categoriasButton
+            // 
+            categoriasButton.BackColor = Color.FromArgb(128, 64, 0);
+            categoriasButton.FlatStyle = FlatStyle.Flat;
+            categoriasButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            categoriasButton.ForeColor = SystemColors.MenuBar;
+            categoriasButton.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
+            categoriasButton.IconColor = SystemColors.MenuBar;
+            categoriasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            categoriasButton.IconSize = 40;
+            categoriasButton.ImageAlign = ContentAlignment.MiddleLeft;
+            categoriasButton.Location = new Point(796, 424);
+            categoriasButton.Margin = new Padding(0);
+            categoriasButton.Name = "categoriasButton";
+            categoriasButton.Size = new Size(144, 48);
+            categoriasButton.TabIndex = 27;
+            categoriasButton.Text = "Categorias";
+            categoriasButton.TextAlign = ContentAlignment.MiddleRight;
+            categoriasButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            categoriasButton.UseVisualStyleBackColor = false;
+            categoriasButton.Click += categoriasButton_Click;
+            // 
             // GestionarLibrosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 673);
+            Controls.Add(categoriasButton);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Controls.Add(label2);
@@ -178,6 +202,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "GestionarLibrosForm";
             Text = "GestionarLibrosForm";
+            Load += GestionarLibrosForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)librosDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -195,5 +220,6 @@
         private FontAwesome.Sharp.IconButton editarLibroButton;
         private PictureBox pictureBox2;
         public DataGridView librosDataGridView;
+        private FontAwesome.Sharp.IconButton categoriasButton;
     }
 }

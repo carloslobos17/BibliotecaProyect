@@ -19,9 +19,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
         {
             InitializeComponent();
             _categoriaServicios = categoriaServicios;
-
             CargarCategoríasDatos();
-
             CategoriadataGridView.CellClick += CategoriadataGridView_CellClick;
         }
 
