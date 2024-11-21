@@ -83,7 +83,8 @@ namespace CapaPresentacion
 
         private void bibliotecariosButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new BibliotecariosForm());
+            var bibliotecariosForm = _serviceProvider.GetRequiredService<BibliotecariosForm>();
+            AbrirFormHijo(bibliotecariosForm);
         }
 
         private void gestionarLibrosButton_Click(object sender, EventArgs e)

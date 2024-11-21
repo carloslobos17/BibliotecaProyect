@@ -14,6 +14,9 @@ using CapaNegocios.Servicios.PrestamoServicios;
 using CapaPresentacion.Formularios.BibliotecarioForms.Modal;
 using CapaAccesoDatos.Repositorios.CategoriasRepositorios;
 using CapaNegocios.Servicios.CategoriaServicios;
+using CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios;
+using CapaNegocios.Servicios.GestionUsuarioServicios;
+using CapaPresentacion.Formularios.AdminForms;
 
 namespace CapaPresentacion
 {
@@ -47,24 +50,25 @@ namespace CapaPresentacion
                     services.AddTransient<PrincipalForm>();
                     services.AddTransient<PrestamosForm>();
                     services.AddTransient<CategoriaForm>();
+                    services.AddTransient<BibliotecariosForm>();
 
                     //Repositories
                     services.AddScoped<ILibroRepositorio, LibroRepositorio>();
                     services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
                     services.AddScoped<IPrestamoRepositorio, PrestamoRepositorio>();
                     services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+                    services.AddScoped<IGestionUsuarioRepositorio, GestionUsuarioRepositorio>();
 
                     //Services
                     services.AddScoped<ILibroServicio, LibroServicio>();
                     services.AddScoped<IUsuarioServicio, UsuarioServicio>();
                     services.AddScoped<IPrestamoServicio, PrestamoServicio>();
                     services.AddScoped<ICategoriaServicios, CategoriaServicios>();
+                    services.AddScoped<IGestionUsuarioServicio, GestionUsuarioServicio>();
 
                     //Connection
                     services.AddSingleton<IAccesoDatosSql, AccesoDatosSql>();
                 });
         }
-
-
     }
 }

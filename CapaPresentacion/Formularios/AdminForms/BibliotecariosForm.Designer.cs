@@ -32,21 +32,22 @@
             panel1 = new Panel();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            agregarLibroButton = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            dataGridView1 = new DataGridView();
+            eliminarBibliotecarioButton = new FontAwesome.Sharp.IconButton();
+            agregarBibliotecarioButton = new FontAwesome.Sharp.IconButton();
+            editarBibliotecarioButton = new FontAwesome.Sharp.IconButton();
+            bibliotecariosDataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bibliotecariosDataGridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(128, 64, 0);
             panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(268, 115);
+            panel1.Location = new Point(234, 86);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(488, 12);
+            panel1.Size = new Size(427, 9);
             panel1.TabIndex = 33;
             // 
             // label2
@@ -54,116 +55,121 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(128, 64, 0);
-            label2.Location = new Point(288, 70);
+            label2.Location = new Point(252, 52);
             label2.Name = "label2";
-            label2.Size = new Size(452, 42);
+            label2.Size = new Size(368, 36);
             label2.TabIndex = 32;
             label2.Text = "Gestión de bibliotecarios";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(134, 45);
+            pictureBox1.Location = new Point(117, 34);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(128, 82);
+            pictureBox1.Size = new Size(112, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 31;
             pictureBox1.TabStop = false;
             // 
-            // iconButton3
+            // eliminarBibliotecarioButton
             // 
-            iconButton3.BackColor = Color.DarkRed;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = SystemColors.MenuBar;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            iconButton3.IconColor = SystemColors.MenuBar;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 40;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(816, 355);
-            iconButton3.Margin = new Padding(0);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(144, 49);
-            iconButton3.TabIndex = 30;
-            iconButton3.Text = "Eliminar";
-            iconButton3.TextAlign = ContentAlignment.MiddleRight;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = false;
+            eliminarBibliotecarioButton.BackColor = Color.DarkRed;
+            eliminarBibliotecarioButton.FlatStyle = FlatStyle.Flat;
+            eliminarBibliotecarioButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            eliminarBibliotecarioButton.ForeColor = SystemColors.MenuBar;
+            eliminarBibliotecarioButton.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            eliminarBibliotecarioButton.IconColor = SystemColors.MenuBar;
+            eliminarBibliotecarioButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            eliminarBibliotecarioButton.IconSize = 40;
+            eliminarBibliotecarioButton.ImageAlign = ContentAlignment.MiddleLeft;
+            eliminarBibliotecarioButton.Location = new Point(714, 266);
+            eliminarBibliotecarioButton.Margin = new Padding(0);
+            eliminarBibliotecarioButton.Name = "eliminarBibliotecarioButton";
+            eliminarBibliotecarioButton.Size = new Size(126, 37);
+            eliminarBibliotecarioButton.TabIndex = 30;
+            eliminarBibliotecarioButton.Text = "Eliminar";
+            eliminarBibliotecarioButton.TextAlign = ContentAlignment.MiddleRight;
+            eliminarBibliotecarioButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            eliminarBibliotecarioButton.UseVisualStyleBackColor = false;
+            eliminarBibliotecarioButton.Click += eliminarBibliotecarioButton_Click;
             // 
-            // agregarLibroButton
+            // agregarBibliotecarioButton
             // 
-            agregarLibroButton.BackColor = Color.FromArgb(58, 157, 35);
-            agregarLibroButton.FlatStyle = FlatStyle.Flat;
-            agregarLibroButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            agregarLibroButton.ForeColor = SystemColors.MenuBar;
-            agregarLibroButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
-            agregarLibroButton.IconColor = SystemColors.MenuBar;
-            agregarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            agregarLibroButton.IconSize = 40;
-            agregarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            agregarLibroButton.Location = new Point(816, 219);
-            agregarLibroButton.Margin = new Padding(0);
-            agregarLibroButton.Name = "agregarLibroButton";
-            agregarLibroButton.Size = new Size(144, 48);
-            agregarLibroButton.TabIndex = 28;
-            agregarLibroButton.Text = "Agregar";
-            agregarLibroButton.TextAlign = ContentAlignment.MiddleRight;
-            agregarLibroButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            agregarLibroButton.UseVisualStyleBackColor = false;
+            agregarBibliotecarioButton.BackColor = Color.FromArgb(58, 157, 35);
+            agregarBibliotecarioButton.FlatStyle = FlatStyle.Flat;
+            agregarBibliotecarioButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            agregarBibliotecarioButton.ForeColor = SystemColors.MenuBar;
+            agregarBibliotecarioButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
+            agregarBibliotecarioButton.IconColor = SystemColors.MenuBar;
+            agregarBibliotecarioButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            agregarBibliotecarioButton.IconSize = 40;
+            agregarBibliotecarioButton.ImageAlign = ContentAlignment.MiddleLeft;
+            agregarBibliotecarioButton.Location = new Point(714, 164);
+            agregarBibliotecarioButton.Margin = new Padding(0);
+            agregarBibliotecarioButton.Name = "agregarBibliotecarioButton";
+            agregarBibliotecarioButton.Size = new Size(126, 36);
+            agregarBibliotecarioButton.TabIndex = 28;
+            agregarBibliotecarioButton.Text = "Agregar";
+            agregarBibliotecarioButton.TextAlign = ContentAlignment.MiddleRight;
+            agregarBibliotecarioButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            agregarBibliotecarioButton.UseVisualStyleBackColor = false;
             // 
-            // iconButton1
+            // editarBibliotecarioButton
             // 
-            iconButton1.BackColor = Color.SteelBlue;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.ForeColor = SystemColors.MenuBar;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            iconButton1.IconColor = SystemColors.MenuBar;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 40;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(816, 285);
-            iconButton1.Margin = new Padding(0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(144, 48);
-            iconButton1.TabIndex = 29;
-            iconButton1.Text = "Editar";
-            iconButton1.TextAlign = ContentAlignment.MiddleRight;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
+            editarBibliotecarioButton.BackColor = Color.SteelBlue;
+            editarBibliotecarioButton.FlatStyle = FlatStyle.Flat;
+            editarBibliotecarioButton.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editarBibliotecarioButton.ForeColor = SystemColors.MenuBar;
+            editarBibliotecarioButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            editarBibliotecarioButton.IconColor = SystemColors.MenuBar;
+            editarBibliotecarioButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            editarBibliotecarioButton.IconSize = 40;
+            editarBibliotecarioButton.ImageAlign = ContentAlignment.MiddleLeft;
+            editarBibliotecarioButton.Location = new Point(714, 214);
+            editarBibliotecarioButton.Margin = new Padding(0);
+            editarBibliotecarioButton.Name = "editarBibliotecarioButton";
+            editarBibliotecarioButton.Size = new Size(126, 36);
+            editarBibliotecarioButton.TabIndex = 29;
+            editarBibliotecarioButton.Text = "Editar";
+            editarBibliotecarioButton.TextAlign = ContentAlignment.MiddleRight;
+            editarBibliotecarioButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            editarBibliotecarioButton.UseVisualStyleBackColor = false;
+            editarBibliotecarioButton.Click += editarBibliotecarioButton_Click;
             // 
-            // dataGridView1
+            // bibliotecariosDataGridView
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(146, 171);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(645, 444);
-            dataGridView1.TabIndex = 27;
+            bibliotecariosDataGridView.AllowUserToAddRows = false;
+            bibliotecariosDataGridView.AllowUserToDeleteRows = false;
+            bibliotecariosDataGridView.AllowUserToResizeColumns = false;
+            bibliotecariosDataGridView.AllowUserToResizeRows = false;
+            bibliotecariosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            bibliotecariosDataGridView.Location = new Point(128, 128);
+            bibliotecariosDataGridView.Margin = new Padding(3, 2, 3, 2);
+            bibliotecariosDataGridView.Name = "bibliotecariosDataGridView";
+            bibliotecariosDataGridView.RowHeadersWidth = 51;
+            bibliotecariosDataGridView.Size = new Size(564, 333);
+            bibliotecariosDataGridView.TabIndex = 27;
             // 
             // BibliotecariosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuBar;
-            ClientSize = new Size(1080, 673);
+            ClientSize = new Size(945, 505);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(iconButton3);
-            Controls.Add(agregarLibroButton);
-            Controls.Add(iconButton1);
-            Controls.Add(dataGridView1);
+            Controls.Add(eliminarBibliotecarioButton);
+            Controls.Add(agregarBibliotecarioButton);
+            Controls.Add(editarBibliotecarioButton);
+            Controls.Add(bibliotecariosDataGridView);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "BibliotecariosForm";
             Text = "BibliotecariosForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bibliotecariosDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,9 +179,9 @@
         private Panel panel1;
         private Label label2;
         private PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton agregarLibroButton;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton eliminarBibliotecarioButton;
+        private FontAwesome.Sharp.IconButton agregarBibliotecarioButton;
+        private FontAwesome.Sharp.IconButton editarBibliotecarioButton;
+        private DataGridView bibliotecariosDataGridView;
     }
 }
