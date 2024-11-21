@@ -34,7 +34,7 @@ namespace CapaPresentacion
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<LoginFormulario>());
+            Application.Run(ServiceProvider.GetRequiredService<PrincipalForm>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }

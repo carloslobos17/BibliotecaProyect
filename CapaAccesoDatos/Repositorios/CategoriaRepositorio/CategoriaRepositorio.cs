@@ -46,7 +46,7 @@ namespace CapaAccesoDatos.Repositorios.CategoriasRepositorios
             using (var conexion = _dbConexion.GetConnection())
             {
                 string consulta = @"UPDATE Categoria SET
-                                 Nombre = @Nombre,
+                                 Nombre = @Nombre
                                  WHERE Id = @Id";
 
                 conexion.Query<Categoria>(consulta, categoria);

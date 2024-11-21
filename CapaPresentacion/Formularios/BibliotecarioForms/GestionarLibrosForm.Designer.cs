@@ -202,7 +202,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "GestionarLibrosForm";
             Text = "GestionarLibrosForm";
-            Load += GestionarLibrosForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)librosDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -27,7 +27,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
         {
             if (e.RowIndex >= 0)
             {
-                NombreCategoriatextBox.Text = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
+                NombreCategoriatextBox.Text = CategoriadataGridView.CurrentRow.Cells[0].Value.ToString();
             }
             else
             {
@@ -37,7 +37,22 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
 
         public void CargarCategoríasDatos()
         {
-            CategoriadataGridView.DataSource = _categoriaServicios.ObtenerCategorias();
+            if (_categoriaServicios != null)
+            {
+                var categorias = _categoriaServicios.ObtenerCategorias();
+                if (categorias != null)
+                {
+                    CategoriadataGridView.DataSource = categorias;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron categorías.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El servicio de categorías no está inicializado.");
+            }
         }
 
         private void agregarCategoriaButton_Click(object sender, EventArgs e)
@@ -86,5 +101,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                 }
             }
         }
+
+        
     }
 }

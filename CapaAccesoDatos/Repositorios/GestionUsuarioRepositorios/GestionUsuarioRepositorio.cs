@@ -33,7 +33,7 @@ namespace CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios
             using (var conexion = _dbConexion.GetConnection())
             {
                 string consulta = @"INSERT INTO Usuarios(Nombre, Apellido, Edad, Clave, Telefono, Correo, IdRol)
-                                    VALUES(@Nombre, @Apellido, @Edad, @Clave, @Telefono, @Correo, @IdRol";
+                                    VALUES(@Nombre, @Apellido, @Edad, @Clave, @Telefono, @Correo, @IdRol)";
 
                 conexion.Query<Usuario>(consulta, new
                 {

@@ -9,20 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios.Servicios.CategoriaServicios;
 using CapaNegocios.Servicios.LibroServicios;
+using CapaPresentacion.Formularios.AdminForms;
 using CapaPresentacion.Formularios.AdminForms.Modal;
 using CapaPresentacion.Formularios.BibliotecarioForms.Modal;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
     public partial class GestionarLibrosForm : Form
     {
         private readonly ILibroServicio _libroServicio;
-        private readonly ICategoriaServicios _categoriaServicios;
-        public GestionarLibrosForm(ILibroServicio libroServicio)
+        private readonly IServiceProvider _serviceProvider;
+        public GestionarLibrosForm(ILibroServicio libroServicio, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             _libroServicio = libroServicio;
+            _serviceProvider = serviceProvider;
             CargarLibros();
         }
 
@@ -88,17 +91,11 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
 
         }
 
-        private void GestionarLibrosForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void categoriasButton_Click(object sender, EventArgs e)
         {
-            CategoriaForm modalGestionarLibros = new CategoriaForm(_categoriaServicios);
-            modalGestionarLibros.StartPosition = FormStartPosition.CenterScreen;
-
-            modalGestionarLibros.ShowDialog();
+            var categoriaForm =_serviceProvider.GetRequiredService<CategoriaForm>();
+            categoriaForm.StartPosition = FormStartPosition.CenterScreen;
+            categoriaForm.ShowDialog();
         }
     }
 }

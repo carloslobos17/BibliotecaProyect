@@ -25,13 +25,6 @@ namespace CapaPresentacion.Formularios.AdminForms
             CargarBibliotecarios();
         }
 
-        private void agregarBibliotecarioButton_Click(object sender, EventArgs e)
-        {
-            ModalBibliotecario modalBibliotecario = new ModalBibliotecario(_gestionUsuarioServicio, this);
-            modalBibliotecario.StartPosition = FormStartPosition.CenterScreen;
-            modalBibliotecario.Show();
-        }
-
         public void CargarBibliotecarios()
         {
             bibliotecariosDataGridView.DataSource = _gestionUsuarioServicio.ObtenerUsuarios();
@@ -81,6 +74,13 @@ namespace CapaPresentacion.Formularios.AdminForms
                     CargarBibliotecarios();
                 }
             }
+        }
+
+        private void agregarBibliotecarioButton_Click(object sender, EventArgs e)
+        {
+            ModalBibliotecario modalBibliotecario = new ModalBibliotecario(_gestionUsuarioServicio, this);
+            modalBibliotecario.StartPosition = FormStartPosition.CenterScreen;
+            modalBibliotecario.ShowDialog();
         }
     }
 }

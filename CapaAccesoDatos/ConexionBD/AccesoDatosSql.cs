@@ -14,7 +14,7 @@ namespace CapaAccesoDatos.ConexionBD
 
         public AccesoDatosSql()
         {
-            _cadenaDeConexion = "Data Source=DESKTOP-NFDMETJ\\SQLEXPRESS;Initial Catalog=BibliotecaDB;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
+            _cadenaDeConexion = "Data Source=MERLYNRAJO\\SQLEXPRESS;Initial Catalog=BibliotecaDB;Integrated Security=True;Encrypt=False";
         }
 
         public IDbConnection GetConnection() => new SqlConnection(_cadenaDeConexion);

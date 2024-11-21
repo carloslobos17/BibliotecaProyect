@@ -44,10 +44,9 @@
             // 
             panel1.BackColor = Color.FromArgb(128, 64, 0);
             panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(234, 86);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(267, 115);
             panel1.Name = "panel1";
-            panel1.Size = new Size(427, 9);
+            panel1.Size = new Size(488, 12);
             panel1.TabIndex = 33;
             // 
             // label2
@@ -55,19 +54,18 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(128, 64, 0);
-            label2.Location = new Point(252, 52);
+            label2.Location = new Point(288, 69);
             label2.Name = "label2";
-            label2.Size = new Size(368, 36);
+            label2.Size = new Size(452, 42);
             label2.TabIndex = 32;
             label2.Text = "Gestión de bibliotecarios";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(117, 34);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(134, 45);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(112, 62);
+            pictureBox1.Size = new Size(128, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 31;
             pictureBox1.TabStop = false;
@@ -83,10 +81,10 @@
             eliminarBibliotecarioButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             eliminarBibliotecarioButton.IconSize = 40;
             eliminarBibliotecarioButton.ImageAlign = ContentAlignment.MiddleLeft;
-            eliminarBibliotecarioButton.Location = new Point(714, 266);
+            eliminarBibliotecarioButton.Location = new Point(816, 355);
             eliminarBibliotecarioButton.Margin = new Padding(0);
             eliminarBibliotecarioButton.Name = "eliminarBibliotecarioButton";
-            eliminarBibliotecarioButton.Size = new Size(126, 37);
+            eliminarBibliotecarioButton.Size = new Size(144, 49);
             eliminarBibliotecarioButton.TabIndex = 30;
             eliminarBibliotecarioButton.Text = "Eliminar";
             eliminarBibliotecarioButton.TextAlign = ContentAlignment.MiddleRight;
@@ -105,15 +103,16 @@
             agregarBibliotecarioButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             agregarBibliotecarioButton.IconSize = 40;
             agregarBibliotecarioButton.ImageAlign = ContentAlignment.MiddleLeft;
-            agregarBibliotecarioButton.Location = new Point(714, 164);
+            agregarBibliotecarioButton.Location = new Point(816, 219);
             agregarBibliotecarioButton.Margin = new Padding(0);
             agregarBibliotecarioButton.Name = "agregarBibliotecarioButton";
-            agregarBibliotecarioButton.Size = new Size(126, 36);
+            agregarBibliotecarioButton.Size = new Size(144, 48);
             agregarBibliotecarioButton.TabIndex = 28;
             agregarBibliotecarioButton.Text = "Agregar";
             agregarBibliotecarioButton.TextAlign = ContentAlignment.MiddleRight;
             agregarBibliotecarioButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             agregarBibliotecarioButton.UseVisualStyleBackColor = false;
+            agregarBibliotecarioButton.Click += agregarBibliotecarioButton_Click;
             // 
             // editarBibliotecarioButton
             // 
@@ -126,10 +125,10 @@
             editarBibliotecarioButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editarBibliotecarioButton.IconSize = 40;
             editarBibliotecarioButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editarBibliotecarioButton.Location = new Point(714, 214);
+            editarBibliotecarioButton.Location = new Point(816, 285);
             editarBibliotecarioButton.Margin = new Padding(0);
             editarBibliotecarioButton.Name = "editarBibliotecarioButton";
-            editarBibliotecarioButton.Size = new Size(126, 36);
+            editarBibliotecarioButton.Size = new Size(144, 48);
             editarBibliotecarioButton.TabIndex = 29;
             editarBibliotecarioButton.Text = "Editar";
             editarBibliotecarioButton.TextAlign = ContentAlignment.MiddleRight;
@@ -144,19 +143,18 @@
             bibliotecariosDataGridView.AllowUserToResizeColumns = false;
             bibliotecariosDataGridView.AllowUserToResizeRows = false;
             bibliotecariosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            bibliotecariosDataGridView.Location = new Point(128, 128);
-            bibliotecariosDataGridView.Margin = new Padding(3, 2, 3, 2);
+            bibliotecariosDataGridView.Location = new Point(146, 171);
             bibliotecariosDataGridView.Name = "bibliotecariosDataGridView";
             bibliotecariosDataGridView.RowHeadersWidth = 51;
-            bibliotecariosDataGridView.Size = new Size(564, 333);
+            bibliotecariosDataGridView.Size = new Size(645, 444);
             bibliotecariosDataGridView.TabIndex = 27;
             // 
             // BibliotecariosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuBar;
-            ClientSize = new Size(945, 505);
+            ClientSize = new Size(1080, 673);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -165,7 +163,6 @@
             Controls.Add(editarBibliotecarioButton);
             Controls.Add(bibliotecariosDataGridView);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "BibliotecariosForm";
             Text = "BibliotecariosForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
