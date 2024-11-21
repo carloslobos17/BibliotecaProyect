@@ -7,24 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad.Entidades;
+using CapaNegocios.Servicios.PrestamoServicios;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
     public partial class PrestamosForm : Form
     {
-        public PrestamosForm()
+        private readonly IPrestamoServicio _prestamoServicio;
+        public PrestamosForm(IPrestamoServicio prestamoServicio)
         {
             InitializeComponent();
+            _prestamoServicio = prestamoServicio;
         }
 
-        private void PrestamosForm_Load(object sender, EventArgs e)
+        private void prestarLibroButton_Click(object sender, EventArgs e)
         {
+            int idEstudiante = 4;
+            int idLibro = 5;
+            DateTime fechaPrestamo = fechaPrestamoDateTimePicker.Value;
+            DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
+            bool Estado = true;
 
-        }
+            var prestamo = new Prestamo
+            {
+                IdUsuario = idEstudiante,
+                IdLibro = idLibro,
+                FechaPrestamo = fechaPrestamo,
+                FechaDevolucion = fechaDevolucion,
+                Activo = Estado
+            };
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
+            _prestamoServicio.AgregarPrestamo(prestamo);
         }
     }
 }

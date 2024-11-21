@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using CapaAccesoDatos.ConexionBD;
 using CapaEntidad.Entidades;
+using CapaEntidad.Enums;
 using Dapper;
 
 namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
@@ -22,36 +24,14 @@ namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
         {
             using (var conexion = _dbConexion.GetConnection())
             {
+
+                conexion.Open();
                 using (var transaccion = conexion.BeginTransaction())
                 {
                     try
                     {
-                        string consultaPrestamo = @"INSERT INTO Prestamos(FechaPrestamo, FechaDevolucion, IdUsuario, IdLibro, Activo)
-                                            VALUES(@FechaPrestamo, @FechaDevolucion, @IdUsuario, @IdLibro, @Activo)";
-
-                        conexion.Execute(consultaPrestamo, new
-                        {
-                            prestamo.FechaPrestamo,
-                            prestamo.FechaDevolucion,
-                            prestamo.IdUsuario,
-                            prestamo.IdLibro,
-                            prestamo.Activo
-                        }, transaccion);
-
-                        string actualizarCantidad = @"UPDATE Libros
-                                              SET CopiasDisponibles = CopiasDisponibles - 1
-                                              WHERE IdLibro = @IdLibro AND CopiasDisponibles > 0";
-
-                        int filasAfectadas = conexion.Execute(actualizarCantidad, new
-                        {
-                            IdLibro = prestamo.IdLibro
-                        }, transaccion);
-
-                        if (filasAfectadas == 0)
-                        {
-                            throw new InvalidOperationException("No hay copias disponibles para este libro.");
-                        }
-
+                        AgregarPrestamoEnBD(prestamo);
+                        ActualizarCantidadLibros(prestamo);
                         transaccion.Commit();
                     }
                     catch
@@ -63,6 +43,47 @@ namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
             }
         }
 
+        public void AgregarPrestamoEnBD(Prestamo prestamo)
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consultaPrestamo = @"INSERT INTO Prestamos(FechaPrestamo, FechaDevolucion, IdUsuario, IdLibro, Activo)
+                            VALUES(@FechaPrestamo, @FechaDevolucion, @IdUsuario, @IdLibro, @Activo)";
 
+                conexion.Query<Prestamo>(consultaPrestamo, new
+                {
+                    prestamo.FechaPrestamo,
+                    prestamo.FechaDevolucion,
+                    prestamo.IdUsuario,
+                    prestamo.IdLibro,
+                    prestamo.Activo
+                });
+            }
+        }
+
+        public void ActualizarCantidadLibros(Prestamo prestamo)
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string actualizarCantidad = @"UPDATE Libros
+                                               SET CopiasDisponibles = CopiasDisponibles - 1
+                                               WHERE Id = @IdLibro AND CopiasDisponibles > 0";
+
+                conexion.Query<Prestamo>(actualizarCantidad, new
+                {
+                    prestamo.IdLibro
+                });
+            }
+        }
+
+        public IEnumerable<Usuario> ObtenerUsuario()
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT u.nombre, r.Nombre FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol";
+
+                return conexion.Query<Usuario>(consulta, (int)RolEnum.Estudiante);
+            }
+        }
     }
 }

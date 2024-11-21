@@ -88,7 +88,7 @@
             correoUsuarioLabel.AutoSize = true;
             correoUsuarioLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             correoUsuarioLabel.ForeColor = Color.White;
-            correoUsuarioLabel.Location = new Point(30, 177);
+            correoUsuarioLabel.Location = new Point(29, 187);
             correoUsuarioLabel.Name = "correoUsuarioLabel";
             correoUsuarioLabel.Size = new Size(198, 20);
             correoUsuarioLabel.TabIndex = 10;
@@ -99,7 +99,7 @@
             nombreUsuarioLabel.AutoSize = true;
             nombreUsuarioLabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nombreUsuarioLabel.ForeColor = Color.White;
-            nombreUsuarioLabel.Location = new Point(61, 149);
+            nombreUsuarioLabel.Location = new Point(58, 162);
             nombreUsuarioLabel.Name = "nombreUsuarioLabel";
             nombreUsuarioLabel.Size = new Size(133, 25);
             nombreUsuarioLabel.TabIndex = 9;

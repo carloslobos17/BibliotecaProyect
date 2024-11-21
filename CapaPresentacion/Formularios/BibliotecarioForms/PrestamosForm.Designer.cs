@@ -33,13 +33,13 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
-            button1 = new Button();
+            prestarLibroButton = new Button();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            label3 = new Label();
-            label2 = new Label();
+            fechaPrestamoDateTimePicker = new DateTimePicker();
+            fechaDevolucionDateTimePicker = new DateTimePicker();
+            fechaDevolucionLabel = new Label();
+            fechaPrestamoLabel = new Label();
             label6 = new Label();
             nombreLabel = new Label();
             panel2.SuspendLayout();
@@ -84,17 +84,18 @@
             label1.TabIndex = 89;
             label1.Text = "Prestamos de libros";
             // 
-            // button1
+            // prestarLibroButton
             // 
-            button1.BackColor = Color.FromArgb(58, 157, 35);
-            button1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(192, 587);
-            button1.Name = "button1";
-            button1.Size = new Size(333, 43);
-            button1.TabIndex = 84;
-            button1.Text = "Prestar";
-            button1.UseVisualStyleBackColor = false;
+            prestarLibroButton.BackColor = Color.FromArgb(58, 157, 35);
+            prestarLibroButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            prestarLibroButton.ForeColor = Color.White;
+            prestarLibroButton.Location = new Point(192, 587);
+            prestarLibroButton.Name = "prestarLibroButton";
+            prestarLibroButton.Size = new Size(333, 43);
+            prestarLibroButton.TabIndex = 84;
+            prestarLibroButton.Text = "Prestar";
+            prestarLibroButton.UseVisualStyleBackColor = false;
+            prestarLibroButton.Click += prestarLibroButton_Click;
             // 
             // comboBox2
             // 
@@ -112,43 +113,43 @@
             comboBox1.Size = new Size(250, 28);
             comboBox1.TabIndex = 98;
             // 
-            // dateTimePicker2
+            // fechaPrestamoDateTimePicker
             // 
-            dateTimePicker2.Location = new Point(340, 375);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 97;
+            fechaPrestamoDateTimePicker.Location = new Point(340, 375);
+            fechaPrestamoDateTimePicker.Name = "fechaPrestamoDateTimePicker";
+            fechaPrestamoDateTimePicker.Size = new Size(250, 27);
+            fechaPrestamoDateTimePicker.TabIndex = 97;
             // 
-            // dateTimePicker1
+            // fechaDevolucionDateTimePicker
             // 
-            dateTimePicker1.Location = new Point(340, 461);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 96;
+            fechaDevolucionDateTimePicker.Location = new Point(340, 461);
+            fechaDevolucionDateTimePicker.Name = "fechaDevolucionDateTimePicker";
+            fechaDevolucionDateTimePicker.Size = new Size(250, 27);
+            fechaDevolucionDateTimePicker.TabIndex = 96;
             // 
-            // label3
+            // fechaDevolucionLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(74, 74, 74);
-            label3.Location = new Point(85, 461);
-            label3.Name = "label3";
-            label3.Size = new Size(195, 22);
-            label3.TabIndex = 95;
-            label3.Text = "Fecha de devolución";
+            fechaDevolucionLabel.AutoSize = true;
+            fechaDevolucionLabel.BackColor = Color.Transparent;
+            fechaDevolucionLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            fechaDevolucionLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            fechaDevolucionLabel.Location = new Point(85, 461);
+            fechaDevolucionLabel.Name = "fechaDevolucionLabel";
+            fechaDevolucionLabel.Size = new Size(195, 22);
+            fechaDevolucionLabel.TabIndex = 95;
+            fechaDevolucionLabel.Text = "Fecha de devolución";
             // 
-            // label2
+            // fechaPrestamoLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(74, 74, 74);
-            label2.Location = new Point(99, 380);
-            label2.Name = "label2";
-            label2.Size = new Size(181, 22);
-            label2.TabIndex = 94;
-            label2.Text = "Fecha de préstamo";
+            fechaPrestamoLabel.AutoSize = true;
+            fechaPrestamoLabel.BackColor = Color.Transparent;
+            fechaPrestamoLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            fechaPrestamoLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            fechaPrestamoLabel.Location = new Point(99, 380);
+            fechaPrestamoLabel.Name = "fechaPrestamoLabel";
+            fechaPrestamoLabel.Size = new Size(181, 22);
+            fechaPrestamoLabel.TabIndex = 94;
+            fechaPrestamoLabel.Text = "Fecha de préstamo";
             // 
             // label6
             // 
@@ -181,20 +182,19 @@
             ClientSize = new Size(983, 721);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(fechaPrestamoDateTimePicker);
+            Controls.Add(fechaDevolucionDateTimePicker);
+            Controls.Add(fechaDevolucionLabel);
+            Controls.Add(fechaPrestamoLabel);
             Controls.Add(label6);
             Controls.Add(nombreLabel);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(prestarLibroButton);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PrestamosForm";
             Text = "Prestamos";
-            Load += PrestamosForm_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -207,13 +207,13 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private Label label1;
-        private Button button1;
+        private Button prestarLibroButton;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
-        private Label label3;
-        private Label label2;
+        private DateTimePicker fechaPrestamoDateTimePicker;
+        private DateTimePicker fechaDevolucionDateTimePicker;
+        private Label fechaDevolucionLabel;
+        private Label fechaPrestamoLabel;
         private Label label6;
         private Label nombreLabel;
     }

@@ -95,7 +95,8 @@ namespace CapaPresentacion
 
         private void prestamosButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new PrestamosForm());
+            var prestamosForm = _serviceProvider.GetRequiredService<PrestamosForm>();
+            AbrirFormHijo(prestamosForm);
         }
 
         private void devolucionesButton_Click(object sender, EventArgs e)
