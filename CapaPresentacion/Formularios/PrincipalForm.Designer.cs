@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalForm));
             menuPanel = new Panel();
+            estudiantesButton = new FontAwesome.Sharp.IconButton();
             salirIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             correoUsuarioLabel = new Label();
             nombreUsuarioLabel = new Label();
@@ -51,6 +52,7 @@
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(44, 62, 80);
+            menuPanel.Controls.Add(estudiantesButton);
             menuPanel.Controls.Add(salirIconPictureBox);
             menuPanel.Controls.Add(correoUsuarioLabel);
             menuPanel.Controls.Add(nombreUsuarioLabel);
@@ -68,6 +70,27 @@
             menuPanel.Size = new Size(255, 749);
             menuPanel.TabIndex = 1;
             menuPanel.Paint += menuPanel_Paint;
+            // 
+            // estudiantesButton
+            // 
+            estudiantesButton.BackColor = Color.FromArgb(37, 53, 68);
+            estudiantesButton.FlatStyle = FlatStyle.Flat;
+            estudiantesButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            estudiantesButton.ForeColor = SystemColors.MenuBar;
+            estudiantesButton.IconChar = FontAwesome.Sharp.IconChar.Users;
+            estudiantesButton.IconColor = SystemColors.MenuBar;
+            estudiantesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            estudiantesButton.IconSize = 30;
+            estudiantesButton.ImageAlign = ContentAlignment.MiddleLeft;
+            estudiantesButton.Location = new Point(30, 339);
+            estudiantesButton.Margin = new Padding(0);
+            estudiantesButton.Name = "estudiantesButton";
+            estudiantesButton.Size = new Size(190, 38);
+            estudiantesButton.TabIndex = 12;
+            estudiantesButton.Text = "Estudiantes";
+            estudiantesButton.TextAlign = ContentAlignment.MiddleRight;
+            estudiantesButton.UseVisualStyleBackColor = false;
+            estudiantesButton.Click += estudiantesButton_Click;
             // 
             // salirIconPictureBox
             // 
@@ -90,7 +113,7 @@
             correoUsuarioLabel.ForeColor = Color.White;
             correoUsuarioLabel.Location = new Point(29, 187);
             correoUsuarioLabel.Name = "correoUsuarioLabel";
-            correoUsuarioLabel.Size = new Size(198, 20);
+            correoUsuarioLabel.Size = new Size(165, 17);
             correoUsuarioLabel.TabIndex = 10;
             correoUsuarioLabel.Text = "mariasalome@gmail.com";
             // 
@@ -101,7 +124,7 @@
             nombreUsuarioLabel.ForeColor = Color.White;
             nombreUsuarioLabel.Location = new Point(58, 162);
             nombreUsuarioLabel.Name = "nombreUsuarioLabel";
-            nombreUsuarioLabel.Size = new Size(133, 25);
+            nombreUsuarioLabel.Size = new Size(106, 20);
             nombreUsuarioLabel.TabIndex = 9;
             nombreUsuarioLabel.Text = "Maria Salomé";
             // 
@@ -125,7 +148,7 @@
             historialButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             historialButton.IconSize = 30;
             historialButton.ImageAlign = ContentAlignment.MiddleLeft;
-            historialButton.Location = new Point(29, 577);
+            historialButton.Location = new Point(30, 628);
             historialButton.Margin = new Padding(0);
             historialButton.Name = "historialButton";
             historialButton.Size = new Size(190, 38);
@@ -144,7 +167,7 @@
             librosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             librosButton.IconSize = 30;
             librosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            librosButton.Location = new Point(29, 523);
+            librosButton.Location = new Point(30, 571);
             librosButton.Margin = new Padding(0);
             librosButton.Name = "librosButton";
             librosButton.Size = new Size(190, 38);
@@ -163,7 +186,7 @@
             devolucionesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             devolucionesButton.IconSize = 30;
             devolucionesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            devolucionesButton.Location = new Point(29, 466);
+            devolucionesButton.Location = new Point(30, 514);
             devolucionesButton.Margin = new Padding(0);
             devolucionesButton.Name = "devolucionesButton";
             devolucionesButton.Size = new Size(190, 38);
@@ -182,7 +205,7 @@
             prestamosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             prestamosButton.IconSize = 30;
             prestamosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            prestamosButton.Location = new Point(29, 406);
+            prestamosButton.Location = new Point(30, 458);
             prestamosButton.Margin = new Padding(0);
             prestamosButton.Name = "prestamosButton";
             prestamosButton.Size = new Size(190, 38);
@@ -201,7 +224,7 @@
             gestionarLibrosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             gestionarLibrosButton.IconSize = 30;
             gestionarLibrosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            gestionarLibrosButton.Location = new Point(29, 343);
+            gestionarLibrosButton.Location = new Point(30, 399);
             gestionarLibrosButton.Margin = new Padding(0);
             gestionarLibrosButton.Name = "gestionarLibrosButton";
             gestionarLibrosButton.Size = new Size(190, 38);
@@ -222,7 +245,7 @@
             bibliotecariosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bibliotecariosButton.IconSize = 30;
             bibliotecariosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            bibliotecariosButton.Location = new Point(30, 284);
+            bibliotecariosButton.Location = new Point(30, 281);
             bibliotecariosButton.Margin = new Padding(0);
             bibliotecariosButton.Name = "bibliotecariosButton";
             bibliotecariosButton.Size = new Size(190, 38);
@@ -243,7 +266,7 @@
             panelControlButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             panelControlButton.IconSize = 30;
             panelControlButton.ImageAlign = ContentAlignment.MiddleLeft;
-            panelControlButton.Location = new Point(30, 227);
+            panelControlButton.Location = new Point(30, 223);
             panelControlButton.Margin = new Padding(0);
             panelControlButton.Name = "panelControlButton";
             panelControlButton.Size = new Size(190, 38);
@@ -293,5 +316,6 @@
         private Label nombreUsuarioLabel;
         private Label correoUsuarioLabel;
         private FontAwesome.Sharp.IconPictureBox salirIconPictureBox;
+        private FontAwesome.Sharp.IconButton estudiantesButton;
     }
 }

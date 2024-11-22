@@ -131,5 +131,11 @@ namespace CapaPresentacion
             var loginForm = _serviceProvider.GetRequiredService<LoginFormulario>();
             loginForm.ShowDialog();
         }
+
+        private void estudiantesButton_Click(object sender, EventArgs e)
+        {
+            var estudiantesForm = _serviceProvider.GetRequiredService<EstudiantesForm>();
+            AbrirFormHijo(estudiantesForm);
+        }
     }
 }
