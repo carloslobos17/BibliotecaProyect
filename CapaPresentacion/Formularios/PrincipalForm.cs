@@ -137,5 +137,11 @@ namespace CapaPresentacion
             var estudiantesForm = _serviceProvider.GetRequiredService<EstudiantesForm>();
             AbrirFormHijo(estudiantesForm);
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            var administradorForm = _serviceProvider.GetRequiredService<AdministradorForm>();
+            AbrirFormHijo(administradorForm);
+        }
     }
 }

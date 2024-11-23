@@ -44,6 +44,7 @@
             panelControlButton = new FontAwesome.Sharp.IconButton();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             contenedorPanel = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)salirIconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -52,6 +53,7 @@
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(44, 62, 80);
+            menuPanel.Controls.Add(iconButton1);
             menuPanel.Controls.Add(estudiantesButton);
             menuPanel.Controls.Add(salirIconPictureBox);
             menuPanel.Controls.Add(correoUsuarioLabel);
@@ -67,7 +69,7 @@
             menuPanel.Dock = DockStyle.Left;
             menuPanel.Location = new Point(0, 0);
             menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(255, 749);
+            menuPanel.Size = new Size(258, 789);
             menuPanel.TabIndex = 1;
             menuPanel.Paint += menuPanel_Paint;
             // 
@@ -82,7 +84,7 @@
             estudiantesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             estudiantesButton.IconSize = 30;
             estudiantesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            estudiantesButton.Location = new Point(30, 339);
+            estudiantesButton.Location = new Point(30, 391);
             estudiantesButton.Margin = new Padding(0);
             estudiantesButton.Name = "estudiantesButton";
             estudiantesButton.Size = new Size(190, 38);
@@ -99,7 +101,7 @@
             salirIconPictureBox.IconColor = Color.White;
             salirIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
             salirIconPictureBox.IconSize = 40;
-            salirIconPictureBox.Location = new Point(201, 697);
+            salirIconPictureBox.Location = new Point(201, 737);
             salirIconPictureBox.Name = "salirIconPictureBox";
             salirIconPictureBox.Size = new Size(40, 40);
             salirIconPictureBox.TabIndex = 11;
@@ -113,7 +115,7 @@
             correoUsuarioLabel.ForeColor = Color.White;
             correoUsuarioLabel.Location = new Point(29, 187);
             correoUsuarioLabel.Name = "correoUsuarioLabel";
-            correoUsuarioLabel.Size = new Size(165, 17);
+            correoUsuarioLabel.Size = new Size(198, 20);
             correoUsuarioLabel.TabIndex = 10;
             correoUsuarioLabel.Text = "mariasalome@gmail.com";
             // 
@@ -124,7 +126,7 @@
             nombreUsuarioLabel.ForeColor = Color.White;
             nombreUsuarioLabel.Location = new Point(58, 162);
             nombreUsuarioLabel.Name = "nombreUsuarioLabel";
-            nombreUsuarioLabel.Size = new Size(106, 20);
+            nombreUsuarioLabel.Size = new Size(133, 25);
             nombreUsuarioLabel.TabIndex = 9;
             nombreUsuarioLabel.Text = "Maria Salomé";
             // 
@@ -148,7 +150,7 @@
             historialButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             historialButton.IconSize = 30;
             historialButton.ImageAlign = ContentAlignment.MiddleLeft;
-            historialButton.Location = new Point(30, 628);
+            historialButton.Location = new Point(30, 679);
             historialButton.Margin = new Padding(0);
             historialButton.Name = "historialButton";
             historialButton.Size = new Size(190, 38);
@@ -167,7 +169,7 @@
             librosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             librosButton.IconSize = 30;
             librosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            librosButton.Location = new Point(30, 571);
+            librosButton.Location = new Point(30, 624);
             librosButton.Margin = new Padding(0);
             librosButton.Name = "librosButton";
             librosButton.Size = new Size(190, 38);
@@ -186,7 +188,7 @@
             devolucionesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             devolucionesButton.IconSize = 30;
             devolucionesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            devolucionesButton.Location = new Point(30, 514);
+            devolucionesButton.Location = new Point(30, 569);
             devolucionesButton.Margin = new Padding(0);
             devolucionesButton.Name = "devolucionesButton";
             devolucionesButton.Size = new Size(190, 38);
@@ -205,7 +207,7 @@
             prestamosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             prestamosButton.IconSize = 30;
             prestamosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            prestamosButton.Location = new Point(30, 458);
+            prestamosButton.Location = new Point(30, 508);
             prestamosButton.Margin = new Padding(0);
             prestamosButton.Name = "prestamosButton";
             prestamosButton.Size = new Size(190, 38);
@@ -224,7 +226,7 @@
             gestionarLibrosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             gestionarLibrosButton.IconSize = 30;
             gestionarLibrosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            gestionarLibrosButton.Location = new Point(30, 399);
+            gestionarLibrosButton.Location = new Point(30, 448);
             gestionarLibrosButton.Margin = new Padding(0);
             gestionarLibrosButton.Name = "gestionarLibrosButton";
             gestionarLibrosButton.Size = new Size(190, 38);
@@ -245,7 +247,7 @@
             bibliotecariosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bibliotecariosButton.IconSize = 30;
             bibliotecariosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            bibliotecariosButton.Location = new Point(30, 281);
+            bibliotecariosButton.Location = new Point(30, 334);
             bibliotecariosButton.Margin = new Padding(0);
             bibliotecariosButton.Name = "bibliotecariosButton";
             bibliotecariosButton.Size = new Size(190, 38);
@@ -280,13 +282,34 @@
             // 
             contenedorPanel.Location = new Point(257, 0);
             contenedorPanel.Name = "contenedorPanel";
-            contenedorPanel.Size = new Size(993, 749);
+            contenedorPanel.Size = new Size(993, 789);
             contenedorPanel.TabIndex = 2;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(37, 53, 68);
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton1.ForeColor = SystemColors.MenuBar;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            iconButton1.IconColor = SystemColors.MenuBar;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 30;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(30, 278);
+            iconButton1.Margin = new Padding(0);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(190, 38);
+            iconButton1.TabIndex = 13;
+            iconButton1.Text = "Administradores";
+            iconButton1.TextAlign = ContentAlignment.MiddleRight;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click;
             // 
             // PrincipalForm
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1250, 749);
+            ClientSize = new Size(1250, 789);
             Controls.Add(contenedorPanel);
             Controls.Add(menuPanel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -317,5 +340,6 @@
         private Label correoUsuarioLabel;
         private FontAwesome.Sharp.IconPictureBox salirIconPictureBox;
         private FontAwesome.Sharp.IconButton estudiantesButton;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
