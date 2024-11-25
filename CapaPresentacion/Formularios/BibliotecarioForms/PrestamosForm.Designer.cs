@@ -34,8 +34,8 @@
             panel1 = new Panel();
             label1 = new Label();
             prestarLibroButton = new Button();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            librosComboBox = new ComboBox();
+            estudiantesComboBox = new ComboBox();
             fechaPrestamoDateTimePicker = new DateTimePicker();
             fechaDevolucionDateTimePicker = new DateTimePicker();
             fechaDevolucionLabel = new Label();
@@ -97,21 +97,21 @@
             prestarLibroButton.UseVisualStyleBackColor = false;
             prestarLibroButton.Click += prestarLibroButton_Click;
             // 
-            // comboBox2
+            // librosComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(340, 288);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(250, 28);
-            comboBox2.TabIndex = 99;
+            librosComboBox.FormattingEnabled = true;
+            librosComboBox.Location = new Point(340, 288);
+            librosComboBox.Name = "librosComboBox";
+            librosComboBox.Size = new Size(250, 28);
+            librosComboBox.TabIndex = 99;
             // 
-            // comboBox1
+            // estudiantesComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(340, 203);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(250, 28);
-            comboBox1.TabIndex = 98;
+            estudiantesComboBox.FormattingEnabled = true;
+            estudiantesComboBox.Location = new Point(340, 203);
+            estudiantesComboBox.Name = "estudiantesComboBox";
+            estudiantesComboBox.Size = new Size(250, 28);
+            estudiantesComboBox.TabIndex = 98;
             // 
             // fechaPrestamoDateTimePicker
             // 
@@ -180,8 +180,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(983, 721);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(librosComboBox);
+            Controls.Add(estudiantesComboBox);
             Controls.Add(fechaPrestamoDateTimePicker);
             Controls.Add(fechaDevolucionDateTimePicker);
             Controls.Add(fechaDevolucionLabel);
@@ -208,8 +208,8 @@
         private Panel panel1;
         private Label label1;
         private Button prestarLibroButton;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox librosComboBox;
+        private ComboBox estudiantesComboBox;
         private DateTimePicker fechaPrestamoDateTimePicker;
         private DateTimePicker fechaDevolucionDateTimePicker;
         private Label fechaDevolucionLabel;

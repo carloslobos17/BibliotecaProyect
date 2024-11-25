@@ -19,5 +19,8 @@ namespace CapaNegocios.Servicios.PrestamoServicios
         }
 
         public void AgregarPrestamo(Prestamo prestamo) => _prestamoRepositorio.AgregarPrestamo(prestamo);
+        public IEnumerable<Usuario> ObtenerEstudiantes() => _prestamoRepositorio.ObtenerEstudiantes();
+        public IEnumerable<Libro> ObtenerLibros() => _prestamoRepositorio.ObtenerLibros();
+        
     }
 }

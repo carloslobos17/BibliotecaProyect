@@ -48,7 +48,7 @@ namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
             using (var conexion = _dbConexion.GetConnection())
             {
                 string consultaPrestamo = @"INSERT INTO Prestamos(FechaPrestamo, FechaDevolucion, IdUsuario, IdLibro, Activo)
-                            VALUES(@FechaPrestamo, @FechaDevolucion, @IdUsuario, @IdLibro, @Activo)";
+                     VALUES(@FechaPrestamo, @FechaDevolucion, @IdUsuario, @IdLibro, @Activo)";
 
                 conexion.Query<Prestamo>(consultaPrestamo, new
                 {
@@ -66,8 +66,8 @@ namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
             using (var conexion = _dbConexion.GetConnection())
             {
                 string actualizarCantidad = @"UPDATE Libros
-                                               SET CopiasDisponibles = CopiasDisponibles - 1
-                                               WHERE Id = @IdLibro AND CopiasDisponibles > 0";
+                                        SET CopiasDisponibles = CopiasDisponibles - 1
+                                        WHERE Id = @IdLibro AND CopiasDisponibles > 0";
 
                 conexion.Query<Prestamo>(actualizarCantidad, new
                 {
@@ -76,14 +76,25 @@ namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
             }
         }
 
-        public IEnumerable<Usuario> ObtenerUsuario()
+        public IEnumerable<Usuario> ObtenerEstudiantes()
         {
             using (var conexion = _dbConexion.GetConnection())
             {
-                string consulta = @"SELECT u.nombre, r.Nombre FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol";
+                string consulta = @"SELECT u.nombre, u.Id FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol";
 
-                return conexion.Query<Usuario>(consulta, (int)RolEnum.Estudiante);
+                return conexion.Query<Usuario>(consulta, new { IdRol = (int)RolEnum.Estudiante });
             }
         }
+
+        public IEnumerable<Libro> ObtenerLibros()
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT Titulo, Id FROM Libros";
+
+                return conexion.Query<Libro>(consulta);
+            }
+        }
+
     }
 }

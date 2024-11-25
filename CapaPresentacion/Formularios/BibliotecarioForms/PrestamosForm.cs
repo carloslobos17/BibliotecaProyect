@@ -19,16 +19,33 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             InitializeComponent();
             _prestamoServicio = prestamoServicio;
+            CargarEstudiantes();
+            CargarLibros();
         }
 
+        private void CargarEstudiantes()
+        {
+            estudiantesComboBox.DataSource = _prestamoServicio.ObtenerEstudiantes();
+            estudiantesComboBox.DisplayMember = "Nombre";
+            estudiantesComboBox.ValueMember = "Id";
+
+        }
+
+        private void CargarLibros()
+        {
+            librosComboBox.DataSource = _prestamoServicio.ObtenerLibros();
+            librosComboBox.DisplayMember = "titulo";
+            librosComboBox.ValueMember = "Id";
+
+        }
         private void prestarLibroButton_Click(object sender, EventArgs e)
         {
-            int idEstudiante = 4;
-            int idLibro = 5;
+            int idEstudiante = int.Parse(estudiantesComboBox.SelectedValue.ToString());
+            int idLibro = int.Parse(librosComboBox.SelectedValue.ToString());
             DateTime fechaPrestamo = fechaPrestamoDateTimePicker.Value;
             DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
             bool Estado = true;
-
+            
             var prestamo = new Prestamo
             {
                 IdUsuario = idEstudiante,
