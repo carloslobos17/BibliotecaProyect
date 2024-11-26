@@ -28,32 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             NombreCategoriatextBox = new TextBox();
             CategoriadataGridView = new DataGridView();
             panel1 = new Panel();
+            tituloModalLabel = new Label();
             Nombrelabel = new Label();
             eliminarCategoriaButton = new FontAwesome.Sharp.IconButton();
             agregarCategoriaButton = new FontAwesome.Sharp.IconButton();
             editarCategoriaButton = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)CategoriadataGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(381, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 28);
-            label1.TabIndex = 0;
-            label1.Text = "Categorias";
-            // 
             // NombreCategoriatextBox
             // 
-            NombreCategoriatextBox.Location = new Point(151, 90);
+            NombreCategoriatextBox.Location = new Point(211, 124);
             NombreCategoriatextBox.Multiline = true;
             NombreCategoriatextBox.Name = "NombreCategoriatextBox";
             NombreCategoriatextBox.Size = new Size(222, 37);
@@ -62,27 +52,38 @@
             // CategoriadataGridView
             // 
             CategoriadataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CategoriadataGridView.Location = new Point(43, 171);
+            CategoriadataGridView.Location = new Point(68, 199);
             CategoriadataGridView.Name = "CategoriadataGridView";
             CategoriadataGridView.RowHeadersWidth = 51;
-            CategoriadataGridView.Size = new Size(779, 324);
+            CategoriadataGridView.Size = new Size(335, 324);
             CategoriadataGridView.TabIndex = 3;
             CategoriadataGridView.CellClick += CategoriadataGridView_CellClick;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(44, 62, 80);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(tituloModalLabel);
             panel1.Location = new Point(-5, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(867, 73);
+            panel1.Size = new Size(622, 96);
             panel1.TabIndex = 4;
+            // 
+            // tituloModalLabel
+            // 
+            tituloModalLabel.AutoSize = true;
+            tituloModalLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tituloModalLabel.ForeColor = Color.White;
+            tituloModalLabel.Location = new Point(225, 33);
+            tituloModalLabel.Name = "tituloModalLabel";
+            tituloModalLabel.Size = new Size(158, 36);
+            tituloModalLabel.TabIndex = 1;
+            tituloModalLabel.Text = "Categorias";
             // 
             // Nombrelabel
             // 
             Nombrelabel.AutoSize = true;
             Nombrelabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            Nombrelabel.Location = new Point(43, 105);
+            Nombrelabel.Location = new Point(87, 139);
             Nombrelabel.Name = "Nombrelabel";
             Nombrelabel.Size = new Size(79, 22);
             Nombrelabel.TabIndex = 5;
@@ -99,7 +100,7 @@
             eliminarCategoriaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             eliminarCategoriaButton.IconSize = 40;
             eliminarCategoriaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            eliminarCategoriaButton.Location = new Point(699, 90);
+            eliminarCategoriaButton.Location = new Point(424, 351);
             eliminarCategoriaButton.Margin = new Padding(0);
             eliminarCategoriaButton.Name = "eliminarCategoriaButton";
             eliminarCategoriaButton.Size = new Size(123, 49);
@@ -121,7 +122,7 @@
             agregarCategoriaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             agregarCategoriaButton.IconSize = 40;
             agregarCategoriaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            agregarCategoriaButton.Location = new Point(402, 93);
+            agregarCategoriaButton.Location = new Point(424, 218);
             agregarCategoriaButton.Margin = new Padding(0);
             agregarCategoriaButton.Name = "agregarCategoriaButton";
             agregarCategoriaButton.Size = new Size(125, 48);
@@ -143,10 +144,10 @@
             editarCategoriaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editarCategoriaButton.IconSize = 40;
             editarCategoriaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editarCategoriaButton.Location = new Point(570, 93);
+            editarCategoriaButton.Location = new Point(424, 285);
             editarCategoriaButton.Margin = new Padding(0);
             editarCategoriaButton.Name = "editarCategoriaButton";
-            editarCategoriaButton.Size = new Size(105, 48);
+            editarCategoriaButton.Size = new Size(125, 48);
             editarCategoriaButton.TabIndex = 23;
             editarCategoriaButton.Text = "Editar";
             editarCategoriaButton.TextAlign = ContentAlignment.MiddleRight;
@@ -154,11 +155,20 @@
             editarCategoriaButton.UseVisualStyleBackColor = false;
             editarCategoriaButton.Click += editarCategoriaButton_Click;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(44, 62, 80);
+            panel2.Location = new Point(-5, 558);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(622, 73);
+            panel2.TabIndex = 25;
+            // 
             // CategoriaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(852, 533);
+            ClientSize = new Size(613, 628);
+            Controls.Add(panel2);
             Controls.Add(eliminarCategoriaButton);
             Controls.Add(agregarCategoriaButton);
             Controls.Add(editarCategoriaButton);
@@ -177,8 +187,6 @@
         }
 
         #endregion
-
-        private Label label1;
         private TextBox NombreCategoriatextBox;
         private DataGridView CategoriadataGridView;
         private Panel panel1;
@@ -186,5 +194,7 @@
         private FontAwesome.Sharp.IconButton eliminarCategoriaButton;
         private FontAwesome.Sharp.IconButton agregarCategoriaButton;
         private FontAwesome.Sharp.IconButton editarCategoriaButton;
+        private Label tituloModalLabel;
+        private Panel panel2;
     }
 }

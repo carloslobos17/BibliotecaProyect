@@ -78,5 +78,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                 this.Close();
             }
         }
+
+
     }
 }
