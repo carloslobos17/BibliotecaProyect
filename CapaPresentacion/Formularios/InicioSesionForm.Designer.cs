@@ -110,7 +110,7 @@
             iniciarBtn.BackColor = Color.SeaGreen;
             iniciarBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             iniciarBtn.ForeColor = SystemColors.ControlLightLight;
-            iniciarBtn.Location = new Point(182, 213);
+            iniciarBtn.Location = new Point(156, 228);
             iniciarBtn.Margin = new Padding(3, 4, 3, 4);
             iniciarBtn.Name = "iniciarBtn";
             iniciarBtn.Size = new Size(130, 50);
@@ -124,7 +124,7 @@
             cancelarBtn.BackColor = Color.FromArgb(191, 97, 106);
             cancelarBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancelarBtn.ForeColor = SystemColors.ButtonHighlight;
-            cancelarBtn.Location = new Point(353, 211);
+            cancelarBtn.Location = new Point(356, 226);
             cancelarBtn.Margin = new Padding(3, 4, 3, 4);
             cancelarBtn.Name = "cancelarBtn";
             cancelarBtn.Size = new Size(142, 52);
@@ -136,7 +136,7 @@
             // 
             contraseñaLabel.AutoSize = true;
             contraseñaLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contraseñaLabel.Location = new Point(182, 131);
+            contraseñaLabel.Location = new Point(133, 143);
             contraseñaLabel.Name = "contraseñaLabel";
             contraseñaLabel.Size = new Size(140, 28);
             contraseñaLabel.TabIndex = 3;
@@ -146,7 +146,7 @@
             // 
             correoLabel.AutoSize = true;
             correoLabel.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            correoLabel.Location = new Point(211, 64);
+            correoLabel.Location = new Point(182, 56);
             correoLabel.Name = "correoLabel";
             correoLabel.Size = new Size(87, 28);
             correoLabel.TabIndex = 2;
@@ -155,22 +155,22 @@
             // claveLoginTextBox
             // 
             claveLoginTextBox.BackColor = Color.White;
-            claveLoginTextBox.Location = new Point(353, 131);
+            claveLoginTextBox.Location = new Point(313, 131);
             claveLoginTextBox.Margin = new Padding(3, 4, 3, 4);
             claveLoginTextBox.Multiline = true;
             claveLoginTextBox.Name = "claveLoginTextBox";
             claveLoginTextBox.PasswordChar = '*';
-            claveLoginTextBox.Size = new Size(130, 40);
+            claveLoginTextBox.Size = new Size(237, 40);
             claveLoginTextBox.TabIndex = 1;
             // 
             // correoLoginTextBox
             // 
             correoLoginTextBox.BackColor = Color.White;
-            correoLoginTextBox.Location = new Point(353, 64);
+            correoLoginTextBox.Location = new Point(313, 56);
             correoLoginTextBox.Margin = new Padding(3, 4, 3, 4);
             correoLoginTextBox.Multiline = true;
             correoLoginTextBox.Name = "correoLoginTextBox";
-            correoLoginTextBox.Size = new Size(130, 40);
+            correoLoginTextBox.Size = new Size(237, 40);
             correoLoginTextBox.TabIndex = 0;
             // 
             // panelInferior

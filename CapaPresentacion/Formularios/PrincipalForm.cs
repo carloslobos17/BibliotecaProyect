@@ -101,7 +101,8 @@ namespace CapaPresentacion
 
         private void devolucionesButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new DevolucionesForm());
+            var devolucionesForm = _serviceProvider.GetRequiredService<DevolucionesForm>();
+            AbrirFormHijo(devolucionesForm);
         }
 
         private void librosButton_Click(object sender, EventArgs e)

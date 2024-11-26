@@ -34,7 +34,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         private void CargarLibros()
         {
             librosComboBox.DataSource = _prestamoServicio.ObtenerLibros();
-            librosComboBox.DisplayMember = "titulo";
+            librosComboBox.DisplayMember = "Titulo";
             librosComboBox.ValueMember = "Id";
 
         }

@@ -33,15 +33,15 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
+            librosComboBox = new ComboBox();
+            estudiantesComboBox = new ComboBox();
+            fechaDevolucionDateTimePicker = new DateTimePicker();
+            devolverButton = new Button();
             label3 = new Label();
-            label2 = new Label();
             label6 = new Label();
             nombreLabel = new Label();
+            observacionesTextBox = new TextBox();
+            label2 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -84,48 +84,41 @@
             label1.TabIndex = 77;
             label1.Text = "Devolución de libros";
             // 
-            // comboBox2
+            // librosComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(340, 266);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(250, 28);
-            comboBox2.TabIndex = 76;
+            librosComboBox.FormattingEnabled = true;
+            librosComboBox.Location = new Point(340, 266);
+            librosComboBox.Name = "librosComboBox";
+            librosComboBox.Size = new Size(250, 28);
+            librosComboBox.TabIndex = 76;
             // 
-            // comboBox1
+            // estudiantesComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(340, 181);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(250, 28);
-            comboBox1.TabIndex = 75;
+            estudiantesComboBox.FormattingEnabled = true;
+            estudiantesComboBox.Location = new Point(340, 181);
+            estudiantesComboBox.Name = "estudiantesComboBox";
+            estudiantesComboBox.Size = new Size(250, 28);
+            estudiantesComboBox.TabIndex = 75;
             // 
-            // dateTimePicker2
+            // fechaDevolucionDateTimePicker
             // 
-            dateTimePicker2.Location = new Point(340, 353);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 74;
+            fechaDevolucionDateTimePicker.Location = new Point(340, 347);
+            fechaDevolucionDateTimePicker.Name = "fechaDevolucionDateTimePicker";
+            fechaDevolucionDateTimePicker.Size = new Size(250, 27);
+            fechaDevolucionDateTimePicker.TabIndex = 73;
             // 
-            // dateTimePicker1
+            // devolverButton
             // 
-            dateTimePicker1.Location = new Point(340, 439);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 73;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.DarkRed;
-            button1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(175, 549);
-            button1.Name = "button1";
-            button1.Size = new Size(333, 43);
-            button1.TabIndex = 72;
-            button1.Text = "Prestar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            devolverButton.BackColor = Color.DarkRed;
+            devolverButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            devolverButton.ForeColor = Color.White;
+            devolverButton.Location = new Point(175, 549);
+            devolverButton.Name = "devolverButton";
+            devolverButton.Size = new Size(333, 43);
+            devolverButton.TabIndex = 72;
+            devolverButton.Text = "Devolver";
+            devolverButton.UseVisualStyleBackColor = false;
+            devolverButton.Click += devolverButton_Click;
             // 
             // label3
             // 
@@ -133,23 +126,11 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(74, 74, 74);
-            label3.Location = new Point(85, 439);
+            label3.Location = new Point(85, 347);
             label3.Name = "label3";
             label3.Size = new Size(195, 22);
             label3.TabIndex = 71;
             label3.Text = "Fecha de devolución";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(74, 74, 74);
-            label2.Location = new Point(99, 358);
-            label2.Name = "label2";
-            label2.Size = new Size(181, 22);
-            label2.TabIndex = 70;
-            label2.Text = "Fecha de préstamo";
             // 
             // label6
             // 
@@ -175,27 +156,48 @@
             nombreLabel.TabIndex = 68;
             nombreLabel.Text = "Estudiante";
             // 
+            // observacionesTextBox
+            // 
+            observacionesTextBox.BackColor = Color.White;
+            observacionesTextBox.Location = new Point(340, 418);
+            observacionesTextBox.Margin = new Padding(3, 4, 3, 4);
+            observacionesTextBox.Multiline = true;
+            observacionesTextBox.Name = "observacionesTextBox";
+            observacionesTextBox.Size = new Size(250, 73);
+            observacionesTextBox.TabIndex = 80;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(74, 74, 74);
+            label2.Location = new Point(137, 419);
+            label2.Name = "label2";
+            label2.Size = new Size(143, 22);
+            label2.TabIndex = 81;
+            label2.Text = "Observaciones";
+            // 
             // DevolucionesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(983, 719);
+            Controls.Add(label2);
+            Controls.Add(observacionesTextBox);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(button1);
+            Controls.Add(librosComboBox);
+            Controls.Add(estudiantesComboBox);
+            Controls.Add(fechaDevolucionDateTimePicker);
+            Controls.Add(devolverButton);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label6);
             Controls.Add(nombreLabel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "DevolucionesForm";
             Text = "DevolucionesForm";
-            Load += DevolucionesForm_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -208,14 +210,14 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private Label label1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
-        private Button button1;
+        private ComboBox librosComboBox;
+        private ComboBox estudiantesComboBox;
+        private DateTimePicker fechaDevolucionDateTimePicker;
+        private Button devolverButton;
         private Label label3;
-        private Label label2;
         private Label label6;
         private Label nombreLabel;
+        private TextBox observacionesTextBox;
+        private Label label2;
     }
 }
