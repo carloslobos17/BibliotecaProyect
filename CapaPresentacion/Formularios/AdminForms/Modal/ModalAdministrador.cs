@@ -77,5 +77,6 @@ namespace CapaPresentacion.Formularios.AdminForms.Modal
                 this.Close();
             }
         }
+
     }
 }

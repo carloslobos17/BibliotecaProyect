@@ -232,6 +232,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(566, 686);
             Controls.Add(categoriaComboBox);
             Controls.Add(fechaPublicacionDateTimePicker);

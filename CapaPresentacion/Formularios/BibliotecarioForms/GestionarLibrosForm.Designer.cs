@@ -47,7 +47,7 @@
             // 
             panel1.BackColor = Color.FromArgb(128, 64, 0);
             panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(248, 116);
+            panel1.Location = new Point(251, 132);
             panel1.Name = "panel1";
             panel1.Size = new Size(488, 12);
             panel1.TabIndex = 25;
@@ -57,7 +57,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(128, 64, 0);
-            label2.Location = new Point(314, 71);
+            label2.Location = new Point(317, 87);
             label2.Name = "label2";
             label2.Size = new Size(315, 42);
             label2.TabIndex = 24;
@@ -66,7 +66,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(100, 58);
+            pictureBox1.Location = new Point(103, 74);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(101, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,7 +84,7 @@
             eliminarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             eliminarLibroButton.IconSize = 40;
             eliminarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            eliminarLibroButton.Location = new Point(796, 356);
+            eliminarLibroButton.Location = new Point(799, 372);
             eliminarLibroButton.Margin = new Padding(0);
             eliminarLibroButton.Name = "eliminarLibroButton";
             eliminarLibroButton.Size = new Size(144, 49);
@@ -106,7 +106,7 @@
             agregarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             agregarLibroButton.IconSize = 40;
             agregarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            agregarLibroButton.Location = new Point(796, 220);
+            agregarLibroButton.Location = new Point(799, 236);
             agregarLibroButton.Margin = new Padding(0);
             agregarLibroButton.Name = "agregarLibroButton";
             agregarLibroButton.Size = new Size(144, 48);
@@ -128,7 +128,7 @@
             editarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editarLibroButton.IconSize = 40;
             editarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editarLibroButton.Location = new Point(796, 286);
+            editarLibroButton.Location = new Point(799, 302);
             editarLibroButton.Margin = new Padding(0);
             editarLibroButton.Name = "editarLibroButton";
             editarLibroButton.Size = new Size(144, 48);
@@ -146,7 +146,7 @@
             librosDataGridView.AllowUserToResizeColumns = false;
             librosDataGridView.AllowUserToResizeRows = false;
             librosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            librosDataGridView.Location = new Point(126, 172);
+            librosDataGridView.Location = new Point(129, 188);
             librosDataGridView.Name = "librosDataGridView";
             librosDataGridView.RowHeadersWidth = 51;
             librosDataGridView.Size = new Size(645, 444);
@@ -155,7 +155,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(796, 58);
+            pictureBox2.Location = new Point(799, 74);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(133, 70);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -173,7 +173,7 @@
             categoriasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             categoriasButton.IconSize = 40;
             categoriasButton.ImageAlign = ContentAlignment.MiddleLeft;
-            categoriasButton.Location = new Point(796, 424);
+            categoriasButton.Location = new Point(799, 440);
             categoriasButton.Margin = new Padding(0);
             categoriasButton.Name = "categoriasButton";
             categoriasButton.Size = new Size(144, 48);

@@ -43,7 +43,7 @@ namespace CapaPresentacion.Formularios.AdminForms
                 modalBibliotecario.idUsuario = Convert.ToInt32(bibliotecariosDataGridView.CurrentRow.Cells[0].Value);
                 modalBibliotecario.nombreTextBox.Text = bibliotecariosDataGridView.CurrentRow.Cells[1].Value.ToString();
                 modalBibliotecario.apellidoTextBox.Text = bibliotecariosDataGridView.CurrentRow.Cells[2].Value.ToString();
-                modalBibliotecario.edadTextBox.Text = bibliotecariosDataGridView.CurrentRow.Cells[3].Value.ToString();
+                modalBibliotecario.edadNumericUpDown.Text = bibliotecariosDataGridView.CurrentRow.Cells[3].Value.ToString();
                 modalBibliotecario.claveTextBox.Text = bibliotecariosDataGridView.CurrentRow.Cells[4].Value.ToString();
                 modalBibliotecario.telefonoTextBox.Text = bibliotecariosDataGridView.CurrentRow.Cells[5].Value.ToString();
                 modalBibliotecario.correoTextBox.Text = bibliotecariosDataGridView.CurrentRow.Cells[6].Value.ToString();
