@@ -1,5 +1,6 @@
 ﻿using CapaAccesoDatos.ConexionBD;
 using CapaEntidad.Entidades;
+using CapaEntidad.Enums;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios
         {
             using (var conexion = _dbConexion.GetConnection())
             {
-                string consulta = @"SELECT * FROM Usuarios";
+                string consulta = @"SELECT u.nombre, u.Id FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol";
 
-                return conexion.Query<Usuario>(consulta);
+                return conexion.Query<Usuario>(consulta, new { IdRol = (int)RolEnum.Bibliotecario });
             }
         }
 
