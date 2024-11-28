@@ -11,6 +11,9 @@ using CapaEntidad.Entidades;
 using CapaNegocios.Servicios.PrestamoServicios;
 using CapaPresentacion.Validaciones;
 using FluentValidation.Results;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
@@ -20,6 +23,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         public PrestamosForm(IPrestamoServicio prestamoServicio)
         {
             InitializeComponent();
+            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
             _prestamoServicio = prestamoServicio;
             CargarEstudiantes();
             CargarLibros();
@@ -50,10 +54,13 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             int idEstudiante = int.Parse(estudiantesComboBox.SelectedValue.ToString());
             int idLibro = int.Parse(librosComboBox.SelectedValue.ToString());
+          //string nombreEstudiante = estudiantesComboBox.SelectedItem.ToString(); 
+        //string nombreLibro = librosComboBox.SelectedItem.ToString();
             DateTime fechaPrestamo = fechaPrestamoDateTimePicker.Value;
             DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
             bool Estado = true;
-            
+
+
             var prestamo = new Prestamo
             {
                 IdUsuario = idEstudiante,
@@ -71,8 +78,86 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             }
             else
             {
-                _prestamoServicio.AgregarPrestamo(prestamo);
+                string nombreEstudiante = estudiantesComboBox.Text;
+                string tituloLibro = librosComboBox.Text;
+
+                Console.WriteLine($"Estudiante: {nombreEstudiante}, Libro: {tituloLibro}");
+
+  
+                Usuario usuario = new Usuario { Id = 0, Nombre = "Seleccione un estudiante" };
+                List<Usuario> usuarios = _prestamoServicio.ObtenerEstudiantes().ToList();
+                usuarios.Insert(0, usuario);
+                estudiantesComboBox.DataSource = usuarios;
+                estudiantesComboBox.DisplayMember = "Nombre";
+                estudiantesComboBox.ValueMember = "Id";
+
+                Libro libro = new Libro { Id = 0, Titulo = "Seleccione un libro" };
+                List<Libro> libros = _prestamoServicio.ObtenerLibros().ToList();
+                libros.Insert(0, libro);
+                librosComboBox.DataSource = libros;
+                librosComboBox.DisplayMember = "Titulo";
+                librosComboBox.ValueMember = "Id";
+
+
+
+                Document.Create(container =>
+                {
+                    container.Page(page =>
+                    {
+                        page.Margin(1, Unit.Centimetre);
+
+                        page.Header().Height(35).Background(Colors.Green.Accent4).Text("Comprobante de el prestamo")
+                        .Bold().AlignCenter().FontSize(20).FontColor(Colors.White);
+
+                        page.Content()
+                            .Column(column =>
+                            {
+
+                                column.Item().PaddingLeft(1, Unit.Centimetre).PaddingTop(1, Unit.Centimetre).Table(table =>
+                                {
+                                    table.ColumnsDefinition(columns =>
+                                    {
+                                        columns.RelativeColumn();
+                                        columns.RelativeColumn();
+                                        columns.RelativeColumn();
+                                        columns.RelativeColumn(); ;
+                                    });
+
+                                    table.Header(header =>
+                                    {
+                                        header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1)
+                                            .Text("Nombre").Bold().FontColor(Colors.White);
+
+                                        header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1)
+                                            .Text("Nombre del libro").Bold().FontColor(Colors.White);
+
+                                        header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1)
+                                            .Text("Fecha del prestamo").Bold().FontColor(Colors.White);
+
+                                        header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1)
+                                            .Text("Fecha de devolucion").Bold().FontColor(Colors.White);
+                                    });
+
+                                    {
+                                        var backgroundColor = Colors.White;
+
+                                        table.Cell().Element(CellStyle).Background(backgroundColor).Text(nombreEstudiante);
+                                        table.Cell().Element(CellStyle).Background(backgroundColor).Text(tituloLibro);
+                                        table.Cell().Element(CellStyle).Background(backgroundColor).Text(prestamo.FechaPrestamo);
+                                        table.Cell().Element(CellStyle).Background(backgroundColor).Text(prestamo.FechaDevolucion);
+                                    }
+
+                                    QuestPDF.Infrastructure.IContainer CellStyle(QuestPDF.Infrastructure.IContainer container) => container
+                                        .Border(1)
+                                        .BorderColor(Colors.Grey.Darken1);
+                                });
+                            });
+                    });
+                }).GeneratePdfAndShow();
+                MessageBox.Show("Reporte PDF generado exitosamente!");
             }
+
+           
             
         }
 
