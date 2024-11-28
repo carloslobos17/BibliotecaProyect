@@ -13,5 +13,6 @@ namespace CapaNegocios.Servicios.LibroServicios
         void EliminarLibro(int id);
         void EditarLibro(Libro libro);
         IEnumerable<Libro> ObtenerLibros();
+        IEnumerable<Categoria> ObtenerCategorias();
     }
 }

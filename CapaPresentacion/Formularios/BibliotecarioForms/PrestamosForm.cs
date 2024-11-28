@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad.Entidades;
 using CapaNegocios.Servicios.PrestamoServicios;
+using CapaPresentacion.Validaciones;
+using FluentValidation.Results;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
@@ -25,7 +27,10 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
 
         private void CargarEstudiantes()
         {
-            estudiantesComboBox.DataSource = _prestamoServicio.ObtenerEstudiantes();
+            Usuario usuario = new Usuario { Id = 0, Nombre = "Seleccione un estudiante" };
+            List<Usuario> usuarios = _prestamoServicio.ObtenerEstudiantes().ToList();
+            usuarios.Insert(0, usuario);
+            estudiantesComboBox.DataSource = usuarios;
             estudiantesComboBox.DisplayMember = "Nombre";
             estudiantesComboBox.ValueMember = "Id";
 
@@ -33,7 +38,10 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
 
         private void CargarLibros()
         {
-            librosComboBox.DataSource = _prestamoServicio.ObtenerLibros();
+            Libro libro = new Libro { Id = 0, Titulo = "Seleccione un libro" };
+            List<Libro> libros = _prestamoServicio.ObtenerLibros().ToList();
+            libros.Insert(0, libro);
+            librosComboBox.DataSource = libros;
             librosComboBox.DisplayMember = "Titulo";
             librosComboBox.ValueMember = "Id";
 
@@ -54,8 +62,42 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 FechaDevolucion = fechaDevolucion,
                 Activo = Estado
             };
+            ValidacionPrestamo validacionPrestamo = new ValidacionPrestamo();
+            ValidationResult result = validacionPrestamo.Validate(prestamo);
 
-            _prestamoServicio.AgregarPrestamo(prestamo);
+            if (!result.IsValid)
+            {
+                MostrarErroresValidacion(result);
+            }
+            else
+            {
+                _prestamoServicio.AgregarPrestamo(prestamo);
+            }
+            
+        }
+
+        private void MostrarErroresValidacion(ValidationResult result)
+        {
+            validacionErrorProvider.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Prestamo.IdUsuario):
+                        validacionErrorProvider.SetError(estudiantesComboBox, error.ErrorMessage);
+                        break;
+                    case nameof(Prestamo.IdLibro):
+                        validacionErrorProvider.SetError(librosComboBox, error.ErrorMessage);
+                        break;
+                    case nameof(Prestamo.FechaPrestamo):
+                        validacionErrorProvider.SetError(fechaPrestamoDateTimePicker, error.ErrorMessage);
+                        break;
+                    case nameof(Prestamo.FechaDevolucion):
+                        validacionErrorProvider.SetError(fechaDevolucionDateTimePicker, error.ErrorMessage);
+                        break;
+                }
+            }
         }
     }
 }

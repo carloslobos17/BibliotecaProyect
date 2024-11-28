@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            NombreCategoriatextBox = new TextBox();
+            components = new System.ComponentModel.Container();
+            nombreCategoriaTextBox = new TextBox();
             CategoriadataGridView = new DataGridView();
             panel1 = new Panel();
             tituloModalLabel = new Label();
@@ -37,17 +38,19 @@
             agregarCategoriaButton = new FontAwesome.Sharp.IconButton();
             editarCategoriaButton = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            validacionErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)CategoriadataGridView).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
             SuspendLayout();
             // 
-            // NombreCategoriatextBox
+            // nombreCategoriaTextBox
             // 
-            NombreCategoriatextBox.Location = new Point(211, 124);
-            NombreCategoriatextBox.Multiline = true;
-            NombreCategoriatextBox.Name = "NombreCategoriatextBox";
-            NombreCategoriatextBox.Size = new Size(222, 37);
-            NombreCategoriatextBox.TabIndex = 2;
+            nombreCategoriaTextBox.Location = new Point(211, 124);
+            nombreCategoriaTextBox.Multiline = true;
+            nombreCategoriaTextBox.Name = "nombreCategoriaTextBox";
+            nombreCategoriaTextBox.Size = new Size(222, 37);
+            nombreCategoriaTextBox.TabIndex = 2;
             // 
             // CategoriadataGridView
             // 
@@ -163,6 +166,10 @@
             panel2.Size = new Size(622, 73);
             panel2.TabIndex = 25;
             // 
+            // validacionErrorProvider
+            // 
+            validacionErrorProvider.ContainerControl = this;
+            // 
             // CategoriaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -175,19 +182,20 @@
             Controls.Add(Nombrelabel);
             Controls.Add(panel1);
             Controls.Add(CategoriadataGridView);
-            Controls.Add(NombreCategoriatextBox);
+            Controls.Add(nombreCategoriaTextBox);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CategoriaForm";
             Text = "CategoriaForm";
             ((System.ComponentModel.ISupportInitialize)CategoriadataGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox NombreCategoriatextBox;
+        private TextBox nombreCategoriaTextBox;
         private DataGridView CategoriadataGridView;
         private Panel panel1;
         private Label Nombrelabel;
@@ -196,5 +204,6 @@
         private FontAwesome.Sharp.IconButton editarCategoriaButton;
         private Label tituloModalLabel;
         private Panel panel2;
+        private ErrorProvider validacionErrorProvider;
     }
 }

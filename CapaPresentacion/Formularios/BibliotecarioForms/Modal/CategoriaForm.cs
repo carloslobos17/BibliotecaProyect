@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FluentValidation.Results;
+using CapaPresentacion.Validaciones;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
 {
@@ -27,7 +29,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
         {
             if (e.RowIndex >= 0)
             {
-                NombreCategoriatextBox.Text = CategoriadataGridView.CurrentRow.Cells[0].Value.ToString();
+                nombreCategoriaTextBox.Text = CategoriadataGridView.CurrentRow.Cells[0].Value.ToString();
             }
             else
             {
@@ -59,12 +61,22 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
         {
             var categoria = new Categoria
             {
-                Nombre = NombreCategoriatextBox.Text
+                Nombre = nombreCategoriaTextBox.Text
             };
 
-            _categoriaServicios.AgregarCategoria(categoria);
+            ValidacionCategoria validacionCategoria = new ValidacionCategoria();
+            ValidationResult result = validacionCategoria.Validate(categoria);
 
-            CargarCategoríasDatos();
+            if (!result.IsValid)
+            {
+                MostrarErroresValidacion(result);
+            }
+            else
+            {
+                _categoriaServicios.AgregarCategoria(categoria);
+                CargarCategoríasDatos();
+            }
+            
         }
 
         private void editarCategoriaButton_Click(object sender, EventArgs e)
@@ -72,12 +84,22 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
             var categoria = new Categoria
             {
                 Id = Convert.ToInt32(CategoriadataGridView.CurrentRow.Cells[0].Value.ToString()),
-                Nombre = NombreCategoriatextBox.Text
+                Nombre = nombreCategoriaTextBox.Text
             };
 
-            _categoriaServicios.EditarCategoria(categoria);
+            ValidacionCategoria validacionCategoria = new ValidacionCategoria();
+            ValidationResult result = validacionCategoria.Validate(categoria);
 
-            CargarCategoríasDatos();
+            if (!result.IsValid)
+            {
+                MostrarErroresValidacion(result);
+            }
+            else
+            {
+                _categoriaServicios.EditarCategoria(categoria);
+                CargarCategoríasDatos();
+            }
+            
         }
 
         private void eliminarCategoriaButton_Click(object sender, EventArgs e)
@@ -102,6 +124,21 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
             }
         }
 
-        
+        private void MostrarErroresValidacion(ValidationResult result)
+        {
+            validacionErrorProvider.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Categoria.Nombre):
+                        validacionErrorProvider.SetError(nombreCategoriaTextBox, error.ErrorMessage);
+                        break;
+                    
+                }
+            }
+        }
+
     }
 }

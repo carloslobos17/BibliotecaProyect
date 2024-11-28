@@ -13,5 +13,7 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
         void EditarLibro(Libro libro);
         void EliminarLibro(int id);
         IEnumerable<Libro> ObtenerLibros();
+
+        IEnumerable<Categoria> ObtenerCategorias();
     }
 }

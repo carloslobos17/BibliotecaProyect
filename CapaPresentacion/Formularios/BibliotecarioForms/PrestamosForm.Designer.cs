@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrestamosForm));
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
@@ -42,8 +43,10 @@
             fechaPrestamoLabel = new Label();
             label6 = new Label();
             nombreLabel = new Label();
+            validacionErrorProvider = new ErrorProvider(components);
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -175,6 +178,10 @@
             nombreLabel.TabIndex = 92;
             nombreLabel.Text = "Estudiante";
             // 
+            // validacionErrorProvider
+            // 
+            validacionErrorProvider.ContainerControl = this;
+            // 
             // PrestamosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -197,6 +204,7 @@
             Text = "Prestamos";
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -216,5 +224,6 @@
         private Label fechaPrestamoLabel;
         private Label label6;
         private Label nombreLabel;
+        private ErrorProvider validacionErrorProvider;
     }
 }

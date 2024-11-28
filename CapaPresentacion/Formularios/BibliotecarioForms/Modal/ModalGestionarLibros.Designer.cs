@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalGestionarLibros));
             panel4 = new Panel();
             panel3 = new Panel();
@@ -38,7 +39,6 @@
             agregarLibroModalButton = new Button();
             categoriaLibroLabel = new Label();
             copiasDisponiblesLabel = new Label();
-            copiasDisponiblesTextBox = new TextBox();
             fechaPublicacionLabel = new Label();
             autorLabel = new Label();
             autorTextBox = new TextBox();
@@ -47,8 +47,12 @@
             panel1 = new Panel();
             fechaPublicacionDateTimePicker = new DateTimePicker();
             categoriaComboBox = new ComboBox();
+            copiasDisponiblesNumericUpDown = new NumericUpDown();
+            validacionErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)copiasDisponiblesNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel4
@@ -145,13 +149,6 @@
             copiasDisponiblesLabel.TabIndex = 39;
             copiasDisponiblesLabel.Text = "Copias disponibles";
             // 
-            // copiasDisponiblesTextBox
-            // 
-            copiasDisponiblesTextBox.Location = new Point(262, 388);
-            copiasDisponiblesTextBox.Name = "copiasDisponiblesTextBox";
-            copiasDisponiblesTextBox.Size = new Size(250, 27);
-            copiasDisponiblesTextBox.TabIndex = 38;
-            // 
             // fechaPublicacionLabel
             // 
             fechaPublicacionLabel.AutoSize = true;
@@ -225,8 +222,23 @@
             categoriaComboBox.FormattingEnabled = true;
             categoriaComboBox.Location = new Point(262, 469);
             categoriaComboBox.Name = "categoriaComboBox";
+            categoriaComboBox.RightToLeft = RightToLeft.No;
             categoriaComboBox.Size = new Size(250, 28);
             categoriaComboBox.TabIndex = 50;
+            categoriaComboBox.Text = "Seleccione una categoría";
+            // 
+            // copiasDisponiblesNumericUpDown
+            // 
+            validacionErrorProvider.SetIconAlignment(copiasDisponiblesNumericUpDown, ErrorIconAlignment.TopLeft);
+            copiasDisponiblesNumericUpDown.Location = new Point(262, 393);
+            copiasDisponiblesNumericUpDown.Name = "copiasDisponiblesNumericUpDown";
+            copiasDisponiblesNumericUpDown.RightToLeft = RightToLeft.No;
+            copiasDisponiblesNumericUpDown.Size = new Size(250, 27);
+            copiasDisponiblesNumericUpDown.TabIndex = 51;
+            // 
+            // validacionErrorProvider
+            // 
+            validacionErrorProvider.ContainerControl = this;
             // 
             // ModalGestionarLibros
             // 
@@ -234,6 +246,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(566, 686);
+            Controls.Add(copiasDisponiblesNumericUpDown);
             Controls.Add(categoriaComboBox);
             Controls.Add(fechaPublicacionDateTimePicker);
             Controls.Add(panel4);
@@ -243,7 +256,6 @@
             Controls.Add(agregarLibroModalButton);
             Controls.Add(categoriaLibroLabel);
             Controls.Add(copiasDisponiblesLabel);
-            Controls.Add(copiasDisponiblesTextBox);
             Controls.Add(fechaPublicacionLabel);
             Controls.Add(autorLabel);
             Controls.Add(autorTextBox);
@@ -256,6 +268,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)copiasDisponiblesNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -275,10 +289,11 @@
         private Label autorLabel;
         private Label tituloLabel;
         private Panel panel1;
-        public TextBox copiasDisponiblesTextBox;
         public TextBox autorTextBox;
         public TextBox tituloTextBox;
         public DateTimePicker fechaPublicacionDateTimePicker;
         public ComboBox categoriaComboBox;
+        private ErrorProvider validacionErrorProvider;
+        public NumericUpDown copiasDisponiblesNumericUpDown;
     }
 }

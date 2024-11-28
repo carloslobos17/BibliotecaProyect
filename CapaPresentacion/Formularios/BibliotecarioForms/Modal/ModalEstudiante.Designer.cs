@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalEstudiante));
             button2 = new Button();
             guardarEstudianteButton = new Button();
@@ -38,7 +39,6 @@
             label3 = new Label();
             claveTextBox = new TextBox();
             label2 = new Label();
-            edadTextBox = new TextBox();
             label1 = new Label();
             apellidoTextBox = new TextBox();
             nombreLabel = new Label();
@@ -50,8 +50,12 @@
             panel3 = new Panel();
             panel2 = new Panel();
             panel5 = new Panel();
+            validacionErrorProvider = new ErrorProvider(components);
+            edadNumericUpDown = new NumericUpDown();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)edadNumericUpDown).BeginInit();
             SuspendLayout();
             // 
             // button2
@@ -147,13 +151,6 @@
             label2.Size = new Size(56, 22);
             label2.TabIndex = 47;
             label2.Text = "Edad";
-            // 
-            // edadTextBox
-            // 
-            edadTextBox.Location = new Point(256, 278);
-            edadTextBox.Name = "edadTextBox";
-            edadTextBox.Size = new Size(186, 27);
-            edadTextBox.TabIndex = 46;
             // 
             // label1
             // 
@@ -258,12 +255,24 @@
             panel5.Size = new Size(524, 19);
             panel5.TabIndex = 59;
             // 
+            // validacionErrorProvider
+            // 
+            validacionErrorProvider.ContainerControl = this;
+            // 
+            // edadNumericUpDown
+            // 
+            edadNumericUpDown.Location = new Point(256, 280);
+            edadNumericUpDown.Name = "edadNumericUpDown";
+            edadNumericUpDown.Size = new Size(186, 27);
+            edadNumericUpDown.TabIndex = 32;
+            // 
             // ModalEstudiante
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(548, 693);
+            Controls.Add(edadNumericUpDown);
             Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panel3);
@@ -277,7 +286,6 @@
             Controls.Add(label3);
             Controls.Add(claveTextBox);
             Controls.Add(label2);
-            Controls.Add(edadTextBox);
             Controls.Add(label1);
             Controls.Add(apellidoTextBox);
             Controls.Add(nombreLabel);
@@ -289,6 +297,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)edadNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -304,7 +314,6 @@
         private Label label3;
         public TextBox claveTextBox;
         private Label label2;
-        public TextBox edadTextBox;
         private Label label1;
         public TextBox apellidoTextBox;
         private Label nombreLabel;
@@ -316,5 +325,7 @@
         private Panel panel4;
         private Panel panel2;
         private Panel panel5;
+        private ErrorProvider validacionErrorProvider;
+        public NumericUpDown edadNumericUpDown;
     }
 }

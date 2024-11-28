@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFormulario));
             panelSuperior = new Panel();
             titulLabel = new Label();
@@ -38,12 +39,14 @@
             cancelarBtn = new Button();
             contraseñaLabel = new Label();
             correoLabel = new Label();
-            claveLoginTextBox = new TextBox();
-            correoLoginTextBox = new TextBox();
+            claveSesionTextBox = new TextBox();
+            correoSesionTextBox = new TextBox();
             panelInferior = new Panel();
+            validacionErrorProvider = new ErrorProvider(components);
             panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconoBox).BeginInit();
             panelCentral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // panelSuperior
@@ -88,8 +91,8 @@
             panelCentral.Controls.Add(cancelarBtn);
             panelCentral.Controls.Add(contraseñaLabel);
             panelCentral.Controls.Add(correoLabel);
-            panelCentral.Controls.Add(claveLoginTextBox);
-            panelCentral.Controls.Add(correoLoginTextBox);
+            panelCentral.Controls.Add(claveSesionTextBox);
+            panelCentral.Controls.Add(correoSesionTextBox);
             panelCentral.Location = new Point(0, 100);
             panelCentral.Margin = new Padding(3, 4, 3, 4);
             panelCentral.Name = "panelCentral";
@@ -152,26 +155,26 @@
             correoLabel.TabIndex = 2;
             correoLabel.Text = "Correo";
             // 
-            // claveLoginTextBox
+            // claveSesionTextBox
             // 
-            claveLoginTextBox.BackColor = Color.White;
-            claveLoginTextBox.Location = new Point(313, 131);
-            claveLoginTextBox.Margin = new Padding(3, 4, 3, 4);
-            claveLoginTextBox.Multiline = true;
-            claveLoginTextBox.Name = "claveLoginTextBox";
-            claveLoginTextBox.PasswordChar = '*';
-            claveLoginTextBox.Size = new Size(237, 40);
-            claveLoginTextBox.TabIndex = 1;
+            claveSesionTextBox.BackColor = Color.White;
+            claveSesionTextBox.Location = new Point(313, 131);
+            claveSesionTextBox.Margin = new Padding(3, 4, 3, 4);
+            claveSesionTextBox.Multiline = true;
+            claveSesionTextBox.Name = "claveSesionTextBox";
+            claveSesionTextBox.PasswordChar = '*';
+            claveSesionTextBox.Size = new Size(237, 40);
+            claveSesionTextBox.TabIndex = 1;
             // 
-            // correoLoginTextBox
+            // correoSesionTextBox
             // 
-            correoLoginTextBox.BackColor = Color.White;
-            correoLoginTextBox.Location = new Point(313, 56);
-            correoLoginTextBox.Margin = new Padding(3, 4, 3, 4);
-            correoLoginTextBox.Multiline = true;
-            correoLoginTextBox.Name = "correoLoginTextBox";
-            correoLoginTextBox.Size = new Size(237, 40);
-            correoLoginTextBox.TabIndex = 0;
+            correoSesionTextBox.BackColor = Color.White;
+            correoSesionTextBox.Location = new Point(313, 56);
+            correoSesionTextBox.Margin = new Padding(3, 4, 3, 4);
+            correoSesionTextBox.Multiline = true;
+            correoSesionTextBox.Name = "correoSesionTextBox";
+            correoSesionTextBox.Size = new Size(237, 40);
+            correoSesionTextBox.TabIndex = 0;
             // 
             // panelInferior
             // 
@@ -182,6 +185,10 @@
             panelInferior.Name = "panelInferior";
             panelInferior.Size = new Size(667, 67);
             panelInferior.TabIndex = 2;
+            // 
+            // validacionErrorProvider
+            // 
+            validacionErrorProvider.ContainerControl = this;
             // 
             // LoginFormulario
             // 
@@ -201,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)iconoBox).EndInit();
             panelCentral.ResumeLayout(false);
             panelCentral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -215,8 +223,9 @@
         private Button cancelarBtn;
         private Label contraseñaLabel;
         private Label correoLabel;
-        private TextBox claveLoginTextBox;
-        private TextBox correoLoginTextBox;
+        private TextBox claveSesionTextBox;
+        private TextBox correoSesionTextBox;
         private Label errorLoginLabel;
+        private ErrorProvider validacionErrorProvider;
     }
 }

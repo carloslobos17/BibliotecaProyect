@@ -36,6 +36,16 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
             }
         }
 
+        public IEnumerable<Categoria> ObtenerCategorias()
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT * FROM Categoria";
+
+                return conexion.Query<Categoria>(consulta);
+            }
+        }
+
         public void AgregarLibro(Libro libro)
         {
             using (var conexion = _dbConexion.GetConnection())

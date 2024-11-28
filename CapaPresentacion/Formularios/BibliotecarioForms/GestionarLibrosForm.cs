@@ -58,7 +58,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 modalGestionarLibros.tituloTextBox.Text = librosDataGridView.CurrentRow.Cells[1].Value.ToString();
                 modalGestionarLibros.autorTextBox.Text = librosDataGridView.CurrentRow.Cells[2].Value.ToString();
                 modalGestionarLibros.fechaPublicacionDateTimePicker.Text = librosDataGridView.CurrentRow.Cells[3].Value.ToString();
-                modalGestionarLibros.copiasDisponiblesTextBox.Text = librosDataGridView.CurrentRow.Cells[4].Value.ToString();
+                modalGestionarLibros.copiasDisponiblesNumericUpDown.Text = librosDataGridView.CurrentRow.Cells[4].Value.ToString();
                 modalGestionarLibros.editMode = true;
                 if (modalGestionarLibros.ShowDialog() == DialogResult.OK)
                 {

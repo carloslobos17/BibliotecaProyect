@@ -49,7 +49,7 @@ namespace CapaPresentacion.Formularios.AdminForms
                 modalAdministrador.idUsuario = Convert.ToInt32(administradorDataGridView.CurrentRow.Cells[0].Value);
                 modalAdministrador.nombreTextBox.Text = administradorDataGridView.CurrentRow.Cells[1].Value.ToString();
                 modalAdministrador.apellidoTextBox.Text = administradorDataGridView.CurrentRow.Cells[2].Value.ToString();
-                modalAdministrador.edadTextBox.Text = administradorDataGridView.CurrentRow.Cells[3].Value.ToString();
+                modalAdministrador.edadNumericUpDown.Text = administradorDataGridView.CurrentRow.Cells[3].Value.ToString();
                 modalAdministrador.claveTextBox.Text = administradorDataGridView.CurrentRow.Cells[4].Value.ToString();
                 modalAdministrador.telefonoTextBox.Text = administradorDataGridView.CurrentRow.Cells[5].Value.ToString();
                 modalAdministrador.correoTextBox.Text = administradorDataGridView.CurrentRow.Cells[6].Value.ToString();

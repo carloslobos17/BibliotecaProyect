@@ -21,6 +21,8 @@ namespace CapaNegocios.Servicios.LibroServicios
 
         public IEnumerable<Libro> ObtenerLibros() => _libroRepositorio.ObtenerLibros();
 
+        public IEnumerable<Categoria> ObtenerCategorias() => _libroRepositorio.ObtenerCategorias();
+
         public void AgregarLibro(Libro libro) => _libroRepositorio.AgregarLibro(libro);
 
         public void EditarLibro(Libro libro) => _libroRepositorio.EditarLibro(libro);

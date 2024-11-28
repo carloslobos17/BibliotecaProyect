@@ -11,6 +11,10 @@ using CapaEntidad.Entidades;
 using CapaNegocios.Servicios;
 using CapaNegocios.Servicios.UsuarioServicios;
 using Microsoft.Extensions.DependencyInjection;
+using FluentValidation.Results;
+using CapaPresentacion.Formularios.BibliotecarioForms;
+using CapaPresentacion.Validaciones;
+using CapaEntidad.Enums;
 
 namespace CapaPresentacion.Formulario
 {
@@ -28,25 +32,57 @@ namespace CapaPresentacion.Formulario
 
         private void iniciarBtn_Click(object sender, EventArgs e)
         {
-           
-            var usuario = _usuarioServicio.Inicio(correoLoginTextBox.Text, claveLoginTextBox.Text);
 
-            if (usuario != null)
+            var usuarioValidacion = new Usuario
             {
-                UsuarioVerificado.Correo = usuario.Correo;
-                UsuarioVerificado.RolId = usuario.Id;
+                Clave = claveSesionTextBox.Text,
+                Correo = correoSesionTextBox.Text,
+            };
 
-                var principalForm = _serviceProvider.GetRequiredService<PrincipalForm>();   
-                principalForm.ShowDialog();
-                this.Hide();
+            ValidacionInicioSesion validacionInicioSesion = new ValidacionInicioSesion();
+            ValidationResult result = validacionInicioSesion.Validate(usuarioValidacion);
 
-               
+            if (!result.IsValid)
+            {
+                MostrarErroresValidacion(result);
             }
+            else
+            {
+                var usuario = _usuarioServicio.Inicio(correoSesionTextBox.Text, claveSesionTextBox.Text);
 
+                if (usuario != null)
+                {
+                    UsuarioVerificado.Correo = usuario.Correo;
+                    UsuarioVerificado.RolId = usuario.Id;
+
+                    var principalForm = _serviceProvider.GetRequiredService<PrincipalForm>();
+                    principalForm.ShowDialog();
+                    this.Hide();
+
+
+                }
+            }
 
         }
 
-        
+        private void MostrarErroresValidacion(ValidationResult result)
+        {
+            validacionErrorProvider.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Usuario.Correo):
+                        validacionErrorProvider.SetError(correoSesionTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Usuario.Clave):
+                        validacionErrorProvider.SetError(claveSesionTextBox, error.ErrorMessage);
+                        break;
+                }
+            }
+        }
+
     }
 }
 

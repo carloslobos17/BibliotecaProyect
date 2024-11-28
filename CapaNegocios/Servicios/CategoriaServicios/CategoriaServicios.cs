@@ -20,6 +20,7 @@ namespace CapaNegocios.Servicios.CategoriaServicios
 
         public IEnumerable<Categoria> ObtenerCategorias() => _categoriaRepositorio.ObtenerCategorias();
 
+
         public void AgregarCategoria(Categoria categoria) => _categoriaRepositorio.AgregarCategoria(categoria);
 
         public void EditarCategoria(Categoria categoria) => _categoriaRepositorio.EditarCategoria(categoria);

@@ -51,7 +51,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 modalEstudiante.idUsuario = Convert.ToInt32(estudiantesDataGridView.CurrentRow.Cells[0].Value);
                 modalEstudiante.nombreTextBox.Text = estudiantesDataGridView.CurrentRow.Cells[1].Value.ToString();
                 modalEstudiante.apellidoTextBox.Text = estudiantesDataGridView.CurrentRow.Cells[2].Value.ToString();
-                modalEstudiante.edadTextBox.Text = estudiantesDataGridView.CurrentRow.Cells[3].Value.ToString();
+                modalEstudiante.edadNumericUpDown.Text = estudiantesDataGridView.CurrentRow.Cells[3].Value.ToString();
                 modalEstudiante.claveTextBox.Text = estudiantesDataGridView.CurrentRow.Cells[4].Value.ToString();
                 modalEstudiante.telefonoTextBox.Text = estudiantesDataGridView.CurrentRow.Cells[5].Value.ToString();
                 modalEstudiante.correoTextBox.Text = estudiantesDataGridView.CurrentRow.Cells[6].Value.ToString();
