@@ -106,7 +106,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                     {
                         page.Margin(1, Unit.Centimetre);
 
-                        page.Header().Height(35).Background(Colors.Green.Accent4).Text("Comprobante de el prestamo")
+                        page.Header().Height(35).Background(Colors.Grey.Lighten1).Text("Comprobante de el prestamo")
                         .Bold().AlignCenter().FontSize(20).FontColor(Colors.White);
 
                         page.Content()
