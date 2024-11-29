@@ -17,7 +17,9 @@ namespace CapaNegocios.Servicios.GestionUsuarioServicios
             _gestionUsuarioRepositorio = gestionUsuarioRepositorio;
         }
 
-        public IEnumerable<Usuario> ObtenerUsuarios() => _gestionUsuarioRepositorio.ObtenerUsuario();
+        public IEnumerable<Usuario> ObtenerBibliotecarios() => _gestionUsuarioRepositorio.ObtenerBibliotecarios();
+        public IEnumerable<Usuario> ObtenerAdministrador() => _gestionUsuarioRepositorio.ObtenerAdministrador();
+        public IEnumerable<Usuario> ObtenerEstudiantes() => _gestionUsuarioRepositorio.ObtenerEstudiantes();
 
         public void AgregarUsuario(Usuario usuario) => _gestionUsuarioRepositorio.AgregarUsuario(usuario);
 

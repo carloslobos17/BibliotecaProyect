@@ -27,7 +27,7 @@ namespace CapaPresentacion.Formularios.AdminForms
 
         public void CargarBibliotecarios()
         {
-            bibliotecariosDataGridView.DataSource = _gestionUsuarioServicio.ObtenerUsuarios();
+            bibliotecariosDataGridView.DataSource = _gestionUsuarioServicio.ObtenerBibliotecarios();
             bibliotecariosDataGridView.Refresh();
         }
         private void editarBibliotecarioButton_Click(object sender, EventArgs e)

@@ -7,6 +7,8 @@ namespace CapaNegocios.Servicios.GestionUsuarioServicios
         void AgregarUsuario(Usuario usuario);
         void EditarUsuario(Usuario usuario);
         void EliminarUsuario(int id);
-        IEnumerable<Usuario> ObtenerUsuarios();
+        IEnumerable<Usuario> ObtenerBibliotecarios();
+        IEnumerable<Usuario> ObtenerAdministrador();
+        IEnumerable<Usuario> ObtenerEstudiantes();
     }
 }

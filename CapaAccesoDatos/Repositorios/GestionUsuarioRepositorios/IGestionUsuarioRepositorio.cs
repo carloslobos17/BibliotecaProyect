@@ -7,6 +7,9 @@ namespace CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios
         void AgregarUsuario(Usuario usuario);
         void EditarUsuario(Usuario usuario);
         void EliminarUsuario(int id);
-        IEnumerable<Usuario> ObtenerUsuario();
+        IEnumerable<Usuario> ObtenerAdministrador();
+        IEnumerable<Usuario> ObtenerBibliotecarios();
+        IEnumerable<Usuario> ObtenerEstudiantes();
+
     }
 }

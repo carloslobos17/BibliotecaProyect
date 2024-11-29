@@ -1,4 +1,4 @@
-﻿using CapaNegocios.Servicios.AdministradorServicios;
+﻿
 using CapaNegocios.Servicios.GestionUsuarioServicios;
 using CapaPresentacion.Formularios.AdminForms.Modal;
 using System;
@@ -15,30 +15,30 @@ namespace CapaPresentacion.Formularios.AdminForms
 {
     public partial class AdministradorForm : Form
     {
-        private readonly IAdministradorServicio _administradorServicio;
-        public AdministradorForm(IAdministradorServicio administradorServicio)
+        private readonly IGestionUsuarioServicio _gestionUsuarioServicio;
+        public AdministradorForm(IGestionUsuarioServicio gestionUsuarioServicio)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            _administradorServicio = administradorServicio;
+            _gestionUsuarioServicio = gestionUsuarioServicio;
             CargarAdministrador();
         }
         public void CargarAdministrador()
         {
-            administradorDataGridView.DataSource = _administradorServicio.ObtenerAdministrador();
+            administradorDataGridView.DataSource = _gestionUsuarioServicio.ObtenerAdministrador();
             administradorDataGridView.Refresh();
         }
 
         private void agregarAdministradorButton_Click(object sender, EventArgs e)
         {
-            ModalAdministrador modalAdministrador = new ModalAdministrador(_administradorServicio, this);
+            ModalAdministrador modalAdministrador = new ModalAdministrador(_gestionUsuarioServicio, this);
             modalAdministrador.StartPosition = FormStartPosition.CenterScreen;
             modalAdministrador.ShowDialog();
         }
 
         private void editarAdministradorButton_Click(object sender, EventArgs e)
         {
-            ModalAdministrador modalAdministrador = new ModalAdministrador(_administradorServicio, this);
+            ModalAdministrador modalAdministrador = new ModalAdministrador(_gestionUsuarioServicio, this);
             modalAdministrador.StartPosition = FormStartPosition.CenterScreen;
             if (administradorDataGridView.SelectedRows.Count > 1)
             {
@@ -76,7 +76,7 @@ namespace CapaPresentacion.Formularios.AdminForms
                 if (deleteConfirm == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(administradorDataGridView.CurrentRow.Cells[0].Value);
-                    _administradorServicio.EliminarAdministrador(id);
+                    _gestionUsuarioServicio.EliminarUsuario(id);
                     CargarAdministrador();
                 }
             }

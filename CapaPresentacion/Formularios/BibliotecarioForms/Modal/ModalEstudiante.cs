@@ -1,6 +1,5 @@
 ﻿using CapaEntidad.Entidades;
 using CapaEntidad.Enums;
-using CapaNegocios.Servicios.EstudianteServicios;
 using CapaNegocios.Servicios.GestionUsuarioServicios;
 using CapaPresentacion.Formularios.AdminForms;
 using System;
@@ -19,17 +18,17 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
 {
     public partial class ModalEstudiante : Form
     {
-        private readonly IEstudianteServicio _estudianteServicio;
+        private readonly IGestionUsuarioServicio _gestionUsuarioServicio;
 
         private readonly EstudiantesForm _estudiantesForm;
 
         public bool editMode = false;
 
         public int idUsuario = 0;
-        public ModalEstudiante(IEstudianteServicio estudianteServicio, EstudiantesForm estudiantesForm)
+        public ModalEstudiante(IGestionUsuarioServicio gestionUsuarioServicio, EstudiantesForm estudiantesForm)
         {
             InitializeComponent();
-            _estudianteServicio = estudianteServicio;
+            _gestionUsuarioServicio = gestionUsuarioServicio;
             _estudiantesForm = estudiantesForm;
         }
 
@@ -56,7 +55,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                     Correo = correo
                 };
 
-                _estudianteServicio.EditarEstudiante(usuario);
+                _gestionUsuarioServicio.EditarUsuario(usuario);
                 _estudiantesForm.CargarEstudiantes();
                 this.Close();
                 editMode = false;
@@ -82,7 +81,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                 }
                 else
                 {
-                    _estudianteServicio.AgregarEstudiante(usuario);
+                    _gestionUsuarioServicio.AgregarUsuario(usuario);
                     _estudiantesForm.CargarEstudiantes();
                     this.Close();
                 }

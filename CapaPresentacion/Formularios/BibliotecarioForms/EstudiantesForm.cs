@@ -1,4 +1,4 @@
-﻿using CapaNegocios.Servicios.EstudianteServicios;
+﻿
 using CapaNegocios.Servicios.GestionUsuarioServicios;
 using CapaPresentacion.Formularios.AdminForms.Modal;
 using CapaPresentacion.Formularios.BibliotecarioForms.Modal;
@@ -16,31 +16,31 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
     public partial class EstudiantesForm : Form
     {
-        private readonly IEstudianteServicio _estudianteServicio;
-        public EstudiantesForm(IEstudianteServicio estudianteServicio)
+        private readonly IGestionUsuarioServicio _gestionUsuarioServicio;
+        public EstudiantesForm(IGestionUsuarioServicio gestionUsuarioServicio)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            _estudianteServicio = estudianteServicio;
+            _gestionUsuarioServicio = gestionUsuarioServicio;
             CargarEstudiantes();
         }
 
         public void CargarEstudiantes()
         {
-            estudiantesDataGridView.DataSource = _estudianteServicio.ObtenerEstudiantes();
+            estudiantesDataGridView.DataSource = _gestionUsuarioServicio.ObtenerEstudiantes();
             estudiantesDataGridView.Refresh();
         }
 
         private void agregarEstudianteButton_Click(object sender, EventArgs e)
         {
-            ModalEstudiante modalEstudiante = new ModalEstudiante(_estudianteServicio, this);
+            ModalEstudiante modalEstudiante = new ModalEstudiante(_gestionUsuarioServicio, this);
             modalEstudiante.StartPosition = FormStartPosition.CenterScreen;
             modalEstudiante.ShowDialog();
         }
 
         private void editarEstudianteButton_Click(object sender, EventArgs e)
         {
-            ModalEstudiante modalEstudiante = new ModalEstudiante(_estudianteServicio, this);
+            ModalEstudiante modalEstudiante = new ModalEstudiante(_gestionUsuarioServicio, this);
             modalEstudiante.StartPosition = FormStartPosition.CenterScreen;
             if (estudiantesDataGridView.SelectedRows.Count > 1)
             {
@@ -78,7 +78,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 if (deleteConfirm == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(estudiantesDataGridView.CurrentRow.Cells[0].Value);
-                    _estudianteServicio.EliminarEstudiante(id);
+                    _gestionUsuarioServicio.EliminarUsuario(id);
                     CargarEstudiantes();
                 }
             }

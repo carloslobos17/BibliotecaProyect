@@ -1,6 +1,5 @@
 ﻿using CapaEntidad.Entidades;
 using CapaEntidad.Enums;
-using CapaNegocios.Servicios.AdministradorServicios;
 using CapaPresentacion.Formularios.BibliotecarioForms;
 using CapaPresentacion.Validaciones;
 using System;
@@ -13,22 +12,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FluentValidation.Results;
+using CapaNegocios.Servicios.GestionUsuarioServicios;
 
 namespace CapaPresentacion.Formularios.AdminForms.Modal
 {
     public partial class ModalAdministrador : Form
     {
-        private readonly IAdministradorServicio _administradorServicio;
+        private readonly IGestionUsuarioServicio _gestionUsuarioServicio;
 
         private readonly AdministradorForm _administradorForm;
 
         public bool editMode = false;
 
         public int idUsuario = 0;
-        public ModalAdministrador(IAdministradorServicio administradorServicio, AdministradorForm administradorForm)
+        public ModalAdministrador(IGestionUsuarioServicio gestionUsuarioServicio, AdministradorForm administradorForm)
         {
             InitializeComponent();
-            _administradorServicio = administradorServicio;
+            _gestionUsuarioServicio = gestionUsuarioServicio;
             _administradorForm = administradorForm;
         }
 
@@ -55,7 +55,7 @@ namespace CapaPresentacion.Formularios.AdminForms.Modal
                     Correo = correo
                 };
 
-                _administradorServicio.EditarAdministrador(usuario);
+                _gestionUsuarioServicio.EditarUsuario(usuario);
                 _administradorForm.CargarAdministrador();
                 this.Close();
                 editMode = false;
@@ -82,7 +82,7 @@ namespace CapaPresentacion.Formularios.AdminForms.Modal
                 }
                 else
                 {
-                    _administradorServicio.AgregarAdministrador(usuario);
+                    _gestionUsuarioServicio.AgregarUsuario(usuario);
                     _administradorForm.CargarAdministrador();
                     this.Close();
                 }
