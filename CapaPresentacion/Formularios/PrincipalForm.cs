@@ -113,7 +113,8 @@ namespace CapaPresentacion
 
         private void historialButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new HistorialForm());
+            var historialForm = _serviceProvider.GetService<HistorialForm>();
+            AbrirFormHijo(historialForm);
         }
 
         private void salirIconPictureBox_Click(object sender, EventArgs e)
