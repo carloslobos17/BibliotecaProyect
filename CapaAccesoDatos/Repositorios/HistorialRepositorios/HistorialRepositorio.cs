@@ -12,6 +12,11 @@ namespace CapaAccesoDatos.Repositorios.HistorialRepositorios
     public class HistorialRepositorio : IHistorialRepositorio
     {
         readonly IAccesoDatosSql _dbConexion;
+
+        public HistorialRepositorio(IAccesoDatosSql dbConexion)
+        {
+            _dbConexion = dbConexion;
+        }
         public IEnumerable<Prestamo> ObtenerPrestamos(int IdUsuario)
         {
             using (var conexion = _dbConexion.GetConnection())
@@ -27,10 +32,7 @@ namespace CapaAccesoDatos.Repositorios.HistorialRepositorios
                                 ON p.IdLibro = l.Id 
                                 WHERE IdUsuario = @IdUsuario";
 
-                return conexion.Query<Prestamo>(consulta, new
-                {
-                    IdUsuario
-                });
+                return conexion.Query<Prestamo>(consulta, new {IdUsuario});
             }
         }
 

@@ -52,8 +52,10 @@ namespace CapaPresentacion.Formulario
 
                 if (usuario != null)
                 {
+                    UsuarioVerificado.Id = usuario.Id;
                     UsuarioVerificado.Correo = usuario.Correo;
-                    UsuarioVerificado.RolId = usuario.Id;
+                    UsuarioVerificado.RolId = usuario.IdRol;
+                    MessageBox.Show($"el id usuario es {UsuarioVerificado.Id}");
 
                     var principalForm = _serviceProvider.GetRequiredService<PrincipalForm>();
                     principalForm.ShowDialog();

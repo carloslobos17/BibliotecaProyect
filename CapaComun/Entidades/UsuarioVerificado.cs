@@ -8,6 +8,7 @@ namespace CapaEntidad.Entidades
 {
     public static class UsuarioVerificado
     {
+        public static int Id { get; set; }
         public static string Correo {  get; set; }
 
         public static int RolId { get; set; }

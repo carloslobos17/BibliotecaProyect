@@ -7,14 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocios.Servicios.HistorialServicios;
+using CapaEntidad.Entidades;
 
 namespace CapaPresentacion.Formularios.EstudianteForms
 {
     public partial class HistorialForm : Form
     {
-        public HistorialForm()
+        private readonly IHistorialServicio _historialServicio;
+        public HistorialForm(IHistorialServicio historialServicio)
         {
             InitializeComponent();
+            _historialServicio = historialServicio;
+            historialDataGridView.DataSource = _historialServicio.ObtenerPrestamos(UsuarioVerificado.Id);
+
+        }
+
+        private void prestamoHistorialButton_Click(object sender, EventArgs e)
+        {
+            historialDataGridView.DataSource = _historialServicio.ObtenerPrestamos(UsuarioVerificado.Id);
+        }
+
+        private void devolucionesHistorialButton_Click(object sender, EventArgs e)
+        {
+            historialDataGridView.DataSource = _historialServicio.ObtenerDevoluciones(UsuarioVerificado.Id);
         }
     }
 }

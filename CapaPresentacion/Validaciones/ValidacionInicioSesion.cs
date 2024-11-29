@@ -20,8 +20,7 @@ namespace CapaPresentacion.Validaciones
                 .MaximumLength(254).WithMessage("El correo no puede exceder los 254 caracteres.");
 
             RuleFor(usuario => usuario.Clave)
-                .NotEmpty().WithMessage("La clave no puede estar vacía.")
-                .MinimumLength(8).WithMessage("La clave debe tener al menos 8 caracteres.");
+                .NotEmpty().WithMessage("La clave no puede estar vacía.");
         }
     }
 }

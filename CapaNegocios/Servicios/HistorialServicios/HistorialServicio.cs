@@ -17,7 +17,7 @@ namespace CapaNegocios.Servicios.HistorialServicios
             _historialRepositorio = historialRepositorio;
         }
 
-        public IEnumerable<Prestamo> ObtenerPrestamo(int IdUsuario) => _historialRepositorio.ObtenerPrestamos(IdUsuario);
+        public IEnumerable<Prestamo> ObtenerPrestamos(int IdUsuario) => _historialRepositorio.ObtenerPrestamos(IdUsuario);
 
         public IEnumerable<Devolucion> ObtenerDevoluciones(int IdUsuario) => _historialRepositorio.ObtenerDevoluciones(IdUsuario);
 
