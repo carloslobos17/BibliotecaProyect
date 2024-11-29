@@ -88,7 +88,7 @@ namespace CapaPresentacion.Formularios.AdminForms.Modal
                     _bibliotecariosForm.CargarBibliotecarios();
                     this.Close();
                 }
-                
+
             }
         }
 
@@ -121,6 +121,11 @@ namespace CapaPresentacion.Formularios.AdminForms.Modal
                 }
             }
         }
+
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
-    
+
 }

@@ -100,6 +100,7 @@
             cancelarLibroButton.TabIndex = 45;
             cancelarLibroButton.Text = "Cancelar";
             cancelarLibroButton.UseVisualStyleBackColor = false;
+            cancelarLibroButton.Click += cancelarLibroButton_Click;
             // 
             // tituloModalLabel
             // 

@@ -30,16 +30,16 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalAdministrador));
-            button2 = new Button();
+            cancelarButton = new Button();
             guardarAdministradorButton = new Button();
-            label5 = new Label();
+            correoLabel = new Label();
             correoTextBox = new TextBox();
-            label4 = new Label();
+            telefonoLabel = new Label();
             telefonoTextBox = new TextBox();
-            label3 = new Label();
+            claveLabel = new Label();
             claveTextBox = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
+            edadLabel = new Label();
+            apellidoLabel = new Label();
             apellidoTextBox = new TextBox();
             nombreLabel = new Label();
             nombreTextBox = new TextBox();
@@ -57,17 +57,18 @@
             ((System.ComponentModel.ISupportInitialize)edadNumericUpDown).BeginInit();
             SuspendLayout();
             // 
-            // button2
+            // cancelarButton
             // 
-            button2.BackColor = Color.DarkRed;
-            button2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(273, 556);
-            button2.Name = "button2";
-            button2.Size = new Size(123, 43);
-            button2.TabIndex = 70;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = false;
+            cancelarButton.BackColor = Color.DarkRed;
+            cancelarButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelarButton.ForeColor = Color.White;
+            cancelarButton.Location = new Point(273, 556);
+            cancelarButton.Name = "cancelarButton";
+            cancelarButton.Size = new Size(123, 43);
+            cancelarButton.TabIndex = 70;
+            cancelarButton.Text = "Cancelar";
+            cancelarButton.UseVisualStyleBackColor = false;
+            cancelarButton.Click += cancelarButton_Click;
             // 
             // guardarAdministradorButton
             // 
@@ -82,17 +83,17 @@
             guardarAdministradorButton.UseVisualStyleBackColor = false;
             guardarAdministradorButton.Click += guardarAdministradorButton_Click;
             // 
-            // label5
+            // correoLabel
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(74, 74, 74);
-            label5.Location = new Point(134, 487);
-            label5.Name = "label5";
-            label5.Size = new Size(71, 22);
-            label5.TabIndex = 68;
-            label5.Text = "Correo";
+            correoLabel.AutoSize = true;
+            correoLabel.BackColor = Color.Transparent;
+            correoLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            correoLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            correoLabel.Location = new Point(134, 487);
+            correoLabel.Name = "correoLabel";
+            correoLabel.Size = new Size(71, 22);
+            correoLabel.TabIndex = 68;
+            correoLabel.Text = "Correo";
             // 
             // correoTextBox
             // 
@@ -101,17 +102,17 @@
             correoTextBox.Size = new Size(186, 27);
             correoTextBox.TabIndex = 67;
             // 
-            // label4
+            // telefonoLabel
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(74, 74, 74);
-            label4.Location = new Point(118, 412);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 22);
-            label4.TabIndex = 66;
-            label4.Text = "Telefono";
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.BackColor = Color.Transparent;
+            telefonoLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            telefonoLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            telefonoLabel.Location = new Point(118, 412);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new Size(89, 22);
+            telefonoLabel.TabIndex = 66;
+            telefonoLabel.Text = "Telefono";
             // 
             // telefonoTextBox
             // 
@@ -120,17 +121,17 @@
             telefonoTextBox.Size = new Size(186, 27);
             telefonoTextBox.TabIndex = 65;
             // 
-            // label3
+            // claveLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(74, 74, 74);
-            label3.Location = new Point(143, 340);
-            label3.Name = "label3";
-            label3.Size = new Size(61, 22);
-            label3.TabIndex = 64;
-            label3.Text = "Clave";
+            claveLabel.AutoSize = true;
+            claveLabel.BackColor = Color.Transparent;
+            claveLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            claveLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            claveLabel.Location = new Point(143, 340);
+            claveLabel.Name = "claveLabel";
+            claveLabel.Size = new Size(61, 22);
+            claveLabel.TabIndex = 64;
+            claveLabel.Text = "Clave";
             // 
             // claveTextBox
             // 
@@ -139,29 +140,29 @@
             claveTextBox.Size = new Size(186, 27);
             claveTextBox.TabIndex = 63;
             // 
-            // label2
+            // edadLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(74, 74, 74);
-            label2.Location = new Point(143, 271);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 22);
-            label2.TabIndex = 62;
-            label2.Text = "Edad";
+            edadLabel.AutoSize = true;
+            edadLabel.BackColor = Color.Transparent;
+            edadLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            edadLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            edadLabel.Location = new Point(143, 271);
+            edadLabel.Name = "edadLabel";
+            edadLabel.Size = new Size(56, 22);
+            edadLabel.TabIndex = 62;
+            edadLabel.Text = "Edad";
             // 
-            // label1
+            // apellidoLabel
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(74, 74, 74);
-            label1.Location = new Point(127, 211);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 22);
-            label1.TabIndex = 60;
-            label1.Text = "Apellido";
+            apellidoLabel.AutoSize = true;
+            apellidoLabel.BackColor = Color.Transparent;
+            apellidoLabel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            apellidoLabel.ForeColor = Color.FromArgb(74, 74, 74);
+            apellidoLabel.Location = new Point(127, 211);
+            apellidoLabel.Name = "apellidoLabel";
+            apellidoLabel.Size = new Size(82, 22);
+            apellidoLabel.TabIndex = 60;
+            apellidoLabel.Text = "Apellido";
             // 
             // apellidoTextBox
             // 
@@ -267,16 +268,16 @@
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Controls.Add(button2);
+            Controls.Add(cancelarButton);
             Controls.Add(guardarAdministradorButton);
-            Controls.Add(label5);
+            Controls.Add(correoLabel);
             Controls.Add(correoTextBox);
-            Controls.Add(label4);
+            Controls.Add(telefonoLabel);
             Controls.Add(telefonoTextBox);
-            Controls.Add(label3);
+            Controls.Add(claveLabel);
             Controls.Add(claveTextBox);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(edadLabel);
+            Controls.Add(apellidoLabel);
             Controls.Add(apellidoTextBox);
             Controls.Add(nombreLabel);
             Controls.Add(nombreTextBox);
@@ -293,16 +294,16 @@
         }
 
         #endregion
-        private Button button2;
+        private Button cancelarButton;
         private Button guardarAdministradorButton;
-        private Label label5;
+        private Label correoLabel;
         public TextBox correoTextBox;
-        private Label label4;
+        private Label telefonoLabel;
         public TextBox telefonoTextBox;
-        private Label label3;
+        private Label claveLabel;
         public TextBox claveTextBox;
-        private Label label2;
-        private Label label1;
+        private Label edadLabel;
+        private Label apellidoLabel;
         public TextBox apellidoTextBox;
         private Label nombreLabel;
         public TextBox nombreTextBox;

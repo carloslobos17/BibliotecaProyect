@@ -85,7 +85,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                     _estudiantesForm.CargarEstudiantes();
                     this.Close();
                 }
-                
+
             }
         }
 
@@ -119,5 +119,9 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
             }
         }
 
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

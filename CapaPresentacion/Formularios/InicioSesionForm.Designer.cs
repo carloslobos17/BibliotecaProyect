@@ -134,6 +134,7 @@
             cancelarBtn.TabIndex = 4;
             cancelarBtn.Text = "Cancelar";
             cancelarBtn.UseVisualStyleBackColor = false;
+            cancelarBtn.Click += cancelarBtn_Click;
             // 
             // contraseñaLabel
             // 

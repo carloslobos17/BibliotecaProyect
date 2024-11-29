@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalForm));
             menuPanel = new Panel();
+            administradoresButton = new FontAwesome.Sharp.IconButton();
             estudiantesButton = new FontAwesome.Sharp.IconButton();
             salirIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             correoUsuarioLabel = new Label();
@@ -44,7 +45,6 @@
             panelControlButton = new FontAwesome.Sharp.IconButton();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             contenedorPanel = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)salirIconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -53,7 +53,7 @@
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(44, 62, 80);
-            menuPanel.Controls.Add(iconButton1);
+            menuPanel.Controls.Add(administradoresButton);
             menuPanel.Controls.Add(estudiantesButton);
             menuPanel.Controls.Add(salirIconPictureBox);
             menuPanel.Controls.Add(correoUsuarioLabel);
@@ -73,6 +73,27 @@
             menuPanel.TabIndex = 1;
             menuPanel.Paint += menuPanel_Paint;
             // 
+            // administradoresButton
+            // 
+            administradoresButton.BackColor = Color.FromArgb(37, 53, 68);
+            administradoresButton.FlatStyle = FlatStyle.Flat;
+            administradoresButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            administradoresButton.ForeColor = SystemColors.MenuBar;
+            administradoresButton.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            administradoresButton.IconColor = SystemColors.MenuBar;
+            administradoresButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            administradoresButton.IconSize = 30;
+            administradoresButton.ImageAlign = ContentAlignment.MiddleLeft;
+            administradoresButton.Location = new Point(29, 292);
+            administradoresButton.Margin = new Padding(0);
+            administradoresButton.Name = "administradoresButton";
+            administradoresButton.Size = new Size(190, 38);
+            administradoresButton.TabIndex = 13;
+            administradoresButton.Text = "Administradores";
+            administradoresButton.TextAlign = ContentAlignment.MiddleRight;
+            administradoresButton.UseVisualStyleBackColor = false;
+            administradoresButton.Click += administradoresButton_Click;
+            // 
             // estudiantesButton
             // 
             estudiantesButton.BackColor = Color.FromArgb(37, 53, 68);
@@ -84,7 +105,7 @@
             estudiantesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             estudiantesButton.IconSize = 30;
             estudiantesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            estudiantesButton.Location = new Point(30, 391);
+            estudiantesButton.Location = new Point(29, 405);
             estudiantesButton.Margin = new Padding(0);
             estudiantesButton.Name = "estudiantesButton";
             estudiantesButton.Size = new Size(190, 38);
@@ -150,7 +171,7 @@
             historialButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             historialButton.IconSize = 30;
             historialButton.ImageAlign = ContentAlignment.MiddleLeft;
-            historialButton.Location = new Point(30, 679);
+            historialButton.Location = new Point(29, 693);
             historialButton.Margin = new Padding(0);
             historialButton.Name = "historialButton";
             historialButton.Size = new Size(190, 38);
@@ -169,7 +190,7 @@
             librosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             librosButton.IconSize = 30;
             librosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            librosButton.Location = new Point(30, 624);
+            librosButton.Location = new Point(29, 638);
             librosButton.Margin = new Padding(0);
             librosButton.Name = "librosButton";
             librosButton.Size = new Size(190, 38);
@@ -188,7 +209,7 @@
             devolucionesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             devolucionesButton.IconSize = 30;
             devolucionesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            devolucionesButton.Location = new Point(30, 569);
+            devolucionesButton.Location = new Point(29, 583);
             devolucionesButton.Margin = new Padding(0);
             devolucionesButton.Name = "devolucionesButton";
             devolucionesButton.Size = new Size(190, 38);
@@ -207,7 +228,7 @@
             prestamosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             prestamosButton.IconSize = 30;
             prestamosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            prestamosButton.Location = new Point(30, 508);
+            prestamosButton.Location = new Point(29, 522);
             prestamosButton.Margin = new Padding(0);
             prestamosButton.Name = "prestamosButton";
             prestamosButton.Size = new Size(190, 38);
@@ -226,7 +247,7 @@
             gestionarLibrosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             gestionarLibrosButton.IconSize = 30;
             gestionarLibrosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            gestionarLibrosButton.Location = new Point(30, 448);
+            gestionarLibrosButton.Location = new Point(29, 462);
             gestionarLibrosButton.Margin = new Padding(0);
             gestionarLibrosButton.Name = "gestionarLibrosButton";
             gestionarLibrosButton.Size = new Size(190, 38);
@@ -247,7 +268,7 @@
             bibliotecariosButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bibliotecariosButton.IconSize = 30;
             bibliotecariosButton.ImageAlign = ContentAlignment.MiddleLeft;
-            bibliotecariosButton.Location = new Point(30, 334);
+            bibliotecariosButton.Location = new Point(29, 348);
             bibliotecariosButton.Margin = new Padding(0);
             bibliotecariosButton.Name = "bibliotecariosButton";
             bibliotecariosButton.Size = new Size(190, 38);
@@ -268,7 +289,7 @@
             panelControlButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             panelControlButton.IconSize = 30;
             panelControlButton.ImageAlign = ContentAlignment.MiddleLeft;
-            panelControlButton.Location = new Point(30, 223);
+            panelControlButton.Location = new Point(29, 237);
             panelControlButton.Margin = new Padding(0);
             panelControlButton.Name = "panelControlButton";
             panelControlButton.Size = new Size(190, 38);
@@ -284,27 +305,6 @@
             contenedorPanel.Name = "contenedorPanel";
             contenedorPanel.Size = new Size(993, 789);
             contenedorPanel.TabIndex = 2;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.FromArgb(37, 53, 68);
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconButton1.ForeColor = SystemColors.MenuBar;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            iconButton1.IconColor = SystemColors.MenuBar;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(30, 278);
-            iconButton1.Margin = new Padding(0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(190, 38);
-            iconButton1.TabIndex = 13;
-            iconButton1.Text = "Administradores";
-            iconButton1.TextAlign = ContentAlignment.MiddleRight;
-            iconButton1.UseVisualStyleBackColor = false;
-            iconButton1.Click += iconButton1_Click;
             // 
             // PrincipalForm
             // 
@@ -340,6 +340,6 @@
         private Label correoUsuarioLabel;
         private FontAwesome.Sharp.IconPictureBox salirIconPictureBox;
         private FontAwesome.Sharp.IconButton estudiantesButton;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton administradoresButton;
     }
 }

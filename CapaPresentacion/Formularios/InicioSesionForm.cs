@@ -55,11 +55,12 @@ namespace CapaPresentacion.Formulario
                     UsuarioVerificado.Id = usuario.Id;
                     UsuarioVerificado.Correo = usuario.Correo;
                     UsuarioVerificado.RolId = usuario.IdRol;
-                    MessageBox.Show($"el id usuario es {UsuarioVerificado.Id}");
+                    UsuarioVerificado.Nombre = usuario.Nombre;
+                    UsuarioVerificado.Apellido = usuario.Apellido;
 
                     var principalForm = _serviceProvider.GetRequiredService<PrincipalForm>();
                     principalForm.ShowDialog();
-                    this.Hide();
+                    this.Close();
 
 
                 }
@@ -85,6 +86,10 @@ namespace CapaPresentacion.Formulario
             }
         }
 
+        private void cancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
 

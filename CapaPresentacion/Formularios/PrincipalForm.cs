@@ -26,12 +26,15 @@ namespace CapaPresentacion
             InitializeComponent();
             EstablecerPermisos();
             _serviceProvider = serviceProvider;
+            nombreUsuarioLabel.Text = UsuarioVerificado.Nombre + " " + UsuarioVerificado.Apellido;
+            correoUsuarioLabel.Text = UsuarioVerificado.Correo;
         }
 
         private void EstablecerPermisos()
         {
             if (UsuarioVerificado.RolId == (int)RolEnum.Admin)
             {
+                estudiantesButton.Visible = false;
                 gestionarLibrosButton.Visible = false;
                 prestamosButton.Visible = false;
                 devolucionesButton.Visible = false;
@@ -42,24 +45,30 @@ namespace CapaPresentacion
             if (UsuarioVerificado.RolId == (int)RolEnum.Bibliotecario)
             {
                 panelControlButton.Visible = false;
+                administradoresButton.Visible = false;
                 bibliotecariosButton.Visible = false;
                 librosButton.Visible = false;
                 historialButton.Visible = false;
 
+                devolucionesButton.Location = estudiantesButton.Location;
                 gestionarLibrosButton.Location = panelControlButton.Location;
+                estudiantesButton.Location = administradoresButton.Location;
                 prestamosButton.Location = bibliotecariosButton.Location;
+                
             }
 
             if (UsuarioVerificado.RolId == (int)RolEnum.Estudiante)
             {
                 panelControlButton.Visible = false;
+                administradoresButton.Visible = false;
                 bibliotecariosButton.Visible = false;
+                estudiantesButton.Visible = false;
                 gestionarLibrosButton.Visible = false;
                 prestamosButton.Visible = false;
                 devolucionesButton.Visible = false;
 
                 librosButton.Location = panelControlButton.Location;
-                historialButton.Location = bibliotecariosButton.Location;
+                historialButton.Location = administradoresButton.Location;
             }
         }
 
@@ -140,7 +149,7 @@ namespace CapaPresentacion
             AbrirFormHijo(estudiantesForm);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void administradoresButton_Click(object sender, EventArgs e)
         {
             var administradorForm = _serviceProvider.GetRequiredService<AdministradorForm>();
             AbrirFormHijo(administradorForm);

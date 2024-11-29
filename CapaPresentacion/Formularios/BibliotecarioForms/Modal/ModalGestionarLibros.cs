@@ -123,6 +123,9 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
 
         }
 
-        
+        private void cancelarLibroButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
