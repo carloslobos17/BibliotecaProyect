@@ -88,5 +88,16 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
                 conexion.Query<Libro>(consulta, new { id });
             }
         }
+
+        public IEnumerable<Libro> ObtenerLibrosFiltrado(DateTime iniciarDato, DateTime finalizarDato)
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT * FROM Libros
+                                    WHERE FechaPublicacion BETWEEN @IniciarDato AND  @FinalizarDato";
+
+                return conexion.Query<Libro>(consulta, new {iniciarDato, finalizarDato});
+            }
+        }
     }
 }

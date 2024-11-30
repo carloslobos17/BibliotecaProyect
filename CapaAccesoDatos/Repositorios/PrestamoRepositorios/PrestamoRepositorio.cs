@@ -95,6 +95,5 @@ namespace CapaAccesoDatos.Repositorios.PrestamoRepositorios
                 return conexion.Query<Libro>(consulta);
             }
         }
-
     }
 }

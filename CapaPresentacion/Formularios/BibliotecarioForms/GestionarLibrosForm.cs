@@ -93,9 +93,23 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
 
         private void categoriasButton_Click(object sender, EventArgs e)
         {
-            var categoriaForm =_serviceProvider.GetRequiredService<CategoriaForm>();
+            var categoriaForm = _serviceProvider.GetRequiredService<CategoriaForm>();
             categoriaForm.StartPosition = FormStartPosition.CenterScreen;
             categoriaForm.ShowDialog();
+        }
+
+        private void filtrarButton_Click(object sender, EventArgs e)
+        {
+            var iniciarDato = iniciarDateTimePicker.Value;
+            var finalizarDato = finalizarDateTimePicker.Value;
+
+            var libros = _libroServicio.ObtenerLibrosFiltrado(iniciarDato, finalizarDato);
+            librosDataGridView.DataSource = libros;
+        }
+
+        private void cargarLibrosButton_Click(object sender, EventArgs e)
+        {
+            CargarLibros();
         }
     }
 }

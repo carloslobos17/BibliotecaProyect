@@ -28,6 +28,9 @@ namespace CapaNegocios.Servicios.LibroServicios
         public void EditarLibro(Libro libro) => _libroRepositorio.EditarLibro(libro);
 
         public void EliminarLibro(int id) => _libroRepositorio.EliminarLibro(id);
+
+        public IEnumerable<Libro> ObtenerLibrosFiltrado(DateTime iniciarDato, DateTime finalizarDato)
+            => _libroRepositorio.ObtenerLibrosFiltrado(iniciarDato, finalizarDato);
         }
     }
 

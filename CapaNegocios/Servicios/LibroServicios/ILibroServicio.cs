@@ -14,5 +14,6 @@ namespace CapaNegocios.Servicios.LibroServicios
         void EditarLibro(Libro libro);
         IEnumerable<Libro> ObtenerLibros();
         IEnumerable<Categoria> ObtenerCategorias();
+        IEnumerable<Libro> ObtenerLibrosFiltrado(DateTime iniciarDato, DateTime finalizarDato);
     }
 }

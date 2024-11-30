@@ -15,5 +15,6 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
         IEnumerable<Libro> ObtenerLibros();
 
         IEnumerable<Categoria> ObtenerCategorias();
+        IEnumerable<Libro> ObtenerLibrosFiltrado(DateTime iniciarDato, DateTime finalizarDato);
     }
 }
