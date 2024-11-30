@@ -22,6 +22,7 @@ using CapaAccesoDatos.Repositorios.DevolucionRepositorios;
 using CapaPresentacion.Formularios.EstudianteForms;
 using CapaNegocios.Servicios.HistorialServicios;
 using CapaAccesoDatos.Repositorios.HistorialRepositorios;
+using Microsoft.Extensions.Configuration;
 
 namespace CapaPresentacion
 {
@@ -39,7 +40,7 @@ namespace CapaPresentacion
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<LoginFormulario>());
+            Application.Run(ServiceProvider.GetRequiredService<PrincipalForm>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
@@ -47,6 +48,13 @@ namespace CapaPresentacion
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
+                .ConfigureAppConfiguration((context, config) => {
+                    config.AddJsonFile(
+                        "appsettings.json",
+                        optional: false,
+                        reloadOnChange: true
+                     );
+                })
                 .ConfigureServices((context, services) => {
 
                     //Forms
