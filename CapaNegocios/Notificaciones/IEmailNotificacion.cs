@@ -9,6 +9,6 @@ namespace CapaNegocios.Notificaciones
 {
     public interface IEmailNotificacion
     {
-        void EnviarEmail(EmailAjustes emailAjustes);
+        void EnviarEmail(EmailAjustes emailAjustes, string nombreEstudiante, string tituloLibro, DateTime fechaPrestamo, DateTime fechaDevolucion);
     }
 }

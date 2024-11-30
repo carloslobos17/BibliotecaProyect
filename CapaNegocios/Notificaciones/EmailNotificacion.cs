@@ -19,7 +19,7 @@ namespace CapaNegocios.Notificaciones
             _configuration = configuration;
         }
 
-        public void EnviarEmail(EmailAjustes emailAjustes)
+        public void EnviarEmail(EmailAjustes emailAjustes, string nombreEstudiante, string tituloLibro, DateTime fechaPrestamo, DateTime fechaDevolucion)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress(
@@ -45,8 +45,13 @@ namespace CapaNegocios.Notificaciones
 
             var templateContent = File.ReadAllText(templatePath);
 
-            body.HtmlBody = templateContent;
+            templateContent = templateContent
+    .Replace("{{Estudiante}}", nombreEstudiante)
+    .Replace("{{Libro}}", tituloLibro)
+    .Replace("{{FechaPrestamo}}", fechaPrestamo.ToString("dd/MM/yyyy"))
+    .Replace("{{FechaDevolucion}}", fechaDevolucion.ToString("dd/MM/yyyy"));
 
+            body.HtmlBody = templateContent;
             message.Body = body.ToMessageBody();
 
             using (var client = new SmtpClient())

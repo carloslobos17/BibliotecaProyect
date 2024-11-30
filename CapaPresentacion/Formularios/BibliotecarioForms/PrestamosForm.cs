@@ -159,16 +159,22 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                     });
                 }).GeneratePdfAndShow();
                 MessageBox.Show("Reporte PDF generado exitosamente!");
-            }
-            var email = new EmailAjustes
-            {
-                EmailPara = "bidubiduelgato@gmail.com",
-                DestinatarioNombre = "Juan Perez",
-                Encabezado = "Nueva Categoria Agregada",
-                Cuerpo = "Felicidades agregaste correctamente la categoria",
-            };
+                var email = new EmailAjustes
+                {
+                    EmailPara = "bidubiduelgato@gmail.com",
+                    DestinatarioNombre = "Don prueba",
+                    Encabezado = $"Felicidades este es el mmm si creo",
+                };
 
-            _emailNotificacion.EnviarEmail(email);
+                _emailNotificacion.EnviarEmail(
+                    email,
+                    nombreEstudiante,
+                    tituloLibro,
+                    prestamo.FechaPrestamo,
+                    prestamo.FechaDevolucion
+                );
+            }
+
 
 
         }
