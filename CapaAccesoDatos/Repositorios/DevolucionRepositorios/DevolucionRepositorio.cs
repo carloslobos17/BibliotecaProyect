@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,103 +18,75 @@ namespace CapaAccesoDatos.Repositorios.DevolucionRepositorios
         {
             _dbConexion = dbConexion;
         }
-        public int ObtenerIdPrestamo(int IdUsuario, int IdLibro)
+
+        public IEnumerable<Prestamo> ObtenerPrestamos()
         {
             using (var conexion = _dbConexion.GetConnection())
             {
-                string consulta = @"SELECT TOP 1 Id 
-                                    FROM PRESTAMOS 
-                                    WHERE IdUsuario = @IdUsuario AND IdLibro = @IdLibro
-                                    ORDER BY Id DESC";
+                string consulta = @"SELECT 
+                                        p.Id, 
+                                        p.IdUsuario, 
+                                        p.FechaPrestamo, 
+                                        p.FechaDevolucion,
+                                        l.Id AS IdLibro, 
+                                        l.Titulo AS TituloLibro, 
+                                        p.Activo
+                                    FROM 
+                                        Prestamos p
+                                    INNER JOIN 
+                                        Libros l ON p.IdLibro = l.Id
+                                    INNER JOIN 
+                                        Usuarios u ON p.IdUsuario = u.Id
+                                    WHERE p.Activo = 1;
+";
 
-                int idPrestamo = conexion.QuerySingleOrDefault<int>(consulta, new { IdUsuario, IdLibro });
-
-                return idPrestamo;
+                return conexion.Query<Prestamo>(consulta);
             }
         }
 
-        public void AgregarDevolucion(Devolucion devolucion, int idLibro, bool estado)
+        public IEnumerable<Prestamo> BuscarPrestamos(string nombreUsuario)
         {
             using (var conexion = _dbConexion.GetConnection())
             {
+                string consulta = @"SELECT 
+                                        p.Id, 
+                                        p.IdUsuario, 
+                                        p.FechaPrestamo, 
+                                        p.FechaDevolucion, 
+                                        l.Id AS IdLibro, 
+                                        l.Titulo AS TituloLibro, 
+                                        p.Activo
+                                    FROM 
+                                        Prestamos p
+                                    INNER JOIN 
+                                        Libros l ON p.IdLibro = l.Id
+                                    INNER JOIN 
+                                        Usuarios u ON p.IdUsuario = u.Id
+                                    WHERE 
+                                        u.Nombre LIKE '%' + @nombreUsuario + '%' AND p.Activo = 1";
 
-                conexion.Open();
-                using (var transaccion = conexion.BeginTransaction())
+                return conexion.Query<Prestamo>(consulta, new { nombreUsuario });
+            }
+        }
+
+        public void DevolverLibro(int idLibro, bool activo, Devolucion devolucion)
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = "spDevolverLibro";
+
+                var parametros = new
                 {
-                    try
-                    {
-                        AgregarDevolucionEnBD(devolucion);
-                        ActualizarCantidadLibros(idLibro);
-                        CambiarEstadoPrestamo(estado, idLibro);
-                        transaccion.Commit();
-                    }
-                    catch
-                    {
-                        transaccion.Rollback();
-                        throw;
-                    }
-                }
+                    IdLibro = idLibro,
+                    Activo = activo,
+                    FechaDevolucion = devolucion.FechaDevolucion,
+                    Observaciones = devolucion.Observaciones,
+                    IdPrestamo = devolucion.IdPrestamo
+                };
+
+                conexion.Execute(consulta, parametros, commandType: CommandType.StoredProcedure);
             }
         }
 
-        private void AgregarDevolucionEnBD(Devolucion devolucion)
-        {
-            using (var conexion = _dbConexion.GetConnection())
-            {
-                string consulta = @"INSERT INTO Devoluciones(FechaDevolucion, Observaciones, IdPrestamo)
-                     VALUES(@FechaDevolucion, @Observaciones, @IdPrestamo)";
-
-                conexion.Query<Devolucion>(consulta, new
-                {
-                    devolucion.FechaDevolucion,
-                    devolucion.Observaciones,
-                    devolucion.IdPrestamo
-                });
-            }
-        }
-
-
-        private void ActualizarCantidadLibros(int idLibro)
-        {
-            using (var conexion = _dbConexion.GetConnection())
-            {
-                string actualizarCantidad = @"UPDATE Libros
-                                        SET CopiasDisponibles = CopiasDisponibles + 1
-                                        WHERE Id = @IdLibro ";
-
-                conexion.Query(actualizarCantidad, new { IdLibro = idLibro});
-            }
-        }
-
-        private void CambiarEstadoPrestamo(bool activo, int idLibro) 
-        {
-            using (var conexion = _dbConexion.GetConnection())
-            {
-                string consulta = @"UPDATE Prestamos
-                                 SET Activo = @Activo WHERE IdLibro = @IdLibro";
-
-                conexion.Query(consulta , new { Activo = activo, IdLibro = idLibro });
-            }
-        }
-
-        public IEnumerable<Usuario> ObtenerEstudiantes()
-        {
-            using (var conexion = _dbConexion.GetConnection())
-            {
-                string consulta = @"SELECT u.nombre, u.Id FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol";
-
-                return conexion.Query<Usuario>(consulta, new { IdRol = (int)RolEnum.Estudiante });
-            }
-        }
-
-        public IEnumerable<Libro> ObtenerLibros()
-        {
-            using (var conexion = _dbConexion.GetConnection())
-            {
-                string consulta = @"SELECT Titulo, Id FROM Libros";
-
-                return conexion.Query<Libro>(consulta);
-            }
-        }
     }
 }

@@ -18,6 +18,8 @@ namespace CapaEntidad.Entidades
 
         public int IdLibro { get; set; }
 
+        public string TituloLibro { get; set; }
+
         public bool Activo { get; set; }
 
     }

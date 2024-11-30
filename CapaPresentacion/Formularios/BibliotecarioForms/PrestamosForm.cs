@@ -58,8 +58,8 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             int idEstudiante = int.Parse(estudiantesComboBox.SelectedValue.ToString());
             int idLibro = int.Parse(librosComboBox.SelectedValue.ToString());
-          //string nombreEstudiante = estudiantesComboBox.SelectedItem.ToString(); 
-        //string nombreLibro = librosComboBox.SelectedItem.ToString();
+            string nombreEstudiante = estudiantesComboBox.SelectedItem.ToString(); 
+            string tituloLibro = librosComboBox.SelectedItem.ToString();
             DateTime fechaPrestamo = fechaPrestamoDateTimePicker.Value;
             DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
             bool Estado = true;
@@ -82,25 +82,9 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             }
             else
             {
-                string nombreEstudiante = estudiantesComboBox.Text;
-                string tituloLibro = librosComboBox.Text;
+                _prestamoServicio.AgregarPrestamo(prestamo);
 
                 Console.WriteLine($"Estudiante: {nombreEstudiante}, Libro: {tituloLibro}");
-
-  
-                Usuario usuario = new Usuario { Id = 0, Nombre = "Seleccione un estudiante" };
-                List<Usuario> usuarios = _prestamoServicio.ObtenerEstudiantes().ToList();
-                usuarios.Insert(0, usuario);
-                estudiantesComboBox.DataSource = usuarios;
-                estudiantesComboBox.DisplayMember = "Nombre";
-                estudiantesComboBox.ValueMember = "Id";
-
-                Libro libro = new Libro { Id = 0, Titulo = "Seleccione un libro" };
-                List<Libro> libros = _prestamoServicio.ObtenerLibros().ToList();
-                libros.Insert(0, libro);
-                librosComboBox.DataSource = libros;
-                librosComboBox.DisplayMember = "Titulo";
-                librosComboBox.ValueMember = "Id";
 
 
 

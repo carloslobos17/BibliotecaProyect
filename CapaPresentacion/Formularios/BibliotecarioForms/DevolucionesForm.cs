@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad.Entidades;
 using CapaNegocios.Servicios.DevolucionServicios;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
@@ -19,42 +20,52 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             InitializeComponent();
             _devolucionServicio = devolucionServicio;
-            CargarEstudiantes();
-            CargarLibros();
         }
 
-        private void CargarEstudiantes()
-        {
-            estudiantesComboBox.DataSource = _devolucionServicio.ObtenerEstudiantes();
-            estudiantesComboBox.ValueMember = "Id";
-            estudiantesComboBox.DisplayMember = "Nombre";
-        }
-
-        private void CargarLibros()
-        {
-            librosComboBox.DataSource = _devolucionServicio.ObtenerLibros();
-            librosComboBox.ValueMember = "Id";
-            librosComboBox.DisplayMember = "Titulo";
-        }
         private void devolverButton_Click(object sender, EventArgs e)
         {
-            int idEstudiante = int.Parse(estudiantesComboBox.SelectedValue.ToString());
-            int idLibro = int.Parse(librosComboBox.SelectedValue.ToString());
-            bool estado = false;
-
-            int idPrestamo = _devolucionServicio.ObtenerIdPrestamo(idEstudiante, idLibro);
-            DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
-            string observaciones = observacionesTextBox.Text;
-            
-            var devolucion = new Devolucion
+            if (prestamosDataGridView.CurrentRow != null)
             {
-               FechaDevolucion = fechaDevolucion,
-               Observaciones = observaciones,
-               IdPrestamo = idPrestamo
-            };
+                bool estado = false;
+                int idLibro = Convert.ToInt32(prestamosDataGridView.CurrentRow.Cells[4].Value);
+                DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
+                string observaciones = observacionesTextBox.Text;
+                int idPrestamo = Convert.ToInt32(prestamosDataGridView.CurrentRow.Cells[0].Value);
 
-            _devolucionServicio.AgregarDevolucion(devolucion, idLibro, estado);
+                var devolucion = new Devolucion
+                {
+                    FechaDevolucion = fechaDevolucion,
+                    Observaciones = observaciones,
+                    IdPrestamo = idPrestamo
 
+                };
+
+                _devolucionServicio.DevolverLibro(idLibro, estado, devolucion);
+                CargarPrestamosDatos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila en el DataGridView.");
+            }
+
+        }
+        private void CargarPrestamosDatos()
+        {
+            prestamosDataGridView.DataSource = _devolucionServicio.ObtenerPrestamos();
+        }
+
+        private void buscarButton_Click(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text.IsNullOrEmpty())
+            {
+                CargarPrestamosDatos();
+            }
+            else
+            {
+                string busqueda = buscarTextBox.Text;
+                var categories = _devolucionServicio.BuscarPrestamos(busqueda);
+                prestamosDataGridView.DataSource = categories;
+            }
         }
     }
 }
