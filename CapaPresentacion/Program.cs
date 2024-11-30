@@ -23,6 +23,7 @@ using CapaPresentacion.Formularios.EstudianteForms;
 using CapaNegocios.Servicios.HistorialServicios;
 using CapaAccesoDatos.Repositorios.HistorialRepositorios;
 using Microsoft.Extensions.Configuration;
+using CapaNegocios.Notificaciones;
 
 namespace CapaPresentacion
 {
@@ -86,6 +87,11 @@ namespace CapaPresentacion
                     services.AddScoped<IGestionUsuarioServicio, GestionUsuarioServicio>();
                     services.AddScoped<IDevolucionServicio, DevolucionServicio>();
                     services.AddScoped<IHistorialServicio, HistorialServicio>();
+
+                    //Notificaciones
+                    services.AddScoped<IEmailNotificacion, EmailNotificacion>();
+
+                   
 
                     //Connection
                     services.AddSingleton<IAccesoDatosSql, AccesoDatosSql>();

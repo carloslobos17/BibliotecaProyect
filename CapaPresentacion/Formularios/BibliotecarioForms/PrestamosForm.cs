@@ -14,17 +14,21 @@ using FluentValidation.Results;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using CapaNegocios.Notificaciones;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
     public partial class PrestamosForm : Form
     {
         private readonly IPrestamoServicio _prestamoServicio;
-        public PrestamosForm(IPrestamoServicio prestamoServicio)
+        private readonly IEmailNotificacion _emailNotificacion;
+        public PrestamosForm(IPrestamoServicio prestamoServicio,
+                             IEmailNotificacion emailNotificacion)
         {
             InitializeComponent();
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
             _prestamoServicio = prestamoServicio;
+            _emailNotificacion = emailNotificacion;
             CargarEstudiantes();
             CargarLibros();
         }
@@ -156,9 +160,17 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 }).GeneratePdfAndShow();
                 MessageBox.Show("Reporte PDF generado exitosamente!");
             }
+            var email = new EmailAjustes
+            {
+                EmailPara = "bidubiduelgato@gmail.com",
+                DestinatarioNombre = "Juan Perez",
+                Encabezado = "Nueva Categoria Agregada",
+                Cuerpo = "Felicidades agregaste correctamente la categoria",
+            };
 
-           
-            
+            _emailNotificacion.EnviarEmail(email);
+
+
         }
 
         private void MostrarErroresValidacion(ValidationResult result)
