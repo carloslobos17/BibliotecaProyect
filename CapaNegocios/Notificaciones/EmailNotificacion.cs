@@ -21,29 +21,29 @@ namespace CapaNegocios.Notificaciones
 
         public void EnviarEmail(EmailAjustes emailAjustes, string nombreEstudiante, string tituloLibro, DateTime fechaPrestamo, DateTime fechaDevolucion)
         {
-            var message = new MimeMessage();
-            message.From.Add(new MailboxAddress(
+            var mensaje = new MimeMessage();
+            mensaje.From.Add(new MailboxAddress(
                 "demo",
                 _configuration["EmailSettings:EmailFrom"]));
 
-            message.To.Add(new MailboxAddress(
+            mensaje.To.Add(new MailboxAddress(
                 emailAjustes.DestinatarioNombre,
                 emailAjustes.EmailPara
                 ));
 
-            message.Subject = emailAjustes.Encabezado;
+            mensaje.Subject = emailAjustes.Encabezado;
 
-            var body = new BodyBuilder();
+            var cuerpo = new BodyBuilder();
 
-            string currentDirectory = Directory.GetCurrentDirectory();
+            string directorioActual = Directory.GetCurrentDirectory();
 
-            var templatePath = Path.Combine(
-                    currentDirectory,
+            var plantillaRuta = Path.Combine(
+                    directorioActual,
                     @"..\..\..\Plantillas",
                     "Emailplantilla.html"
             );
 
-            var templateContent = File.ReadAllText(templatePath);
+            var templateContent = File.ReadAllText(plantillaRuta);
 
             templateContent = templateContent
     .Replace("{{Estudiante}}", nombreEstudiante)
@@ -51,23 +51,23 @@ namespace CapaNegocios.Notificaciones
     .Replace("{{FechaPrestamo}}", fechaPrestamo.ToString("dd/MM/yyyy"))
     .Replace("{{FechaDevolucion}}", fechaDevolucion.ToString("dd/MM/yyyy"));
 
-            body.HtmlBody = templateContent;
-            message.Body = body.ToMessageBody();
+            cuerpo.HtmlBody = templateContent;
+            mensaje.Body = cuerpo.ToMessageBody();
 
-            using (var client = new SmtpClient())
+            using (var cliente = new SmtpClient())
             {
-                client.Connect(
+                cliente.Connect(
                     _configuration["EmailSettings:Host"],
                     Convert.ToInt32(_configuration["EmailSettings:Port"]),
                     false
                 );
 
-                client.Authenticate(
+                cliente.Authenticate(
                     _configuration["EmailSettings:Username"],
                     _configuration["EmailSettings:Password"]);
 
-                client.Send(message);
-                client.Disconnect(true);
+                cliente.Send(mensaje);
+                cliente.Disconnect(true);
             }
         }
     }
