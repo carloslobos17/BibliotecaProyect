@@ -11,5 +11,7 @@ namespace CapaNegocios.Servicios.GestionUsuarioServicios
         IEnumerable<Usuario> ObtenerAdministrador();
         IEnumerable<Usuario> ObtenerEstudiantes();
         IEnumerable<Usuario> ObtenerUsuariosFiltrados();
+        IEnumerable<Usuario> ObtenerAdminFiltrados();
+        IEnumerable<Usuario> ObtenerBibliotecariosFiltrados();
     }
 }

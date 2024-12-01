@@ -82,5 +82,16 @@ namespace CapaPresentacion.Formularios.AdminForms
             modalBibliotecario.StartPosition = FormStartPosition.CenterScreen;
             modalBibliotecario.ShowDialog();
         }
+
+        private void filtrarBibliotecariosButton_Click(object sender, EventArgs e)
+        {
+            var bibliotecarios = _gestionUsuarioServicio.ObtenerBibliotecariosFiltrados();
+            bibliotecariosDataGridView.DataSource = bibliotecarios;
+        }
+
+        private void cargarBibliotecariosButton_Click(object sender, EventArgs e)
+        {
+            CargarBibliotecarios();
+        }
     }
 }

@@ -81,5 +81,16 @@ namespace CapaPresentacion.Formularios.AdminForms
                 }
             }
         }
+
+        private void filtrarAdminsButton_Click(object sender, EventArgs e)
+        {
+            var administradores = _gestionUsuarioServicio.ObtenerAdminFiltrados();
+            administradorDataGridView.DataSource = administradores;
+        }
+
+        private void cargarAdminsButton_Click(object sender, EventArgs e)
+        {
+            CargarAdministrador();
+        }
     }
 }

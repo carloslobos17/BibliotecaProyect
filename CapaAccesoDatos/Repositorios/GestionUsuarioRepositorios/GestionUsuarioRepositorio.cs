@@ -107,5 +107,29 @@ namespace CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios
                 return conexion.Query<Usuario>(consulta, new { IdRol = (int)RolEnum.Estudiante });
             }
         }
+
+        public IEnumerable<Usuario> ObtenerAdminFiltrados()
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT u.nombre, u.Id, u.apellido, u.edad, u.clave, u.telefono, u.correo, u.IdRol
+                                    FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol
+                                    ORDER BY Nombre ASC";
+
+                return conexion.Query<Usuario>(consulta, new { IdRol = (int)RolEnum.Admin });
+            }
+        }
+
+        public IEnumerable<Usuario> ObtenerBibliotecariosFiltrados()
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT u.nombre, u.Id, u.apellido, u.edad, u.clave, u.telefono, u.correo, u.IdRol
+                                    FROM Usuarios u INNER JOIN Rol r ON u.IdRol = r.Id WHERE r.Id = @IdRol
+                                    ORDER BY Nombre ASC";
+
+                return conexion.Query<Usuario>(consulta, new { IdRol = (int)RolEnum.Bibliotecario });
+            }
+        }
     }
 }

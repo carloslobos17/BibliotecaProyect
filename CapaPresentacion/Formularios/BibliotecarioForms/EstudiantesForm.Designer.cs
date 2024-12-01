@@ -37,12 +37,12 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             agregarEstudianteButton = new FontAwesome.Sharp.IconButton();
             editarEstudianteButton = new FontAwesome.Sharp.IconButton();
             estudiantesDataGridView = new DataGridView();
-            menuGroupBox = new GroupBox();
+            menuEstudiantesGroupBox = new GroupBox();
             cargarEstudiantesButton = new Button();
             filtrarEstudiantesButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)estudiantesDataGridView).BeginInit();
-            menuGroupBox.SuspendLayout();
+            menuEstudiantesGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -157,22 +157,22 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             estudiantesDataGridView.Size = new Size(564, 333);
             estudiantesDataGridView.TabIndex = 34;
             // 
-            // menuGroupBox
+            // menuEstudiantesGroupBox
             // 
-            menuGroupBox.Controls.Add(cargarEstudiantesButton);
-            menuGroupBox.Controls.Add(filtrarEstudiantesButton);
-            menuGroupBox.Location = new Point(161, 92);
-            menuGroupBox.Name = "menuGroupBox";
-            menuGroupBox.Size = new Size(564, 73);
-            menuGroupBox.TabIndex = 41;
-            menuGroupBox.TabStop = false;
-            menuGroupBox.Text = "Ordenar Estudiantes por Orden Alfabetico";
+            menuEstudiantesGroupBox.Controls.Add(cargarEstudiantesButton);
+            menuEstudiantesGroupBox.Controls.Add(filtrarEstudiantesButton);
+            menuEstudiantesGroupBox.Location = new Point(161, 92);
+            menuEstudiantesGroupBox.Name = "menuEstudiantesGroupBox";
+            menuEstudiantesGroupBox.Size = new Size(564, 73);
+            menuEstudiantesGroupBox.TabIndex = 41;
+            menuEstudiantesGroupBox.TabStop = false;
+            menuEstudiantesGroupBox.Text = "Ordenar Estudiantes por Orden Alfabetico";
             // 
             // cargarEstudiantesButton
             // 
-            cargarEstudiantesButton.Location = new Point(301, 37);
+            cargarEstudiantesButton.Location = new Point(322, 37);
             cargarEstudiantesButton.Name = "cargarEstudiantesButton";
-            cargarEstudiantesButton.Size = new Size(163, 23);
+            cargarEstudiantesButton.Size = new Size(204, 23);
             cargarEstudiantesButton.TabIndex = 1;
             cargarEstudiantesButton.Text = "Cargar Estudiantes";
             cargarEstudiantesButton.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(945, 571);
-            Controls.Add(menuGroupBox);
+            Controls.Add(menuEstudiantesGroupBox);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -206,7 +206,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             Text = "EstudiantesForms";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)estudiantesDataGridView).EndInit();
-            menuGroupBox.ResumeLayout(false);
+            menuEstudiantesGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,7 +220,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         private FontAwesome.Sharp.IconButton agregarEstudianteButton;
         private FontAwesome.Sharp.IconButton editarEstudianteButton;
         private DataGridView estudiantesDataGridView;
-        private GroupBox menuGroupBox;
+        private GroupBox menuEstudiantesGroupBox;
         private Button cargarEstudiantesButton;
         private Button filtrarEstudiantesButton;
     }
