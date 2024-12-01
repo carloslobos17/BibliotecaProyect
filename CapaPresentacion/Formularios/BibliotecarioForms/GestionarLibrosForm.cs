@@ -111,5 +111,10 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             CargarLibros();
         }
+
+        private void librosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

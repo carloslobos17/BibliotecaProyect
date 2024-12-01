@@ -28,60 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarLibrosForm));
-            panel1 = new Panel();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             eliminarLibroButton = new FontAwesome.Sharp.IconButton();
             agregarLibroButton = new FontAwesome.Sharp.IconButton();
             editarLibroButton = new FontAwesome.Sharp.IconButton();
             librosDataGridView = new DataGridView();
-            pictureBox2 = new PictureBox();
             categoriasButton = new FontAwesome.Sharp.IconButton();
             iniciarDateTimePicker = new DateTimePicker();
             finalizarDateTimePicker = new DateTimePicker();
             filtrarButton = new Button();
             cargarLibrosButton = new Button();
             groupBox1 = new GroupBox();
-            fechaInicioLabel = new Label();
             fechaLimiteLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            fechaInicioLabel = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)librosDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(128, 64, 0);
-            panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(220, 99);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(427, 9);
-            panel1.TabIndex = 25;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(128, 64, 0);
-            label2.Location = new Point(277, 65);
+            label2.Location = new Point(332, 57);
             label2.Name = "label2";
-            label2.Size = new Size(257, 36);
+            label2.Size = new Size(315, 42);
             label2.TabIndex = 24;
             label2.Text = "Gestión de libros";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(90, 56);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(88, 52);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 22;
-            pictureBox1.TabStop = false;
             // 
             // eliminarLibroButton
             // 
@@ -94,10 +68,10 @@
             eliminarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             eliminarLibroButton.IconSize = 40;
             eliminarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            eliminarLibroButton.Location = new Point(699, 279);
+            eliminarLibroButton.Location = new Point(825, 446);
             eliminarLibroButton.Margin = new Padding(0);
             eliminarLibroButton.Name = "eliminarLibroButton";
-            eliminarLibroButton.Size = new Size(126, 37);
+            eliminarLibroButton.Size = new Size(144, 49);
             eliminarLibroButton.TabIndex = 21;
             eliminarLibroButton.Text = "Eliminar";
             eliminarLibroButton.TextAlign = ContentAlignment.MiddleRight;
@@ -116,10 +90,10 @@
             agregarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             agregarLibroButton.IconSize = 40;
             agregarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            agregarLibroButton.Location = new Point(699, 177);
+            agregarLibroButton.Location = new Point(825, 310);
             agregarLibroButton.Margin = new Padding(0);
             agregarLibroButton.Name = "agregarLibroButton";
-            agregarLibroButton.Size = new Size(126, 36);
+            agregarLibroButton.Size = new Size(144, 48);
             agregarLibroButton.TabIndex = 19;
             agregarLibroButton.Text = "Agregar";
             agregarLibroButton.TextAlign = ContentAlignment.MiddleRight;
@@ -138,10 +112,10 @@
             editarLibroButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editarLibroButton.IconSize = 40;
             editarLibroButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editarLibroButton.Location = new Point(699, 226);
+            editarLibroButton.Location = new Point(825, 375);
             editarLibroButton.Margin = new Padding(0);
             editarLibroButton.Name = "editarLibroButton";
-            editarLibroButton.Size = new Size(126, 36);
+            editarLibroButton.Size = new Size(144, 48);
             editarLibroButton.TabIndex = 20;
             editarLibroButton.Text = "Editar";
             editarLibroButton.TextAlign = ContentAlignment.MiddleRight;
@@ -156,23 +130,12 @@
             librosDataGridView.AllowUserToResizeColumns = false;
             librosDataGridView.AllowUserToResizeRows = false;
             librosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            librosDataGridView.Location = new Point(113, 141);
-            librosDataGridView.Margin = new Padding(3, 2, 3, 2);
+            librosDataGridView.Location = new Point(83, 250);
             librosDataGridView.Name = "librosDataGridView";
             librosDataGridView.RowHeadersWidth = 51;
-            librosDataGridView.Size = new Size(564, 333);
+            librosDataGridView.Size = new Size(703, 491);
             librosDataGridView.TabIndex = 18;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(699, 56);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(116, 52);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 26;
-            pictureBox2.TabStop = false;
+            librosDataGridView.CellContentClick += librosDataGridView_CellContentClick;
             // 
             // categoriasButton
             // 
@@ -185,10 +148,10 @@
             categoriasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             categoriasButton.IconSize = 40;
             categoriasButton.ImageAlign = ContentAlignment.MiddleLeft;
-            categoriasButton.Location = new Point(699, 330);
+            categoriasButton.Location = new Point(825, 514);
             categoriasButton.Margin = new Padding(0);
             categoriasButton.Name = "categoriasButton";
-            categoriasButton.Size = new Size(126, 36);
+            categoriasButton.Size = new Size(144, 48);
             categoriasButton.TabIndex = 27;
             categoriasButton.Text = "Categorias";
             categoriasButton.TextAlign = ContentAlignment.MiddleRight;
@@ -198,35 +161,39 @@
             // 
             // iniciarDateTimePicker
             // 
-            iniciarDateTimePicker.Location = new Point(83, 32);
+            iniciarDateTimePicker.Location = new Point(83, 42);
+            iniciarDateTimePicker.Margin = new Padding(3, 4, 3, 4);
             iniciarDateTimePicker.Name = "iniciarDateTimePicker";
-            iniciarDateTimePicker.Size = new Size(244, 25);
+            iniciarDateTimePicker.Size = new Size(278, 29);
             iniciarDateTimePicker.TabIndex = 28;
             // 
             // finalizarDateTimePicker
             // 
-            finalizarDateTimePicker.Location = new Point(83, 79);
+            finalizarDateTimePicker.Location = new Point(453, 41);
+            finalizarDateTimePicker.Margin = new Padding(3, 4, 3, 4);
             finalizarDateTimePicker.Name = "finalizarDateTimePicker";
-            finalizarDateTimePicker.Size = new Size(244, 25);
+            finalizarDateTimePicker.Size = new Size(278, 29);
             finalizarDateTimePicker.TabIndex = 29;
             // 
             // filtrarButton
             // 
-            filtrarButton.Location = new Point(426, 32);
+            filtrarButton.Location = new Point(830, 39);
+            filtrarButton.Margin = new Padding(3, 4, 3, 4);
             filtrarButton.Name = "filtrarButton";
-            filtrarButton.Size = new Size(108, 27);
+            filtrarButton.Size = new Size(75, 36);
             filtrarButton.TabIndex = 30;
-            filtrarButton.Text = "Filtrar Libros";
+            filtrarButton.Text = "Filtrar";
             filtrarButton.UseVisualStyleBackColor = true;
             filtrarButton.Click += filtrarButton_Click;
             // 
             // cargarLibrosButton
             // 
-            cargarLibrosButton.Location = new Point(426, 74);
+            cargarLibrosButton.Location = new Point(737, 39);
+            cargarLibrosButton.Margin = new Padding(3, 4, 3, 4);
             cargarLibrosButton.Name = "cargarLibrosButton";
-            cargarLibrosButton.Size = new Size(108, 27);
+            cargarLibrosButton.Size = new Size(87, 36);
             cargarLibrosButton.TabIndex = 31;
-            cargarLibrosButton.Text = "Cargar Libros";
+            cargarLibrosButton.Text = "Cargar";
             cargarLibrosButton.UseVisualStyleBackColor = true;
             cargarLibrosButton.Click += cargarLibrosButton_Click;
             // 
@@ -239,56 +206,62 @@
             groupBox1.Controls.Add(finalizarDateTimePicker);
             groupBox1.Controls.Add(filtrarButton);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(113, 479);
+            groupBox1.Location = new Point(45, 143);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(564, 124);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(929, 100);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             groupBox1.Text = "Buscar Libros Por Fecha de Lanzamiento";
-            // 
-            // fechaInicioLabel
-            // 
-            fechaInicioLabel.AutoSize = true;
-            fechaInicioLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            fechaInicioLabel.Location = new Point(16, 37);
-            fechaInicioLabel.Name = "fechaInicioLabel";
-            fechaInicioLabel.Size = new Size(46, 17);
-            fechaInicioLabel.TabIndex = 32;
-            fechaInicioLabel.Text = "Desde";
             // 
             // fechaLimiteLabel
             // 
             fechaLimiteLabel.AutoSize = true;
             fechaLimiteLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            fechaLimiteLabel.Location = new Point(16, 84);
+            fechaLimiteLabel.Location = new Point(376, 48);
             fechaLimiteLabel.Name = "fechaLimiteLabel";
-            fechaLimiteLabel.Size = new Size(43, 17);
+            fechaLimiteLabel.Size = new Size(55, 23);
             fechaLimiteLabel.TabIndex = 33;
             fechaLimiteLabel.Text = "Hasta";
             // 
+            // fechaInicioLabel
+            // 
+            fechaInicioLabel.AutoSize = true;
+            fechaInicioLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            fechaInicioLabel.Location = new Point(6, 48);
+            fechaInicioLabel.Name = "fechaInicioLabel";
+            fechaInicioLabel.Size = new Size(59, 23);
+            fechaInicioLabel.TabIndex = 32;
+            fechaInicioLabel.Text = "Desde";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(128, 64, 0);
+            panel1.ForeColor = Color.FromArgb(162, 129, 112);
+            panel1.Location = new Point(237, 102);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(488, 12);
+            panel1.TabIndex = 41;
+            // 
             // GestionarLibrosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 626);
+            ClientSize = new Size(1081, 835);
+            Controls.Add(panel1);
             Controls.Add(groupBox1);
             Controls.Add(categoriasButton);
-            Controls.Add(pictureBox2);
-            Controls.Add(panel1);
             Controls.Add(label2);
-            Controls.Add(pictureBox1);
             Controls.Add(eliminarLibroButton);
             Controls.Add(agregarLibroButton);
             Controls.Add(editarLibroButton);
             Controls.Add(librosDataGridView);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "GestionarLibrosForm";
             Text = "GestionarLibrosForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)librosDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -296,14 +269,10 @@
         }
 
         #endregion
-
-        private Panel panel1;
         private Label label2;
-        private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton eliminarLibroButton;
         private FontAwesome.Sharp.IconButton agregarLibroButton;
         private FontAwesome.Sharp.IconButton editarLibroButton;
-        private PictureBox pictureBox2;
         public DataGridView librosDataGridView;
         private FontAwesome.Sharp.IconButton categoriasButton;
         private DateTimePicker iniciarDateTimePicker;
@@ -313,5 +282,6 @@
         private GroupBox groupBox1;
         private Label fechaLimiteLabel;
         private Label fechaInicioLabel;
+        private Panel panel1;
     }
 }

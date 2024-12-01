@@ -58,8 +58,8 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             int idEstudiante = int.Parse(estudiantesComboBox.SelectedValue.ToString());
             int idLibro = int.Parse(librosComboBox.SelectedValue.ToString());
-            string nombreEstudiante = estudiantesComboBox.SelectedItem.ToString(); 
-            string tituloLibro = librosComboBox.SelectedItem.ToString();
+            //string nombreEstudiante = estudiantesComboBox.SelectedItem.ToString(); 
+            //string nombreLibro = librosComboBox.SelectedItem.ToString();
             DateTime fechaPrestamo = fechaPrestamoDateTimePicker.Value;
             DateTime fechaDevolucion = fechaDevolucionDateTimePicker.Value;
             bool Estado = true;
@@ -82,6 +82,9 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             }
             else
             {
+
+                string nombreEstudiante = estudiantesComboBox.Text;
+                string tituloLibro = librosComboBox.Text;
                 _prestamoServicio.AgregarPrestamo(prestamo);
 
                 Console.WriteLine($"Estudiante: {nombreEstudiante}, Libro: {tituloLibro}");
