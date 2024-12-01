@@ -29,6 +29,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             estudiantesDataGridView.DataSource = _gestionUsuarioServicio.ObtenerEstudiantes();
             estudiantesDataGridView.Refresh();
+            estudiantesDataGridView.Columns["Clave"].Visible = false;
         }
 
         private void agregarEstudianteButton_Click(object sender, EventArgs e)

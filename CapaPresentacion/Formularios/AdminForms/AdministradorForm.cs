@@ -26,6 +26,7 @@ namespace CapaPresentacion.Formularios.AdminForms
         public void CargarAdministrador()
         {
             administradorDataGridView.DataSource = _gestionUsuarioServicio.ObtenerAdministrador();
+            administradorDataGridView.Columns["Clave"].Visible = false;
             administradorDataGridView.Refresh();
         }
 

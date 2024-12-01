@@ -45,6 +45,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                 if (categorias != null)
                 {
                     CategoriadataGridView.DataSource = categorias;
+
                 }
                 else
                 {
