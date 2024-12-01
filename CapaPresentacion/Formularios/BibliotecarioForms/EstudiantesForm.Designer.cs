@@ -38,8 +38,6 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             editarEstudianteButton = new FontAwesome.Sharp.IconButton();
             estudiantesDataGridView = new DataGridView();
             menuGroupBox = new GroupBox();
-            menuLabel = new Label();
-            buscarEstudiantesTextBox = new TextBox();
             cargarEstudiantesButton = new Button();
             filtrarEstudiantesButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -152,7 +150,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             estudiantesDataGridView.AllowUserToResizeColumns = false;
             estudiantesDataGridView.AllowUserToResizeRows = false;
             estudiantesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            estudiantesDataGridView.Location = new Point(142, 201);
+            estudiantesDataGridView.Location = new Point(161, 176);
             estudiantesDataGridView.Margin = new Padding(3, 2, 3, 2);
             estudiantesDataGridView.Name = "estudiantesDataGridView";
             estudiantesDataGridView.RowHeadersWidth = 51;
@@ -161,39 +159,20 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             // 
             // menuGroupBox
             // 
-            menuGroupBox.Controls.Add(menuLabel);
-            menuGroupBox.Controls.Add(buscarEstudiantesTextBox);
             menuGroupBox.Controls.Add(cargarEstudiantesButton);
             menuGroupBox.Controls.Add(filtrarEstudiantesButton);
-            menuGroupBox.Location = new Point(142, 93);
+            menuGroupBox.Location = new Point(161, 92);
             menuGroupBox.Name = "menuGroupBox";
-            menuGroupBox.Size = new Size(564, 91);
+            menuGroupBox.Size = new Size(564, 73);
             menuGroupBox.TabIndex = 41;
             menuGroupBox.TabStop = false;
-            menuGroupBox.Text = "Buscar estudiantes por orden alfabetico";
-            // 
-            // menuLabel
-            // 
-            menuLabel.AutoSize = true;
-            menuLabel.Location = new Point(12, 41);
-            menuLabel.Name = "menuLabel";
-            menuLabel.Size = new Size(100, 15);
-            menuLabel.TabIndex = 3;
-            menuLabel.Text = "Buscar Estudiante";
-            // 
-            // buscarEstudiantesTextBox
-            // 
-            buscarEstudiantesTextBox.Location = new Point(118, 37);
-            buscarEstudiantesTextBox.Name = "buscarEstudiantesTextBox";
-            buscarEstudiantesTextBox.Size = new Size(153, 23);
-            buscarEstudiantesTextBox.TabIndex = 2;
-            buscarEstudiantesTextBox.TextChanged += buscarEstudiantesTextBox_TextChanged;
+            menuGroupBox.Text = "Ordenar Estudiantes por Orden Alfabetico";
             // 
             // cargarEstudiantesButton
             // 
-            cargarEstudiantesButton.Location = new Point(405, 37);
+            cargarEstudiantesButton.Location = new Point(301, 37);
             cargarEstudiantesButton.Name = "cargarEstudiantesButton";
-            cargarEstudiantesButton.Size = new Size(129, 23);
+            cargarEstudiantesButton.Size = new Size(163, 23);
             cargarEstudiantesButton.TabIndex = 1;
             cargarEstudiantesButton.Text = "Cargar Estudiantes";
             cargarEstudiantesButton.UseVisualStyleBackColor = true;
@@ -201,11 +180,11 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             // 
             // filtrarEstudiantesButton
             // 
-            filtrarEstudiantesButton.Location = new Point(324, 37);
+            filtrarEstudiantesButton.Location = new Point(20, 37);
             filtrarEstudiantesButton.Name = "filtrarEstudiantesButton";
-            filtrarEstudiantesButton.Size = new Size(75, 23);
+            filtrarEstudiantesButton.Size = new Size(204, 23);
             filtrarEstudiantesButton.TabIndex = 0;
-            filtrarEstudiantesButton.Text = "Filtrar";
+            filtrarEstudiantesButton.Text = "Ordenar Estudiantes";
             filtrarEstudiantesButton.UseVisualStyleBackColor = true;
             filtrarEstudiantesButton.Click += filtrarEstudiantesButton_Click;
             // 
@@ -228,7 +207,6 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)estudiantesDataGridView).EndInit();
             menuGroupBox.ResumeLayout(false);
-            menuGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,8 +221,6 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         private FontAwesome.Sharp.IconButton editarEstudianteButton;
         private DataGridView estudiantesDataGridView;
         private GroupBox menuGroupBox;
-        private Label menuLabel;
-        private TextBox buscarEstudiantesTextBox;
         private Button cargarEstudiantesButton;
         private Button filtrarEstudiantesButton;
     }
