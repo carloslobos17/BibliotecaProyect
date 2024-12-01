@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaAccesoDatos.Repositorios.DevolucionRepositorios;
 using CapaEntidad.Entidades;
+using Org.BouncyCastle.Asn1.Ess;
 
 namespace CapaNegocios.Servicios.DevolucionServicios
 {
@@ -17,9 +18,10 @@ namespace CapaNegocios.Servicios.DevolucionServicios
             _devolucionRepositorio = devolucionRepositorio;
         }
 
-        public int ObtenerIdPrestamo(int idEstudiante, int idLibro) => _devolucionRepositorio.ObtenerIdPrestamo(idEstudiante, idLibro);
-        public void AgregarDevolucion(Devolucion devolucion, int IdLibro, bool estado) => _devolucionRepositorio.AgregarDevolucion(devolucion, IdLibro, estado);
-        public IEnumerable<Usuario> ObtenerEstudiantes() => _devolucionRepositorio.ObtenerEstudiantes();
-        public IEnumerable<Libro> ObtenerLibros() => _devolucionRepositorio.ObtenerLibros();
+        
+        public IEnumerable<Prestamo> ObtenerPrestamos() => _devolucionRepositorio.ObtenerPrestamos();
+        public IEnumerable<Prestamo> BuscarPrestamos(string nombreUsuario) => _devolucionRepositorio.BuscarPrestamos(nombreUsuario);
+
+        public void DevolverLibro(int idLibro, bool activo, Devolucion devolucion) => _devolucionRepositorio.DevolverLibro(idLibro, activo, devolucion);
     }
 }

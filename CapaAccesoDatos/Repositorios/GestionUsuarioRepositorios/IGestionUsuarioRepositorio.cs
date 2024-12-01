@@ -10,6 +10,6 @@ namespace CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios
         IEnumerable<Usuario> ObtenerAdministrador();
         IEnumerable<Usuario> ObtenerBibliotecarios();
         IEnumerable<Usuario> ObtenerEstudiantes();
-
+        IEnumerable<Usuario> ObtenerUsuariosFiltrados();
     }
 }

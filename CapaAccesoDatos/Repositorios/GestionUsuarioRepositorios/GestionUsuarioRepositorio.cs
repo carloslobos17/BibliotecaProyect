@@ -95,5 +95,16 @@ namespace CapaAccesoDatos.Repositorios.GestionUsuarioRepositorios
                 conexion.Query<Usuario>(consulta, new { id });
             }
         }
+
+        public IEnumerable<Usuario> ObtenerUsuariosFiltrados()
+        {
+            using (var conexion = _dbConexion.GetConnection())
+            {
+                string consulta = @"SELECT * FROM Usuarios
+                            ORDER BY Nombre ASC"; 
+
+                return conexion.Query<Usuario>(consulta);
+            }
+        }
     }
 }

@@ -83,5 +83,17 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 }
             }
         }
+
+        private void filtrarEstudiantesButton_Click(object sender, EventArgs e)
+        {
+
+            var usuarios = _gestionUsuarioServicio.ObtenerUsuariosFiltrados();
+            estudiantesDataGridView.DataSource = usuarios;
+        }
+
+        private void cargarEstudiantesButton_Click(object sender, EventArgs e)
+        {
+            CargarEstudiantes();
+        }
     }
 }
