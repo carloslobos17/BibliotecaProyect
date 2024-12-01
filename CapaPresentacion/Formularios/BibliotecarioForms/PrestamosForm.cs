@@ -88,14 +88,16 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 _prestamoServicio.AgregarPrestamo(prestamo);
 
                 Console.WriteLine($"Estudiante: {nombreEstudiante}, Libro: {tituloLibro}");
-
-
+                string rutaImagen = Path.Combine(Directory.GetCurrentDirectory(), "img", "bibliotecaLogo.png");
 
                 Document.Create(container =>
                 {
                     container.Page(page =>
                     {
                         page.Margin(1, Unit.Centimetre);
+
+                        page.Background()
+                        .Image(rutaImagen);
 
                         page.Header().Height(35).Background(Colors.Grey.Lighten1).Text("Comprobante de el prestamo")
                         .Bold().AlignCenter().FontSize(20).FontColor(Colors.White);
