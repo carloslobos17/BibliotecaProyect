@@ -145,12 +145,11 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                             });
                     });
                 }).GeneratePdfAndShow();
-                MessageBox.Show("Reporte PDF generado exitosamente!");
                 var email = new EmailAjustes
                 {
                     EmailPara = "bidubiduelgato@gmail.com",
-                    DestinatarioNombre = "Don prueba",
-                    Encabezado = $"Felicidades este es el mmm si creo",
+                    DestinatarioNombre = $"{nombreEstudiante}",
+                    Encabezado = "Informe del ultimo prestamo",
                 };
 
                 _emailNotificacion.EnviarEmail(
