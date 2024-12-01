@@ -39,7 +39,9 @@ namespace CapaPresentacion.Validaciones
 
             RuleFor(usuario => usuario.Telefono)
                 .NotEmpty().WithMessage("El teléfono no puede estar vacío.")
+                .Matches(@"^\d+$").WithMessage("El campo debe contener solo números.")
                 .Matches(@"^\d{8,15}$").WithMessage("El teléfono debe contener entre 8 y 15 dígitos y solo números.");
+
 
             RuleFor(usuario => usuario.Correo)
                 .NotEmpty().WithMessage("El correo no puede estar vacío.")
