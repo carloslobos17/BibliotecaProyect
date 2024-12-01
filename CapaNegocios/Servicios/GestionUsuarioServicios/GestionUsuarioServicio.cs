@@ -26,5 +26,7 @@ namespace CapaNegocios.Servicios.GestionUsuarioServicios
         public void EditarUsuario(Usuario usuario) => _gestionUsuarioRepositorio.EditarUsuario(usuario);
 
         public void EliminarUsuario(int id) => _gestionUsuarioRepositorio.EliminarUsuario(id);
+
+        public IEnumerable<Usuario> ObtenerUsuariosFiltrados() => _gestionUsuarioRepositorio.ObtenerUsuariosFiltrados();
     }
 }

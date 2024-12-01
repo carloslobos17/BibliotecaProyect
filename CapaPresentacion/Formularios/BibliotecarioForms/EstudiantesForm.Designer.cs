@@ -1,4 +1,5 @@
-﻿namespace CapaPresentacion.Formularios.BibliotecarioForms
+﻿
+namespace CapaPresentacion.Formularios.BibliotecarioForms
 {
     partial class EstudiantesForm
     {
@@ -36,17 +37,24 @@
             agregarEstudianteButton = new FontAwesome.Sharp.IconButton();
             editarEstudianteButton = new FontAwesome.Sharp.IconButton();
             estudiantesDataGridView = new DataGridView();
+            menuGroupBox = new GroupBox();
+            menuLabel = new Label();
+            buscarEstudiantesTextBox = new TextBox();
+            cargarEstudiantesButton = new Button();
+            filtrarEstudiantesButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)estudiantesDataGridView).BeginInit();
+            menuGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(128, 64, 0);
             panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(283, 130);
+            panel1.Location = new Point(260, 64);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(488, 12);
+            panel1.Size = new Size(427, 9);
             panel1.TabIndex = 40;
             // 
             // label2
@@ -54,18 +62,19 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(128, 64, 0);
-            label2.Location = new Point(304, 85);
+            label2.Location = new Point(271, 26);
             label2.Name = "label2";
-            label2.Size = new Size(427, 42);
+            label2.Size = new Size(345, 36);
             label2.TabIndex = 39;
             label2.Text = "Gestión de Estudiantes";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(150, 61);
+            pictureBox1.Location = new Point(142, 11);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(128, 83);
+            pictureBox1.Size = new Size(112, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 38;
             pictureBox1.TabStop = false;
@@ -81,10 +90,10 @@
             eliminarEstudianteButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             eliminarEstudianteButton.IconSize = 40;
             eliminarEstudianteButton.ImageAlign = ContentAlignment.MiddleLeft;
-            eliminarEstudianteButton.Location = new Point(832, 370);
+            eliminarEstudianteButton.Location = new Point(728, 278);
             eliminarEstudianteButton.Margin = new Padding(0);
             eliminarEstudianteButton.Name = "eliminarEstudianteButton";
-            eliminarEstudianteButton.Size = new Size(144, 49);
+            eliminarEstudianteButton.Size = new Size(126, 37);
             eliminarEstudianteButton.TabIndex = 37;
             eliminarEstudianteButton.Text = "Eliminar";
             eliminarEstudianteButton.TextAlign = ContentAlignment.MiddleRight;
@@ -103,10 +112,10 @@
             agregarEstudianteButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             agregarEstudianteButton.IconSize = 40;
             agregarEstudianteButton.ImageAlign = ContentAlignment.MiddleLeft;
-            agregarEstudianteButton.Location = new Point(832, 234);
+            agregarEstudianteButton.Location = new Point(728, 176);
             agregarEstudianteButton.Margin = new Padding(0);
             agregarEstudianteButton.Name = "agregarEstudianteButton";
-            agregarEstudianteButton.Size = new Size(144, 48);
+            agregarEstudianteButton.Size = new Size(126, 36);
             agregarEstudianteButton.TabIndex = 35;
             agregarEstudianteButton.Text = "Agregar";
             agregarEstudianteButton.TextAlign = ContentAlignment.MiddleRight;
@@ -125,10 +134,10 @@
             editarEstudianteButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editarEstudianteButton.IconSize = 40;
             editarEstudianteButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editarEstudianteButton.Location = new Point(832, 301);
+            editarEstudianteButton.Location = new Point(728, 226);
             editarEstudianteButton.Margin = new Padding(0);
             editarEstudianteButton.Name = "editarEstudianteButton";
-            editarEstudianteButton.Size = new Size(144, 48);
+            editarEstudianteButton.Size = new Size(126, 36);
             editarEstudianteButton.TabIndex = 36;
             editarEstudianteButton.Text = "Editar";
             editarEstudianteButton.TextAlign = ContentAlignment.MiddleRight;
@@ -143,17 +152,69 @@
             estudiantesDataGridView.AllowUserToResizeColumns = false;
             estudiantesDataGridView.AllowUserToResizeRows = false;
             estudiantesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            estudiantesDataGridView.Location = new Point(162, 186);
+            estudiantesDataGridView.Location = new Point(142, 201);
+            estudiantesDataGridView.Margin = new Padding(3, 2, 3, 2);
             estudiantesDataGridView.Name = "estudiantesDataGridView";
             estudiantesDataGridView.RowHeadersWidth = 51;
-            estudiantesDataGridView.Size = new Size(645, 444);
+            estudiantesDataGridView.Size = new Size(564, 333);
             estudiantesDataGridView.TabIndex = 34;
+            // 
+            // menuGroupBox
+            // 
+            menuGroupBox.Controls.Add(menuLabel);
+            menuGroupBox.Controls.Add(buscarEstudiantesTextBox);
+            menuGroupBox.Controls.Add(cargarEstudiantesButton);
+            menuGroupBox.Controls.Add(filtrarEstudiantesButton);
+            menuGroupBox.Location = new Point(142, 93);
+            menuGroupBox.Name = "menuGroupBox";
+            menuGroupBox.Size = new Size(564, 91);
+            menuGroupBox.TabIndex = 41;
+            menuGroupBox.TabStop = false;
+            menuGroupBox.Text = "Buscar estudiantes por orden alfabetico";
+            // 
+            // menuLabel
+            // 
+            menuLabel.AutoSize = true;
+            menuLabel.Location = new Point(12, 41);
+            menuLabel.Name = "menuLabel";
+            menuLabel.Size = new Size(100, 15);
+            menuLabel.TabIndex = 3;
+            menuLabel.Text = "Buscar Estudiante";
+            // 
+            // buscarEstudiantesTextBox
+            // 
+            buscarEstudiantesTextBox.Location = new Point(118, 37);
+            buscarEstudiantesTextBox.Name = "buscarEstudiantesTextBox";
+            buscarEstudiantesTextBox.Size = new Size(153, 23);
+            buscarEstudiantesTextBox.TabIndex = 2;
+            buscarEstudiantesTextBox.TextChanged += buscarEstudiantesTextBox_TextChanged;
+            // 
+            // cargarEstudiantesButton
+            // 
+            cargarEstudiantesButton.Location = new Point(405, 37);
+            cargarEstudiantesButton.Name = "cargarEstudiantesButton";
+            cargarEstudiantesButton.Size = new Size(129, 23);
+            cargarEstudiantesButton.TabIndex = 1;
+            cargarEstudiantesButton.Text = "Cargar Estudiantes";
+            cargarEstudiantesButton.UseVisualStyleBackColor = true;
+            cargarEstudiantesButton.Click += cargarEstudiantesButton_Click;
+            // 
+            // filtrarEstudiantesButton
+            // 
+            filtrarEstudiantesButton.Location = new Point(324, 37);
+            filtrarEstudiantesButton.Name = "filtrarEstudiantesButton";
+            filtrarEstudiantesButton.Size = new Size(75, 23);
+            filtrarEstudiantesButton.TabIndex = 0;
+            filtrarEstudiantesButton.Text = "Filtrar";
+            filtrarEstudiantesButton.UseVisualStyleBackColor = true;
+            filtrarEstudiantesButton.Click += filtrarEstudiantesButton_Click;
             // 
             // EstudiantesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1080, 673);
+            ClientSize = new Size(945, 571);
+            Controls.Add(menuGroupBox);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -162,11 +223,12 @@
             Controls.Add(editarEstudianteButton);
             Controls.Add(estudiantesDataGridView);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "EstudiantesForm";
             Text = "EstudiantesForms";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)estudiantesDataGridView).EndInit();
+            menuGroupBox.ResumeLayout(false);
+            menuGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,5 +242,10 @@
         private FontAwesome.Sharp.IconButton agregarEstudianteButton;
         private FontAwesome.Sharp.IconButton editarEstudianteButton;
         private DataGridView estudiantesDataGridView;
+        private GroupBox menuGroupBox;
+        private Label menuLabel;
+        private TextBox buscarEstudiantesTextBox;
+        private Button cargarEstudiantesButton;
+        private Button filtrarEstudiantesButton;
     }
 }

@@ -83,5 +83,25 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 }
             }
         }
+
+        private void buscarEstudiantesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda = buscarEstudiantesTextBox.Text;
+
+            var estudiantesFiltrados = _gestionUsuarioServicio.ObtenerUsuariosFiltrados();
+            estudiantesDataGridView.DataSource = estudiantesFiltrados.ToList();
+        }
+
+        private void filtrarEstudiantesButton_Click(object sender, EventArgs e)
+        {
+
+            var usuarios = _gestionUsuarioServicio.ObtenerUsuariosFiltrados();
+            estudiantesDataGridView.DataSource = usuarios;
+        }
+
+        private void cargarEstudiantesButton_Click(object sender, EventArgs e)
+        {
+            CargarEstudiantes();
+        }
     }
 }
