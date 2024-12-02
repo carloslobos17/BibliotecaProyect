@@ -26,7 +26,7 @@ namespace CapaAccesoDatos.Repositorios.HistorialRepositorios
                                     p.FechaPrestamo, 
                                     p.FechaDevolucion, 
                                     p.Activo, 
-                                    l.Titulo 
+                                    l.Titulo AS TituloLibro
                                 FROM Prestamos p 
                                 INNER JOIN Libros l 
                                 ON p.IdLibro = l.Id 
@@ -44,7 +44,8 @@ namespace CapaAccesoDatos.Repositorios.HistorialRepositorios
                                         d.Id, 
                                         d.FechaDevolucion, 
                                         d.Observaciones, 
-                                        l.Titulo 
+                                        l.Titulo AS TituloLibro,
+                                        d.IdPrestamo
                                     FROM Devoluciones d 
                                     INNER JOIN Prestamos p ON d.IdPrestamo = p.Id 
                                     INNER JOIN Libros l ON p.IdLibro = l.Id

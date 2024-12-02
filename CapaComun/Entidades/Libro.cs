@@ -15,5 +15,7 @@ namespace CapaEntidad.Entidades
         public DateTime FechaPublicacion { get; set; }
         public int CopiasDisponibles { get; set; }
         public int IdCategoria { get; set; }
+
+        public string nombreCategoria { get; set; }
     }
 }

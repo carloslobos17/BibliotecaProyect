@@ -157,10 +157,10 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             librosDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            librosDataGridView.Location = new Point(83, 250);
+            librosDataGridView.Location = new Point(45, 250);
             librosDataGridView.Name = "librosDataGridView";
             librosDataGridView.RowHeadersWidth = 51;
-            librosDataGridView.Size = new Size(703, 514);
+            librosDataGridView.Size = new Size(759, 514);
             librosDataGridView.TabIndex = 18;
             librosDataGridView.CellContentClick += librosDataGridView_CellContentClick;
             // 

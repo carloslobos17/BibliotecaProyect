@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad.Entidades;
+using CapaEntidad.Enums;
 using CapaNegocios.Servicios.CategoriaServicios;
 using CapaNegocios.Servicios.LibroServicios;
 using CapaPresentacion.Formularios.AdminForms;
@@ -26,9 +28,23 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             this.StartPosition = FormStartPosition.CenterScreen;
             _libroServicio = libroServicio;
             _serviceProvider = serviceProvider;
+            EstablecerPermiso();
             CargarLibros();
         }
 
+        private void EstablecerPermiso()
+        {
+            if (UsuarioVerificado.RolId == (int)RolEnum.Estudiante)
+            {
+                agregarLibroButton.Visible = false;
+                editarLibroButton.Visible = false;
+                eliminarLibroButton.Visible = false;
+                categoriasButton.Visible = false;
+                librosDataGridView.Width = 910;
+
+
+            }
+        }
         private void agregarLibroButton_Click(object sender, EventArgs e)
         {
             ModalGestionarLibros modalGestionarLibros = new ModalGestionarLibros(_libroServicio, this);
@@ -41,7 +57,8 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             librosDataGridView.DataSource = _libroServicio.ObtenerLibros();
             librosDataGridView.Refresh();
-            
+            librosDataGridView.Columns["IdCategoria"].Visible = false;
+
         }
 
         private void editarLibroButton_Click(object sender, EventArgs e)

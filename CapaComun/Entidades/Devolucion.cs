@@ -14,6 +14,8 @@ namespace CapaEntidad.Entidades
         
         public string Observaciones { get; set; }
 
+        public string TituloLibro { get; set; }
+
         public int IdPrestamo { get; set; }
 
 

@@ -29,7 +29,7 @@ namespace CapaAccesoDatos.Repositorios.LibroRepositorios
                                            l.Autor,
                                            l.FechaPublicacion, 
                                            l.CopiasDisponibles, 
-                                           c.Nombre 
+                                           c.Nombre AS nombreCategoria
                                     FROM Libros AS l INNER JOIN Categoria AS c ON l.IdCategoria = c.Id";
 
                 return conexion.Query<Libro>(consulta);

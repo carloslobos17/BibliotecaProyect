@@ -20,11 +20,18 @@ namespace CapaPresentacion.Formularios.EstudianteForms
             InitializeComponent();
             _historialServicio = historialServicio;
             historialDataGridView.DataSource = _historialServicio.ObtenerPrestamos(UsuarioVerificado.Id);
+            QuitarColumnas();
         }
 
+        private void QuitarColumnas()
+        {
+            historialDataGridView.Columns["IdUsuario"].Visible = false;
+            historialDataGridView.Columns["IdLibro"].Visible = false;
+        }
         private void prestamoHistorialButton_Click(object sender, EventArgs e)
         {
             historialDataGridView.DataSource = _historialServicio.ObtenerPrestamos(UsuarioVerificado.Id);
+            QuitarColumnas();
         }
 
         private void devolucionesHistorialButton_Click(object sender, EventArgs e)
