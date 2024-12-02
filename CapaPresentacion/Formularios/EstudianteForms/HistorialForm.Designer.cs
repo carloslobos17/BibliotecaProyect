@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             tituloLabel = new Label();
             prestamoHistorialButton = new Button();
@@ -40,7 +43,7 @@
             // 
             panel1.BackColor = Color.FromArgb(128, 64, 0);
             panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(200, 91);
+            panel1.Location = new Point(260, 115);
             panel1.Name = "panel1";
             panel1.Size = new Size(601, 10);
             panel1.TabIndex = 80;
@@ -50,7 +53,7 @@
             tituloLabel.AutoSize = true;
             tituloLabel.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tituloLabel.ForeColor = Color.FromArgb(128, 64, 0);
-            tituloLabel.Location = new Point(171, 46);
+            tituloLabel.Location = new Point(235, 60);
             tituloLabel.Name = "tituloLabel";
             tituloLabel.Size = new Size(639, 42);
             tituloLabel.TabIndex = 79;
@@ -61,7 +64,7 @@
             prestamoHistorialButton.BackColor = Color.DarkCyan;
             prestamoHistorialButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             prestamoHistorialButton.ForeColor = Color.White;
-            prestamoHistorialButton.Location = new Point(137, 145);
+            prestamoHistorialButton.Location = new Point(210, 168);
             prestamoHistorialButton.Name = "prestamoHistorialButton";
             prestamoHistorialButton.Size = new Size(333, 43);
             prestamoHistorialButton.TabIndex = 81;
@@ -74,7 +77,7 @@
             devolucionesHistorialButton.BackColor = Color.DarkCyan;
             devolucionesHistorialButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             devolucionesHistorialButton.ForeColor = Color.White;
-            devolucionesHistorialButton.Location = new Point(498, 145);
+            devolucionesHistorialButton.Location = new Point(571, 168);
             devolucionesHistorialButton.Name = "devolucionesHistorialButton";
             devolucionesHistorialButton.Size = new Size(333, 43);
             devolucionesHistorialButton.TabIndex = 82;
@@ -84,18 +87,39 @@
             // 
             // historialDataGridView
             // 
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            historialDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            historialDataGridView.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            historialDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             historialDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            historialDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             historialDataGridView.Location = new Point(118, 248);
             historialDataGridView.Name = "historialDataGridView";
             historialDataGridView.RowHeadersWidth = 51;
-            historialDataGridView.Size = new Size(742, 356);
+            historialDataGridView.Size = new Size(869, 484);
             historialDataGridView.TabIndex = 83;
             // 
             // HistorialForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(983, 719);
+            ClientSize = new Size(1080, 780);
             Controls.Add(historialDataGridView);
             Controls.Add(devolucionesHistorialButton);
             Controls.Add(prestamoHistorialButton);

@@ -70,12 +70,12 @@ namespace CapaAccesoDatos.Repositorios.PanelRepositorios
             {
                 string consulta = @"SELECT TOP 10
                                         l.Titulo AS Libro, 
-                                        COUNT(p.IdLibro) AS Cant
+                                        COUNT(p.IdLibro) AS Cantidad
                                     FROM Prestamos p
                                     INNER JOIN Libros l 
                                     ON p.IdLibro = l.Id
                                     GROUP BY l.Titulo
-                                    ORDER BY Cant DESC";
+                                    ORDER BY Cantidad DESC";
 
                 return conexion.Query<EstadisticaPrestamo>(consulta);
             }
@@ -87,12 +87,12 @@ namespace CapaAccesoDatos.Repositorios.PanelRepositorios
             {
                 string consulta = @"SELECT TOP 5
 	                                    c.Nombre As Categoria,
-	                                    Count(l.IdCategoria) As CantidadLibros
+	                                    Count(l.IdCategoria) As Cantidad
                                     FROM Libros l
                                     INNER JOIN Categoria c
                                     ON l.IdCategoria = c.Id
                                     GROUP BY c.Nombre
-                                    ORDER BY CantidadLibros DESC";
+                                    ORDER BY Cantidad DESC";
 
                 return conexion.Query<EstadisticaCategoria>(consulta);
             }

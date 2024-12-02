@@ -17,14 +17,12 @@ namespace CapaPresentacion.Validaciones
             RuleFor(libro => libro.Titulo)
                 .NotEmpty().WithMessage("El título no puede estar vacío.")
                 .MinimumLength(3).WithMessage("El título debe contener al menos 3 caracteres.")
-                .MaximumLength(100).WithMessage("El título no puede exceder los 100 caracteres.")
-                .Matches(@"^[a-zA-Z\s]+$").WithMessage("El título solo puede contener letras y espacios.");
+                .MaximumLength(100).WithMessage("El título no puede exceder los 100 caracteres.");
 
             RuleFor(libro => libro.Autor)
                 .NotEmpty().WithMessage("El autor no puede estar vacío.")
                 .MinimumLength(3).WithMessage("El autor debe contener al menos 3 caracteres.")
-                .MaximumLength(50).WithMessage("El autor no puede exceder los 50 caracteres.")
-                .Matches(@"^[a-zA-Z\s]+$").WithMessage("El autor solo puede contener letras y espacios.");
+                .MaximumLength(50).WithMessage("El autor no puede exceder los 50 caracteres.");
 
             RuleFor(libro => libro.FechaPublicacion)
                 .NotEmpty().WithMessage("La fecha de publicación no puede estar vacía.")

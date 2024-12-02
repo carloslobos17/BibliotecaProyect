@@ -20,7 +20,7 @@ namespace CapaNegocios.Servicios.PanelServicios
         public int BibliotecariosRegistrados() => _panelRepositorio.BibliotecariosRegistrados();
         public int CantidadDevoluciones() => _panelRepositorio.CantidadDevoluciones();
         public int CantidadLibros() => _panelRepositorio.CantidadLibros();
-        public int CantidadPrestamos() => _panelRepositorio.CantidadLibros();
+        public int CantidadPrestamos() => _panelRepositorio.CantidadPrestamos();
         public IEnumerable<EstadisticaCategoria> ObtenerCantidadCategorias() => _panelRepositorio.ObtenerCantidadCategorias();
         public IEnumerable<EstadisticaPrestamo> ObtenerLibrosMasPrestados() => _panelRepositorio.ObtenerLibrosMasPrestados();
     }

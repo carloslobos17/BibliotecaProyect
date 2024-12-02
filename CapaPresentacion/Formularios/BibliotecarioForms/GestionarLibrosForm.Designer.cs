@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label2 = new Label();
             eliminarLibroButton = new FontAwesome.Sharp.IconButton();
             agregarLibroButton = new FontAwesome.Sharp.IconButton();
@@ -129,11 +132,35 @@
             librosDataGridView.AllowUserToDeleteRows = false;
             librosDataGridView.AllowUserToResizeColumns = false;
             librosDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(44, 62, 80);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            librosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            librosDataGridView.BackgroundColor = SystemColors.ControlLight;
+            librosDataGridView.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            librosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             librosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            librosDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             librosDataGridView.Location = new Point(83, 250);
             librosDataGridView.Name = "librosDataGridView";
             librosDataGridView.RowHeadersWidth = 51;
-            librosDataGridView.Size = new Size(703, 491);
+            librosDataGridView.Size = new Size(703, 514);
             librosDataGridView.TabIndex = 18;
             librosDataGridView.CellContentClick += librosDataGridView_CellContentClick;
             // 

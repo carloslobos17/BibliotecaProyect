@@ -67,5 +67,6 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 prestamosDataGridView.DataSource = categories;
             }
         }
+
     }
 }

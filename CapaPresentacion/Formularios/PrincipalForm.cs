@@ -87,7 +87,8 @@ namespace CapaPresentacion
 
         private void panelControlButton_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new PanelForm());
+            var panelForm = _serviceProvider.GetService<PanelForm>();
+            AbrirFormHijo(panelForm);
         }
 
         private void bibliotecariosButton_Click(object sender, EventArgs e)

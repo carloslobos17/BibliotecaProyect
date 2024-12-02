@@ -51,8 +51,8 @@
             devolucionesIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             cantidadDevolucionesLabel = new Label();
             tituloDevolucionesLabel = new Label();
-            graficoPastelChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            graficoBarrasChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            cantidadCategoriaChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            librosPopularesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             estadisticasTableLayoutPanel.SuspendLayout();
             bibliotecariosPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bibliotecarioIconPictureBox).BeginInit();
@@ -62,8 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)prestamosIconPictureBox).BeginInit();
             devolucionesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)devolucionesIconPictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)graficoPastelChart).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)graficoBarrasChart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cantidadCategoriaChart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)librosPopularesChart).BeginInit();
             SuspendLayout();
             // 
             // estadisticasTableLayoutPanel
@@ -287,40 +287,38 @@
             tituloDevolucionesLabel.TabIndex = 3;
             tituloDevolucionesLabel.Text = "Devoluciones";
             // 
-            // graficoPastelChart
+            // cantidadCategoriaChart
             // 
             chartArea1.Name = "ChartArea1";
-            graficoPastelChart.ChartAreas.Add(chartArea1);
+            cantidadCategoriaChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            graficoPastelChart.Legends.Add(legend1);
-            graficoPastelChart.Location = new Point(43, 201);
-            graficoPastelChart.Name = "graficoPastelChart";
-            graficoPastelChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            cantidadCategoriaChart.Legends.Add(legend1);
+            cantidadCategoriaChart.Location = new Point(43, 201);
+            cantidadCategoriaChart.Name = "cantidadCategoriaChart";
+            cantidadCategoriaChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            graficoPastelChart.Series.Add(series1);
-            graficoPastelChart.Size = new Size(329, 416);
-            graficoPastelChart.TabIndex = 1;
-            graficoPastelChart.Text = "chart1";
+            cantidadCategoriaChart.Series.Add(series1);
+            cantidadCategoriaChart.Size = new Size(446, 416);
+            cantidadCategoriaChart.TabIndex = 1;
+            cantidadCategoriaChart.Text = "chart1";
             // 
-            // graficoBarrasChart
+            // librosPopularesChart
             // 
             chartArea2.Name = "ChartArea1";
-            graficoBarrasChart.ChartAreas.Add(chartArea2);
+            librosPopularesChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            graficoBarrasChart.Legends.Add(legend2);
-            graficoBarrasChart.Location = new Point(446, 201);
-            graficoBarrasChart.Name = "graficoBarrasChart";
-            graficoBarrasChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            librosPopularesChart.Legends.Add(legend2);
+            librosPopularesChart.Location = new Point(536, 201);
+            librosPopularesChart.Name = "librosPopularesChart";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            graficoBarrasChart.Series.Add(series2);
-            graficoBarrasChart.Size = new Size(488, 416);
-            graficoBarrasChart.TabIndex = 2;
-            graficoBarrasChart.Text = "chart2";
+            librosPopularesChart.Series.Add(series2);
+            librosPopularesChart.Size = new Size(422, 375);
+            librosPopularesChart.TabIndex = 2;
+            librosPopularesChart.Text = "chart1";
             // 
             // PanelForm
             // 
@@ -328,8 +326,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(1012, 647);
-            Controls.Add(graficoBarrasChart);
-            Controls.Add(graficoPastelChart);
+            Controls.Add(librosPopularesChart);
+            Controls.Add(cantidadCategoriaChart);
             Controls.Add(estadisticasTableLayoutPanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PanelForm";
@@ -347,8 +345,8 @@
             devolucionesPanel.ResumeLayout(false);
             devolucionesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)devolucionesIconPictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)graficoPastelChart).EndInit();
-            ((System.ComponentModel.ISupportInitialize)graficoBarrasChart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cantidadCategoriaChart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)librosPopularesChart).EndInit();
             ResumeLayout(false);
         }
 
@@ -356,7 +354,7 @@
 
         private TableLayoutPanel estadisticasTableLayoutPanel;
         private Panel devolucionesPanel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart graficoPastelChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cantidadCategoriaChart;
         private Label tituloDevolucionesLabel;
         private Panel bibliotecariosPanel;
         private Label tituloBibliotecariosLabel;
@@ -368,10 +366,10 @@
         private Label cantidadLibrosLabel;
         private Label cantidadPrestamosLabel;
         private Label cantidadDevolucionesLabel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart graficoBarrasChart;
         private FontAwesome.Sharp.IconPictureBox bibliotecarioIconPictureBox;
         private FontAwesome.Sharp.IconPictureBox librosIconPictureBox;
         private FontAwesome.Sharp.IconPictureBox prestamosIconPictureBox;
         private FontAwesome.Sharp.IconPictureBox devolucionesIconPictureBox;
+        private System.Windows.Forms.DataVisualization.Charting.Chart librosPopularesChart;
     }
 }

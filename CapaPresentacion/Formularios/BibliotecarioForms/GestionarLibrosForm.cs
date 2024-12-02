@@ -41,7 +41,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
         {
             librosDataGridView.DataSource = _libroServicio.ObtenerLibros();
             librosDataGridView.Refresh();
-            librosDataGridView.Columns["Clave"].Visible = false;
+            
         }
 
         private void editarLibroButton_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
         {
             if (e.RowIndex >= 0)
             {
-                nombreCategoriaTextBox.Text = CategoriadataGridView.CurrentRow.Cells[0].Value.ToString();
+                nombreCategoriaTextBox.Text = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
             }
             else
             {
@@ -77,7 +77,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                 _categoriaServicios.AgregarCategoria(categoria);
                 CargarCategoríasDatos();
             }
-            
+
         }
 
         private void editarCategoriaButton_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                 _categoriaServicios.EditarCategoria(categoria);
                 CargarCategoríasDatos();
             }
-            
+
         }
 
         private void eliminarCategoriaButton_Click(object sender, EventArgs e)
@@ -136,10 +136,14 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms.Modal
                     case nameof(Categoria.Nombre):
                         validacionErrorProvider.SetError(nombreCategoriaTextBox, error.ErrorMessage);
                         break;
-                    
+
                 }
             }
         }
 
+        private void cerrarIconButton_Click(object sender, EventArgs e)
+        {
+           this.Close();
+        }
     }
 }

@@ -20,7 +20,6 @@ namespace CapaPresentacion.Formularios.EstudianteForms
             InitializeComponent();
             _historialServicio = historialServicio;
             historialDataGridView.DataSource = _historialServicio.ObtenerPrestamos(UsuarioVerificado.Id);
-            historialDataGridView.Columns["Clave"].Visible = false;
         }
 
         private void prestamoHistorialButton_Click(object sender, EventArgs e)

@@ -39,6 +39,9 @@
             editarCategoriaButton = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             validacionErrorProvider = new ErrorProvider(components);
+            panel3 = new Panel();
+            panel4 = new Panel();
+            cerrarIconButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)CategoriadataGridView).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
@@ -65,10 +68,11 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(44, 62, 80);
+            panel1.Controls.Add(cerrarIconButton);
             panel1.Controls.Add(tituloModalLabel);
             panel1.Location = new Point(-5, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(622, 96);
+            panel1.Size = new Size(622, 98);
             panel1.TabIndex = 4;
             // 
             // tituloModalLabel
@@ -170,11 +174,42 @@
             // 
             validacionErrorProvider.ContainerControl = this;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(44, 62, 80);
+            panel3.Location = new Point(594, 92);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(23, 472);
+            panel3.TabIndex = 26;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(44, 62, 80);
+            panel4.Location = new Point(-5, 92);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(22, 472);
+            panel4.TabIndex = 27;
+            // 
+            // cerrarIconButton
+            // 
+            cerrarIconButton.IconChar = FontAwesome.Sharp.IconChar.X;
+            cerrarIconButton.IconColor = Color.FromArgb(44, 62, 80);
+            cerrarIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            cerrarIconButton.IconSize = 22;
+            cerrarIconButton.Location = new Point(565, 15);
+            cerrarIconButton.Name = "cerrarIconButton";
+            cerrarIconButton.Size = new Size(32, 30);
+            cerrarIconButton.TabIndex = 2;
+            cerrarIconButton.UseVisualStyleBackColor = true;
+            cerrarIconButton.Click += cerrarIconButton_Click;
+            // 
             // CategoriaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(613, 628);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(eliminarCategoriaButton);
             Controls.Add(agregarCategoriaButton);
@@ -205,5 +240,8 @@
         private Label tituloModalLabel;
         private Panel panel2;
         private ErrorProvider validacionErrorProvider;
+        private Panel panel4;
+        private Panel panel3;
+        private FontAwesome.Sharp.IconButton cerrarIconButton;
     }
 }

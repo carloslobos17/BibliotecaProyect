@@ -9,18 +9,35 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Drawing;
+using CapaNegocios.Servicios.PanelServicios;
+using System.Collections;
 
 namespace CapaPresentacion.Formularios.AdminForms
 {
     public partial class PanelForm : Form
     {
-        public PanelForm()
+        private readonly IPanelServicio _panelServicio;
+        public PanelForm(IPanelServicio panelServicio)
         {
             InitializeComponent();
             bibliotecariosPanel.MouseEnter += bibliotecariosPanel_MouseEnter;
             bibliotecariosPanel.MouseEnter += bibliotecariosPanel_MouseEnter;
+            _panelServicio = panelServicio;
+            CargarDatosPanel();
+            GraficarLibrosPopulares();
+            categoriaLibros();
+
+
         }
 
+        public void CargarDatosPanel()
+        {
+            cantidadBibliotecarioLabel.Text = _panelServicio.BibliotecariosRegistrados().ToString();
+            cantidadLibrosLabel.Text = _panelServicio.CantidadLibros().ToString();
+            cantidadPrestamosLabel.Text = _panelServicio.CantidadPrestamos().ToString();
+            cantidadDevolucionesLabel.Text = _panelServicio.CantidadDevoluciones().ToString();
+
+        }
         private void bibliotecariosPanel_MouseEnter(object sender, EventArgs e)
         {
             bibliotecariosPanel.BackColor = Color.FromArgb(37, 53, 68);
@@ -43,7 +60,7 @@ namespace CapaPresentacion.Formularios.AdminForms
             tituloLibrosLabel.ForeColor = Color.White;
             cantidadLibrosLabel.ForeColor = Color.White;
             librosIconPictureBox.IconColor = Color.White;
-            
+
         }
 
         private void librosPanel_MouseLeave(object sender, EventArgs e)
@@ -51,7 +68,7 @@ namespace CapaPresentacion.Formularios.AdminForms
             librosPanel.BackColor = Color.White;
             tituloLibrosLabel.ForeColor = Color.Black;
             cantidadLibrosLabel.ForeColor = Color.Black;
-            librosIconPictureBox.IconColor= Color.Black;
+            librosIconPictureBox.IconColor = Color.Black;
         }
 
         private void prestamosPanel_MouseEnter(object sender, EventArgs e)
@@ -84,6 +101,44 @@ namespace CapaPresentacion.Formularios.AdminForms
             tituloDevolucionesLabel.ForeColor = Color.White;
             cantidadDevolucionesLabel.ForeColor = Color.White;
             devolucionesIconPictureBox.IconColor = Color.White;
+        }
+
+        private void GraficarLibrosPopulares()
+        {
+
+            var librosPopulares = _panelServicio.ObtenerLibrosMasPrestados();
+
+           
+            ArrayList libros = new ArrayList();
+            ArrayList cantidades = new ArrayList();
+
+            
+            foreach (var libro in librosPopulares)
+            {
+                libros.Add(libro.Libro);      
+                cantidades.Add(libro.Cantidad); 
+            }
+
+            librosPopularesChart.Series[0].Points.DataBindXY(libros, cantidades);
+
+        }
+
+        private void categoriaLibros()
+        {
+            var categoriaLibros = _panelServicio.ObtenerCantidadCategorias();
+
+
+            ArrayList categoria = new ArrayList();
+            ArrayList cantidades = new ArrayList();
+
+
+            foreach (var c in categoriaLibros)
+            {
+                categoria.Add(c.Categoria);
+                cantidades.Add(c.Cantidad);
+            }
+
+            cantidadCategoriaChart.Series[0].Points.DataBindXY(categoria, cantidades);
         }
     }
 }

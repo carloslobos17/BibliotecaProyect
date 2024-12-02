@@ -24,6 +24,8 @@ using CapaNegocios.Servicios.HistorialServicios;
 using CapaAccesoDatos.Repositorios.HistorialRepositorios;
 using Microsoft.Extensions.Configuration;
 using CapaNegocios.Notificaciones;
+using CapaAccesoDatos.Repositorios.PanelRepositorios;
+using CapaNegocios.Servicios.PanelServicios;
 
 namespace CapaPresentacion
 {
@@ -69,6 +71,8 @@ namespace CapaPresentacion
                     services.AddTransient<AdministradorForm>();
                     services.AddTransient<DevolucionesForm>();
                     services.AddTransient<HistorialForm>();
+                    services.AddTransient<PanelForm>();
+
 
                     //Repositories
                     services.AddScoped<ILibroRepositorio, LibroRepositorio>();
@@ -78,6 +82,8 @@ namespace CapaPresentacion
                     services.AddScoped<IGestionUsuarioRepositorio, GestionUsuarioRepositorio>();
                     services.AddScoped<IDevolucionRepositorio, DevolucionRepositorio>();
                     services.AddScoped<IHistorialRepositorio, HistorialRepositorio>();
+                    services.AddScoped<IPanelRepositorio, PanelRepositorio>();
+
 
                     //Services
                     services.AddScoped<ILibroServicio, LibroServicio>();
@@ -87,6 +93,8 @@ namespace CapaPresentacion
                     services.AddScoped<IGestionUsuarioServicio, GestionUsuarioServicio>();
                     services.AddScoped<IDevolucionServicio, DevolucionServicio>();
                     services.AddScoped<IHistorialServicio, HistorialServicio>();
+                    services.AddScoped<IPanelServicio, PanelServicio>();
+
 
                     //Notificaciones
                     services.AddScoped<IEmailNotificacion, EmailNotificacion>();
