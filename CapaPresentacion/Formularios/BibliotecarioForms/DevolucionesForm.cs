@@ -53,7 +53,6 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 {
                     _devolucionServicio.DevolverLibro(idLibro, estado, devolucion);
                     CargarPrestamosDatos();
-                    this.Close();
                 }
                 
             }
