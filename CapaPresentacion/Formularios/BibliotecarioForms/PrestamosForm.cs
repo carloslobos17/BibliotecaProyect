@@ -87,8 +87,9 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
                 string tituloLibro = librosComboBox.Text;
                 _prestamoServicio.AgregarPrestamo(prestamo);
 
-                Console.WriteLine($"Estudiante: {nombreEstudiante}, Libro: {tituloLibro}");
-                string rutaImagen = Path.Combine(Directory.GetCurrentDirectory(), "img", "bibliotecaLogo.png");
+                
+                string rutaImagen = "./img/bibliotecaLogo.png";
+
 
                 Document.Create(container =>
                 {

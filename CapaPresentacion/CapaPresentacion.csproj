@@ -8,14 +8,24 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Formularios\BibliotecarioForms\img\**" />
+    <EmbeddedResource Remove="Formularios\BibliotecarioForms\img\**" />
+    <None Remove="Formularios\BibliotecarioForms\img\**" />
+  </ItemGroup>
+
 
 	<ItemGroup>
 		<None Remove="appsettings.json" />
+		<None Remove="img\bibliotecaLogo.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Content Include="appsettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="img\bibliotecaLogo.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
 	
