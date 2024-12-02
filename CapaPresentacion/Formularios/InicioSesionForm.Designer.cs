@@ -103,7 +103,7 @@
             // 
             errorLoginLabel.AutoSize = true;
             errorLoginLabel.ForeColor = Color.Crimson;
-            errorLoginLabel.Location = new Point(211, 275);
+            errorLoginLabel.Location = new Point(213, 277);
             errorLoginLabel.Name = "errorLoginLabel";
             errorLoginLabel.Size = new Size(0, 20);
             errorLoginLabel.TabIndex = 6;
@@ -113,7 +113,7 @@
             iniciarBtn.BackColor = Color.SeaGreen;
             iniciarBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             iniciarBtn.ForeColor = SystemColors.ControlLightLight;
-            iniciarBtn.Location = new Point(156, 228);
+            iniciarBtn.Location = new Point(158, 211);
             iniciarBtn.Margin = new Padding(3, 4, 3, 4);
             iniciarBtn.Name = "iniciarBtn";
             iniciarBtn.Size = new Size(130, 50);
@@ -127,7 +127,7 @@
             cancelarBtn.BackColor = Color.FromArgb(191, 97, 106);
             cancelarBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancelarBtn.ForeColor = SystemColors.ButtonHighlight;
-            cancelarBtn.Location = new Point(356, 226);
+            cancelarBtn.Location = new Point(351, 209);
             cancelarBtn.Margin = new Padding(3, 4, 3, 4);
             cancelarBtn.Name = "cancelarBtn";
             cancelarBtn.Size = new Size(142, 52);

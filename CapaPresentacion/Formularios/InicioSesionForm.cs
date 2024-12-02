@@ -64,6 +64,10 @@ namespace CapaPresentacion.Formulario
 
 
                 }
+                else
+                {
+                    errorLoginLabel.Text = "Correo o Contraseña incorrecta";
+                }
             }
 
         }
