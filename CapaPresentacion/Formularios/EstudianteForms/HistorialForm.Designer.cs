@@ -43,7 +43,7 @@
             // 
             panel1.BackColor = Color.FromArgb(128, 64, 0);
             panel1.ForeColor = Color.FromArgb(162, 129, 112);
-            panel1.Location = new Point(260, 115);
+            panel1.Location = new Point(214, 108);
             panel1.Name = "panel1";
             panel1.Size = new Size(601, 10);
             panel1.TabIndex = 80;
@@ -53,7 +53,7 @@
             tituloLabel.AutoSize = true;
             tituloLabel.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tituloLabel.ForeColor = Color.FromArgb(128, 64, 0);
-            tituloLabel.Location = new Point(235, 60);
+            tituloLabel.Location = new Point(189, 53);
             tituloLabel.Name = "tituloLabel";
             tituloLabel.Size = new Size(639, 42);
             tituloLabel.TabIndex = 79;
@@ -64,7 +64,7 @@
             prestamoHistorialButton.BackColor = Color.DarkCyan;
             prestamoHistorialButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             prestamoHistorialButton.ForeColor = Color.White;
-            prestamoHistorialButton.Location = new Point(210, 168);
+            prestamoHistorialButton.Location = new Point(164, 161);
             prestamoHistorialButton.Name = "prestamoHistorialButton";
             prestamoHistorialButton.Size = new Size(333, 43);
             prestamoHistorialButton.TabIndex = 81;
@@ -77,7 +77,7 @@
             devolucionesHistorialButton.BackColor = Color.DarkCyan;
             devolucionesHistorialButton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             devolucionesHistorialButton.ForeColor = Color.White;
-            devolucionesHistorialButton.Location = new Point(571, 168);
+            devolucionesHistorialButton.Location = new Point(525, 161);
             devolucionesHistorialButton.Name = "devolucionesHistorialButton";
             devolucionesHistorialButton.Size = new Size(333, 43);
             devolucionesHistorialButton.TabIndex = 82;
@@ -109,10 +109,10 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             historialDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            historialDataGridView.Location = new Point(118, 248);
+            historialDataGridView.Location = new Point(137, 243);
             historialDataGridView.Name = "historialDataGridView";
             historialDataGridView.RowHeadersWidth = 51;
-            historialDataGridView.Size = new Size(869, 484);
+            historialDataGridView.Size = new Size(743, 406);
             historialDataGridView.TabIndex = 83;
             // 
             // HistorialForm

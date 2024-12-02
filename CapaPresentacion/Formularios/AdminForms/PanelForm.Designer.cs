@@ -316,7 +316,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             librosPopularesChart.Series.Add(series2);
-            librosPopularesChart.Size = new Size(422, 375);
+            librosPopularesChart.Size = new Size(430, 416);
             librosPopularesChart.TabIndex = 2;
             librosPopularesChart.Text = "chart1";
             // 

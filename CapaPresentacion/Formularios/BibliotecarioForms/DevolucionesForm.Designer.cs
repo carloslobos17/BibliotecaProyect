@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -42,7 +43,9 @@
             buscarTextBox = new TextBox();
             prestamosDataGridView = new DataGridView();
             buscarButton = new Button();
+            validacionErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)prestamosDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -184,6 +187,10 @@
             buscarButton.UseVisualStyleBackColor = false;
             buscarButton.Click += buscarButton_Click;
             // 
+            // validacionErrorProvider
+            // 
+            validacionErrorProvider.ContainerControl = this;
+            // 
             // DevolucionesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -204,6 +211,7 @@
             Name = "DevolucionesForm";
             Text = "DevolucionesForm";
             ((System.ComponentModel.ISupportInitialize)prestamosDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)validacionErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,5 +228,6 @@
         private TextBox buscarTextBox;
         private DataGridView prestamosDataGridView;
         private Button buscarButton;
+        private ErrorProvider validacionErrorProvider;
     }
 }

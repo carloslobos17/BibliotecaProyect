@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad.Entidades;
 using CapaNegocios.Servicios.DevolucionServicios;
+using CapaPresentacion.Validaciones;
+using FluentValidation.Results;
 using Microsoft.IdentityModel.Tokens;
 
 namespace CapaPresentacion.Formularios.BibliotecarioForms
@@ -40,8 +42,20 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
 
                 };
 
-                _devolucionServicio.DevolverLibro(idLibro, estado, devolucion);
-                CargarPrestamosDatos();
+                ValidacionDevolucion validacionDevolucion = new ValidacionDevolucion();
+                ValidationResult result = validacionDevolucion.Validate(devolucion);
+
+                if (!result.IsValid)
+                {
+                    MostrarErroresValidacion(result);
+                }
+                else
+                {
+                    _devolucionServicio.DevolverLibro(idLibro, estado, devolucion);
+                    CargarPrestamosDatos();
+                    this.Close();
+                }
+                
             }
             else
             {
@@ -68,5 +82,23 @@ namespace CapaPresentacion.Formularios.BibliotecarioForms
             }
         }
 
+        private void MostrarErroresValidacion(ValidationResult result)
+        {
+            validacionErrorProvider.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Devolucion.FechaDevolucion):
+                        validacionErrorProvider.SetError(fechaDevolucionDateTimePicker, error.ErrorMessage);
+                        break;
+                    case nameof(Devolucion.Observaciones):
+                        validacionErrorProvider.SetError(observacionesTextBox, error.ErrorMessage);
+                        break;
+                    
+                }
+            }
+        }
     }
 }
